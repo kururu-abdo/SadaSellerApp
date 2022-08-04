@@ -1,6 +1,6 @@
-# sixvalley_vendor_app
+# Joseder Seller App
 
-A new Flutter application.
+Joseeder App for seller
 
 ## Getting Started
 
