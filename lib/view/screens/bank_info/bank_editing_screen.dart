@@ -1,18 +1,18 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sixvalley_vendor_app/data/model/body/seller_body.dart';
-import 'package:sixvalley_vendor_app/data/model/response/seller_info.dart';
-import 'package:sixvalley_vendor_app/localization/language_constrants.dart';
-import 'package:sixvalley_vendor_app/provider/auth_provider.dart';
-import 'package:sixvalley_vendor_app/provider/bank_info_provider.dart';
-import 'package:sixvalley_vendor_app/provider/profile_provider.dart';
-import 'package:sixvalley_vendor_app/utill/color_resources.dart';
-import 'package:sixvalley_vendor_app/utill/dimensions.dart';
-import 'package:sixvalley_vendor_app/utill/styles.dart';
-import 'package:sixvalley_vendor_app/view/base/custom_app_bar.dart';
-import 'package:sixvalley_vendor_app/view/base/custom_button.dart';
-import 'package:sixvalley_vendor_app/view/base/textfeild/custom_text_feild.dart';
+import 'package:joseeder_seller/data/model/body/seller_body.dart';
+import 'package:joseeder_seller/data/model/response/seller_info.dart';
+import 'package:joseeder_seller/localization/language_constrants.dart';
+import 'package:joseeder_seller/provider/auth_provider.dart';
+import 'package:joseeder_seller/provider/bank_info_provider.dart';
+import 'package:joseeder_seller/provider/profile_provider.dart';
+import 'package:joseeder_seller/utill/color_resources.dart';
+import 'package:joseeder_seller/utill/dimensions.dart';
+import 'package:joseeder_seller/utill/styles.dart';
+import 'package:joseeder_seller/view/base/custom_app_bar.dart';
+import 'package:joseeder_seller/view/base/custom_button.dart';
+import 'package:joseeder_seller/view/base/textfeild/custom_text_feild.dart';
 
 class BankEditingScreen extends StatefulWidget {
 

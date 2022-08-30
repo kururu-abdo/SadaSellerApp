@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sixvalley_vendor_app/data/model/response/refund_model.dart';
-import 'package:sixvalley_vendor_app/helper/date_converter.dart';
-import 'package:sixvalley_vendor_app/localization/language_constrants.dart';
-import 'package:sixvalley_vendor_app/provider/splash_provider.dart';
-import 'package:sixvalley_vendor_app/utill/color_resources.dart';
-import 'package:sixvalley_vendor_app/utill/dimensions.dart';
-import 'package:sixvalley_vendor_app/utill/images.dart';
-import 'package:sixvalley_vendor_app/utill/styles.dart';
-import 'package:sixvalley_vendor_app/view/base/custom_divider.dart';
-import 'package:sixvalley_vendor_app/view/screens/refund/widget/refund_details.dart';
+import 'package:joseeder_seller/data/model/response/refund_model.dart';
+import 'package:joseeder_seller/helper/date_converter.dart';
+import 'package:joseeder_seller/localization/language_constrants.dart';
+import 'package:joseeder_seller/provider/splash_provider.dart';
+import 'package:joseeder_seller/utill/color_resources.dart';
+import 'package:joseeder_seller/utill/dimensions.dart';
+import 'package:joseeder_seller/utill/images.dart';
+import 'package:joseeder_seller/utill/styles.dart';
+import 'package:joseeder_seller/view/base/custom_divider.dart';
+import 'package:joseeder_seller/view/screens/refund/widget/refund_details.dart';
 
 class RefundWidget extends StatelessWidget {
   final RefundModel refundModel;

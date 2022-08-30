@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sixvalley_vendor_app/utill/app_constants.dart';
+import 'package:joseeder_seller/utill/app_constants.dart';
 
 class ThemeProvider with ChangeNotifier {
   final SharedPreferences sharedPreferences;

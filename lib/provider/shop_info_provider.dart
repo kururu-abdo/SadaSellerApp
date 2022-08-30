@@ -3,11 +3,11 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:sixvalley_vendor_app/data/model/response/base/api_response.dart';
-import 'package:sixvalley_vendor_app/data/model/response/response_model.dart';
-import 'package:sixvalley_vendor_app/data/model/response/shop_info_model.dart';
-import 'package:sixvalley_vendor_app/data/repository/shop_info_repo.dart';
-import 'package:sixvalley_vendor_app/helper/api_checker.dart';
+import 'package:joseeder_seller/data/model/response/base/api_response.dart';
+import 'package:joseeder_seller/data/model/response/response_model.dart';
+import 'package:joseeder_seller/data/model/response/shop_info_model.dart';
+import 'package:joseeder_seller/data/repository/shop_info_repo.dart';
+import 'package:joseeder_seller/helper/api_checker.dart';
 import 'package:http/http.dart' as http;
 
 class ShopProvider extends ChangeNotifier {

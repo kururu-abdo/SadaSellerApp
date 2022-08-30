@@ -1,4 +1,4 @@
-import 'package:sixvalley_vendor_app/data/model/response/chat_model.dart';
+import 'package:joseeder_seller/data/model/response/chat_model.dart';
 
 class RefundModel {
   int id;

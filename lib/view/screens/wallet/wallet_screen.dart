@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sixvalley_vendor_app/helper/price_converter.dart';
-import 'package:sixvalley_vendor_app/localization/language_constrants.dart';
-import 'package:sixvalley_vendor_app/provider/profile_provider.dart';
-import 'package:sixvalley_vendor_app/provider/theme_provider.dart';
-import 'package:sixvalley_vendor_app/provider/transaction_provider.dart';
-import 'package:sixvalley_vendor_app/utill/color_resources.dart';
-import 'package:sixvalley_vendor_app/utill/dimensions.dart';
-import 'package:sixvalley_vendor_app/utill/images.dart';
-import 'package:sixvalley_vendor_app/utill/styles.dart';
-import 'package:sixvalley_vendor_app/view/base/custom_app_bar.dart';
-import 'package:sixvalley_vendor_app/view/base/custom_edit_dialog.dart';
-import 'package:sixvalley_vendor_app/view/base/no_data_screen.dart';
-import 'package:sixvalley_vendor_app/view/base/title_row.dart';
-import 'package:sixvalley_vendor_app/view/screens/transaction/transaction_screen.dart';
-import 'package:sixvalley_vendor_app/view/screens/wallet/widget/wallet_card.dart';
-import 'package:sixvalley_vendor_app/view/screens/wallet/widget/wallet_transaction_list_view.dart';
+import 'package:joseeder_seller/helper/price_converter.dart';
+import 'package:joseeder_seller/localization/language_constrants.dart';
+import 'package:joseeder_seller/provider/profile_provider.dart';
+import 'package:joseeder_seller/provider/theme_provider.dart';
+import 'package:joseeder_seller/provider/transaction_provider.dart';
+import 'package:joseeder_seller/utill/color_resources.dart';
+import 'package:joseeder_seller/utill/dimensions.dart';
+import 'package:joseeder_seller/utill/images.dart';
+import 'package:joseeder_seller/utill/styles.dart';
+import 'package:joseeder_seller/view/base/custom_app_bar.dart';
+import 'package:joseeder_seller/view/base/custom_edit_dialog.dart';
+import 'package:joseeder_seller/view/base/no_data_screen.dart';
+import 'package:joseeder_seller/view/base/title_row.dart';
+import 'package:joseeder_seller/view/screens/transaction/transaction_screen.dart';
+import 'package:joseeder_seller/view/screens/wallet/widget/wallet_card.dart';
+import 'package:joseeder_seller/view/screens/wallet/widget/wallet_transaction_list_view.dart';
 
 class WalletScreen extends StatefulWidget {
   @override

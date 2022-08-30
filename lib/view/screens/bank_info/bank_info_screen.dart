@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sixvalley_vendor_app/localization/language_constrants.dart';
-import 'package:sixvalley_vendor_app/provider/bank_info_provider.dart';
-import 'package:sixvalley_vendor_app/utill/color_resources.dart';
-import 'package:sixvalley_vendor_app/utill/dimensions.dart';
-import 'package:sixvalley_vendor_app/utill/images.dart';
-import 'package:sixvalley_vendor_app/utill/styles.dart';
-import 'package:sixvalley_vendor_app/view/base/custom_app_bar.dart';
-import 'package:sixvalley_vendor_app/view/base/no_data_screen.dart';
-import 'package:sixvalley_vendor_app/view/screens/bank_info/bank_editing_screen.dart';
+import 'package:joseeder_seller/localization/language_constrants.dart';
+import 'package:joseeder_seller/provider/bank_info_provider.dart';
+import 'package:joseeder_seller/utill/color_resources.dart';
+import 'package:joseeder_seller/utill/dimensions.dart';
+import 'package:joseeder_seller/utill/images.dart';
+import 'package:joseeder_seller/utill/styles.dart';
+import 'package:joseeder_seller/view/base/custom_app_bar.dart';
+import 'package:joseeder_seller/view/base/no_data_screen.dart';
+import 'package:joseeder_seller/view/screens/bank_info/bank_editing_screen.dart';
 
 class BankInfoScreen extends StatelessWidget {
 
@@ -25,7 +25,10 @@ class BankInfoScreen extends StatelessWidget {
           builder: (context, bankProvider, child) => bankProvider.bankInfo != null ?
           Stack(
             children: [
-              Container(padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT,vertical: Dimensions.PADDING_SIZE_BUTTON),
+              Container(
+                   margin: EdgeInsets.all(10),
+                
+                padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT,vertical: Dimensions.PADDING_SIZE_BUTTON),
 
                 child: Column( mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -111,7 +114,11 @@ class BankInfoScreen extends StatelessWidget {
                 child: InkWell(
                   onTap: ()=>Navigator.push(context,
                       MaterialPageRoute(builder: (_) => BankEditingScreen(sellerModel: bankProvider.bankInfo))),
-                  child: Container(width: 100,
+                  child: Container(
+                    
+                      margin: EdgeInsets.only(bottom: 10) ,
+                    
+                    width: 100,
                     padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_SMALL,
                         vertical: Dimensions.PADDING_SIZE_EXTRA_SMALL),
                     decoration: BoxDecoration(

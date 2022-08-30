@@ -1,20 +1,20 @@
 import 'package:country_code_picker/country_code.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sixvalley_vendor_app/helper/email_checker.dart';
-import 'package:sixvalley_vendor_app/localization/language_constrants.dart';
-import 'package:sixvalley_vendor_app/provider/auth_provider.dart';
-import 'package:sixvalley_vendor_app/utill/color_resources.dart';
-import 'package:sixvalley_vendor_app/utill/dimensions.dart';
-import 'package:sixvalley_vendor_app/utill/phone_number_utils.dart';
-import 'package:sixvalley_vendor_app/utill/styles.dart';
-import 'package:sixvalley_vendor_app/view/base/custom_button.dart';
-import 'package:sixvalley_vendor_app/view/base/custom_snackbar.dart';
-import 'package:sixvalley_vendor_app/view/base/textfeild/custom_pass_textfeild.dart';
-import 'package:sixvalley_vendor_app/view/base/textfeild/custom_text_feild.dart';
-import 'package:sixvalley_vendor_app/view/screens/dashboard/dashboard_screen.dart';
-import 'package:sixvalley_vendor_app/view/screens/forgetPassword/forget_password_screen.dart';
-import 'package:sixvalley_vendor_app/view/screens/forgetPassword/widget/code_picker_widget.dart';
+import 'package:joseeder_seller/helper/email_checker.dart';
+import 'package:joseeder_seller/localization/language_constrants.dart';
+import 'package:joseeder_seller/provider/auth_provider.dart';
+import 'package:joseeder_seller/utill/color_resources.dart';
+import 'package:joseeder_seller/utill/dimensions.dart';
+import 'package:joseeder_seller/utill/phone_number_utils.dart';
+import 'package:joseeder_seller/utill/styles.dart';
+import 'package:joseeder_seller/view/base/custom_button.dart';
+import 'package:joseeder_seller/view/base/custom_snackbar.dart';
+import 'package:joseeder_seller/view/base/textfeild/custom_pass_textfeild.dart';
+import 'package:joseeder_seller/view/base/textfeild/custom_text_feild.dart';
+import 'package:joseeder_seller/view/screens/dashboard/dashboard_screen.dart';
+import 'package:joseeder_seller/view/screens/forgetPassword/forget_password_screen.dart';
+import 'package:joseeder_seller/view/screens/forgetPassword/widget/code_picker_widget.dart';
 import 'package:validate_ksa_number/validate_ksa_number.dart';
 
 class SignInWidget extends StatefulWidget {
@@ -217,7 +217,8 @@ class _SignInWidgetState extends State<SignInWidget> {
                       showCustomSnackBar(getTranslated('enter_password', context), context);
                     }else if (_password.length < 6) {
                       showCustomSnackBar(getTranslated('password_should_be', context), context);
-                    }else {authProvider.login(emailAddress: _email, password: _password).then((status) async {
+                    }else {
+                      authProvider.login(emailAddress: _email, password: _password).then((status) async {
                         if (status.isSuccess) {
                           if (authProvider.isActiveRememberMe) {
                             authProvider.saveUserNumberAndPassword(_emailController.text.trim(), _password);

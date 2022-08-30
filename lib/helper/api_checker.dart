@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sixvalley_vendor_app/data/model/response/base/api_response.dart';
-import 'package:sixvalley_vendor_app/provider/auth_provider.dart';
-import 'package:sixvalley_vendor_app/view/screens/auth/auth_screen.dart';
+import 'package:joseeder_seller/data/model/response/base/api_response.dart';
+import 'package:joseeder_seller/provider/auth_provider.dart';
+import 'package:joseeder_seller/view/screens/auth/auth_screen.dart';
 
 class ApiChecker {
   static void checkApi(BuildContext context, ApiResponse apiResponse) {

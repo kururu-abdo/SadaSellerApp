@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:sixvalley_vendor_app/data/model/body/MessageBody.dart';
-import 'package:sixvalley_vendor_app/data/model/response/chat_model.dart';
-import 'package:sixvalley_vendor_app/provider/chat_provider.dart';
-import 'package:sixvalley_vendor_app/utill/color_resources.dart';
-import 'package:sixvalley_vendor_app/utill/dimensions.dart';
-import 'package:sixvalley_vendor_app/utill/images.dart';
-import 'package:sixvalley_vendor_app/utill/styles.dart';
-import 'package:sixvalley_vendor_app/view/base/custom_app_bar.dart';
-import 'package:sixvalley_vendor_app/view/screens/chat/widget/message_bubble.dart';
+import 'package:joseeder_seller/data/model/body/MessageBody.dart';
+import 'package:joseeder_seller/data/model/response/chat_model.dart';
+import 'package:joseeder_seller/provider/chat_provider.dart';
+import 'package:joseeder_seller/utill/color_resources.dart';
+import 'package:joseeder_seller/utill/dimensions.dart';
+import 'package:joseeder_seller/utill/images.dart';
+import 'package:joseeder_seller/utill/styles.dart';
+import 'package:joseeder_seller/view/base/custom_app_bar.dart';
+import 'package:joseeder_seller/view/screens/chat/widget/message_bubble.dart';
 
 class ChatScreen extends StatelessWidget {
   final Customer customer;

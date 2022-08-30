@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sixvalley_vendor_app/data/model/response/base/api_response.dart';
-import 'package:sixvalley_vendor_app/data/model/response/base/error_response.dart';
-import 'package:sixvalley_vendor_app/data/model/response/response_model.dart';
-import 'package:sixvalley_vendor_app/data/repository/auth_repo.dart';
-import 'package:sixvalley_vendor_app/helper/api_checker.dart';
+import 'package:joseeder_seller/data/model/response/base/api_response.dart';
+import 'package:joseeder_seller/data/model/response/base/error_response.dart';
+import 'package:joseeder_seller/data/model/response/response_model.dart';
+import 'package:joseeder_seller/data/repository/auth_repo.dart';
+import 'package:joseeder_seller/helper/api_checker.dart';
 
 class AuthProvider with ChangeNotifier {
   final AuthRepo authRepo;

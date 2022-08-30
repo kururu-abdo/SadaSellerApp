@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sixvalley_vendor_app/utill/dimensions.dart';
+import 'package:joseeder_seller/utill/dimensions.dart';
 
 const titilliumRegular = TextStyle(
   fontFamily: 'Cairo',

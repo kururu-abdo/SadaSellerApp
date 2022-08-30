@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sixvalley_vendor_app/helper/price_converter.dart';
-import 'package:sixvalley_vendor_app/localization/language_constrants.dart';
-import 'package:sixvalley_vendor_app/provider/auth_provider.dart';
-import 'package:sixvalley_vendor_app/provider/business_provider.dart';
-import 'package:sixvalley_vendor_app/provider/shipping_provider.dart';
-import 'package:sixvalley_vendor_app/utill/color_resources.dart';
-import 'package:sixvalley_vendor_app/utill/dimensions.dart';
-import 'package:sixvalley_vendor_app/utill/images.dart';
-import 'package:sixvalley_vendor_app/utill/styles.dart';
-import 'package:sixvalley_vendor_app/view/base/confirmation_dialog.dart';
-import 'package:sixvalley_vendor_app/view/base/custom_app_bar.dart';
-import 'package:sixvalley_vendor_app/view/base/no_shipping_method.dart';
-import 'package:sixvalley_vendor_app/view/screens/settings/business_setting_details.dart';
+import 'package:joseeder_seller/helper/price_converter.dart';
+import 'package:joseeder_seller/localization/language_constrants.dart';
+import 'package:joseeder_seller/provider/auth_provider.dart';
+import 'package:joseeder_seller/provider/business_provider.dart';
+import 'package:joseeder_seller/provider/shipping_provider.dart';
+import 'package:joseeder_seller/utill/color_resources.dart';
+import 'package:joseeder_seller/utill/dimensions.dart';
+import 'package:joseeder_seller/utill/images.dart';
+import 'package:joseeder_seller/utill/styles.dart';
+import 'package:joseeder_seller/view/base/confirmation_dialog.dart';
+import 'package:joseeder_seller/view/base/custom_app_bar.dart';
+import 'package:joseeder_seller/view/base/no_shipping_method.dart';
+import 'package:joseeder_seller/view/screens/settings/business_setting_details.dart';
 
 class BusinessScreen extends StatelessWidget {
   @override

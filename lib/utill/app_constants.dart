@@ -1,7 +1,7 @@
 
 
-import 'package:sixvalley_vendor_app/data/model/response/language_model.dart';
-import 'package:sixvalley_vendor_app/utill/images.dart';
+import 'package:joseeder_seller/data/model/response/language_model.dart';
+import 'package:joseeder_seller/utill/images.dart';
 
 class AppConstants {
 
@@ -97,6 +97,6 @@ class AppConstants {
 
   static List<LanguageModel> languages = [
     LanguageModel(imageUrl: Images.united_kindom, languageName: 'English', countryCode: 'US', languageCode: 'en'),
-    LanguageModel(imageUrl: Images.arabic, languageName: 'Arabic', countryCode: 'SA', languageCode: 'ar'),
+    LanguageModel(imageUrl: Images.arabic, languageName: 'العربية', countryCode: 'SA', languageCode: 'ar'),
   ];
 }

@@ -4,19 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:sixvalley_vendor_app/localization/language_constrants.dart';
-import 'package:sixvalley_vendor_app/provider/profile_provider.dart';
-import 'package:sixvalley_vendor_app/provider/shipping_provider.dart';
-import 'package:sixvalley_vendor_app/provider/splash_provider.dart';
-import 'package:sixvalley_vendor_app/provider/theme_provider.dart';
-import 'package:sixvalley_vendor_app/utill/color_resources.dart';
-import 'package:sixvalley_vendor_app/utill/dimensions.dart';
-import 'package:sixvalley_vendor_app/utill/images.dart';
-import 'package:sixvalley_vendor_app/utill/styles.dart';
-import 'package:sixvalley_vendor_app/view/base/custom_snackbar.dart';
-import 'package:sixvalley_vendor_app/view/screens/profile/profile_screen.dart';
-import 'package:sixvalley_vendor_app/view/screens/settings/business_setting.dart';
-import 'package:sixvalley_vendor_app/view/screens/shipping/category_wise_shipping.dart';
+import 'package:joseeder_seller/localization/language_constrants.dart';
+import 'package:joseeder_seller/provider/profile_provider.dart';
+import 'package:joseeder_seller/provider/shipping_provider.dart';
+import 'package:joseeder_seller/provider/splash_provider.dart';
+import 'package:joseeder_seller/provider/theme_provider.dart';
+import 'package:joseeder_seller/utill/color_resources.dart';
+import 'package:joseeder_seller/utill/dimensions.dart';
+import 'package:joseeder_seller/utill/images.dart';
+import 'package:joseeder_seller/utill/styles.dart';
+import 'package:joseeder_seller/view/base/custom_snackbar.dart';
+import 'package:joseeder_seller/view/screens/profile/profile_screen.dart';
+import 'package:joseeder_seller/view/screens/settings/business_setting.dart';
+import 'package:joseeder_seller/view/screens/shipping/category_wise_shipping.dart';
 
 
 
@@ -184,7 +184,9 @@ class _ProfileScreenViewState extends State<ProfileScreenView> {
               ),
 
 
-              Positioned(top: MediaQuery.of(context).size.width/4, left: 0,right: 0,
+              Positioned(top:        
+                      MediaQuery.of(context).size.width/11, left: 0,right: 0,
+
                 child: Column(children: [Container(
                   margin: EdgeInsets.only(top: Dimensions.PADDING_SIZE_EXTRA_LARGE),
                   alignment: Alignment.center,

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:sixvalley_vendor_app/data/datasource/remote/exception/api_error_handler.dart';
-import 'package:sixvalley_vendor_app/data/model/response/base/api_response.dart';
-import 'package:sixvalley_vendor_app/data/model/response/business_model.dart';
+import 'package:joseeder_seller/data/datasource/remote/exception/api_error_handler.dart';
+import 'package:joseeder_seller/data/model/response/base/api_response.dart';
+import 'package:joseeder_seller/data/model/response/business_model.dart';
 
 class BusinessRepo {
   Future<ApiResponse> getBusinessList() async {

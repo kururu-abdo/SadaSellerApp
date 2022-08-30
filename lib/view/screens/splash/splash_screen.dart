@@ -1,18 +1,18 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sixvalley_vendor_app/helper/network_info.dart';
-import 'package:sixvalley_vendor_app/provider/auth_provider.dart';
-import 'package:sixvalley_vendor_app/provider/splash_provider.dart';
-import 'package:sixvalley_vendor_app/provider/theme_provider.dart';
-import 'package:sixvalley_vendor_app/utill/app_constants.dart';
-import 'package:sixvalley_vendor_app/utill/color_resources.dart';
-import 'package:sixvalley_vendor_app/utill/dimensions.dart';
-import 'package:sixvalley_vendor_app/utill/images.dart';
-import 'package:sixvalley_vendor_app/utill/styles.dart';
-import 'package:sixvalley_vendor_app/view/screens/auth/auth_screen.dart';
-import 'package:sixvalley_vendor_app/view/screens/dashboard/dashboard_screen.dart';
-import 'package:sixvalley_vendor_app/view/screens/splash/widget/splash_painter.dart';
+import 'package:joseeder_seller/helper/network_info.dart';
+import 'package:joseeder_seller/provider/auth_provider.dart';
+import 'package:joseeder_seller/provider/splash_provider.dart';
+import 'package:joseeder_seller/provider/theme_provider.dart';
+import 'package:joseeder_seller/utill/app_constants.dart';
+import 'package:joseeder_seller/utill/color_resources.dart';
+import 'package:joseeder_seller/utill/dimensions.dart';
+import 'package:joseeder_seller/utill/images.dart';
+import 'package:joseeder_seller/utill/styles.dart';
+import 'package:joseeder_seller/view/screens/auth/auth_screen.dart';
+import 'package:joseeder_seller/view/screens/dashboard/dashboard_screen.dart';
+import 'package:joseeder_seller/view/screens/splash/widget/splash_painter.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

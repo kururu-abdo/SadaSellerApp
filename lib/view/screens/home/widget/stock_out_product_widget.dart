@@ -1,15 +1,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sixvalley_vendor_app/data/model/response/product_model.dart';
-import 'package:sixvalley_vendor_app/localization/language_constrants.dart';
-import 'package:sixvalley_vendor_app/provider/localization_provider.dart';
-import 'package:sixvalley_vendor_app/provider/product_provider.dart';
-import 'package:sixvalley_vendor_app/provider/theme_provider.dart';
-import 'package:sixvalley_vendor_app/utill/dimensions.dart';
-import 'package:sixvalley_vendor_app/view/base/product_widget.dart';
-import 'package:sixvalley_vendor_app/view/base/title_row.dart';
-import 'package:sixvalley_vendor_app/view/screens/stockOut/stock_out_product_screen.dart';
+import 'package:joseeder_seller/data/model/response/product_model.dart';
+import 'package:joseeder_seller/localization/language_constrants.dart';
+import 'package:joseeder_seller/provider/localization_provider.dart';
+import 'package:joseeder_seller/provider/product_provider.dart';
+import 'package:joseeder_seller/provider/theme_provider.dart';
+import 'package:joseeder_seller/utill/dimensions.dart';
+import 'package:joseeder_seller/view/base/product_widget.dart';
+import 'package:joseeder_seller/view/base/title_row.dart';
+import 'package:joseeder_seller/view/screens/stockOut/stock_out_product_screen.dart';
 
 
 class StockOutProductView extends StatelessWidget {

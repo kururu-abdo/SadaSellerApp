@@ -3,11 +3,11 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sixvalley_vendor_app/data/datasource/remote/dio/dio_client.dart';
-import 'package:sixvalley_vendor_app/data/datasource/remote/exception/api_error_handler.dart';
-import 'package:sixvalley_vendor_app/data/model/response/base/api_response.dart';
-import 'package:sixvalley_vendor_app/data/model/response/shop_info_model.dart';
-import 'package:sixvalley_vendor_app/utill/app_constants.dart';
+import 'package:joseeder_seller/data/datasource/remote/dio/dio_client.dart';
+import 'package:joseeder_seller/data/datasource/remote/exception/api_error_handler.dart';
+import 'package:joseeder_seller/data/model/response/base/api_response.dart';
+import 'package:joseeder_seller/data/model/response/shop_info_model.dart';
+import 'package:joseeder_seller/utill/app_constants.dart';
 import 'package:http/http.dart' as http;
 
 class ShopRepo {

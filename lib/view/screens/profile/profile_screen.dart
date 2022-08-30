@@ -1,22 +1,28 @@
 import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:joseeder_seller/view/base/custom_snackbar.dart';
 import 'package:provider/provider.dart';
-import 'package:sixvalley_vendor_app/data/model/body/seller_body.dart';
-import 'package:sixvalley_vendor_app/data/model/response/seller_info.dart';
-import 'package:sixvalley_vendor_app/localization/language_constrants.dart';
-import 'package:sixvalley_vendor_app/provider/auth_provider.dart';
-import 'package:sixvalley_vendor_app/provider/bank_info_provider.dart';
-import 'package:sixvalley_vendor_app/provider/profile_provider.dart';
-import 'package:sixvalley_vendor_app/provider/splash_provider.dart';
-import 'package:sixvalley_vendor_app/utill/color_resources.dart';
-import 'package:sixvalley_vendor_app/utill/dimensions.dart';
-import 'package:sixvalley_vendor_app/utill/images.dart';
-import 'package:sixvalley_vendor_app/utill/styles.dart';
-import 'package:sixvalley_vendor_app/view/base/custom_button.dart';
-import 'package:sixvalley_vendor_app/view/base/textfeild/custom_text_feild.dart';
+import 'package:joseeder_seller/data/model/body/seller_body.dart';
+import 'package:joseeder_seller/data/model/response/seller_info.dart';
+import 'package:joseeder_seller/localization/language_constrants.dart';
+import 'package:joseeder_seller/provider/auth_provider.dart';
+import 'package:joseeder_seller/provider/bank_info_provider.dart';
+import 'package:joseeder_seller/provider/profile_provider.dart';
+import 'package:joseeder_seller/provider/splash_provider.dart';
+import 'package:joseeder_seller/utill/color_resources.dart';
+import 'package:joseeder_seller/utill/dimensions.dart';
+import 'package:joseeder_seller/utill/images.dart';
+import 'package:joseeder_seller/utill/styles.dart';
+import 'package:joseeder_seller/view/base/custom_button.dart';
+import 'package:joseeder_seller/view/base/textfeild/custom_text_feild.dart';
+import 'package:validate_ksa_number/validate_ksa_number.dart';
+
+import '../../../utill/phone_number_utils.dart';
+import '../forgetPassword/widget/code_picker_widget.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -31,7 +37,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
-
+String _countryDialCode = "+966";
   File file;
   final picker = ImagePicker();
   final GlobalKey<ScaffoldMessengerState> _scaffoldKey = GlobalKey<ScaffoldMessengerState>();
@@ -50,7 +56,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   _updateUserAccount() async {
     String _firstName = _firstNameController.text.trim();
     String _lastName = _firstNameController.text.trim();
-    String _phoneNumber = _phoneController.text.trim();
+    String _phoneNumber = _countryDialCode.trim()+
+                    
+                    PhoneNumberUtils.getPhoneNumberFromInputs( _phoneController.text.trim())
+                    ;;
+ var ksaValidate =KsaNumber();
 
     if(Provider.of<ProfileProvider>(context, listen: false).userInfoModel.fName == _firstNameController.text
         && Provider.of<ProfileProvider>(context, listen: false).userInfoModel.lName == _lastNameController.text
@@ -66,7 +76,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
     }else if (_phoneNumber.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(getTranslated('enter_phone_number', context)),
           backgroundColor: ColorResources.RED));
-    }else {
+    }
+    
+    
+      else if (!ksaValidate.isValidNumber(_phoneNumber)) {
+                      showCustomSnackBar(getTranslated('enter_valid_email', context), context);
+                    }
+    else {
       SellerModel updateUserInfoModel = Provider.of<ProfileProvider>(context, listen: false).userInfoModel;
       updateUserInfoModel.fName = _firstNameController.text ?? "";
       updateUserInfoModel.lName = _lastNameController.text ?? "";
@@ -116,7 +132,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
           if(_firstNameController.text.isEmpty) {
             _firstNameController.text = profile.userInfoModel.fName;
             _lastNameController.text = profile.userInfoModel.lName;
-            _phoneController.text = profile.userInfoModel.phone;
+            _phoneController.text = 
+            profile.userInfoModel.phone;
           }
           return Stack(
             clipBehavior: Clip.none,
@@ -198,34 +215,71 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 ],
                               ),
                             ),
-
+ Container(
+            margin: EdgeInsets.only(
+                left: Dimensions.MARGIN_SIZE_LARGE,
+                right: Dimensions.MARGIN_SIZE_LARGE,
+                bottom: Dimensions.MARGIN_SIZE_SMALL),
+            child: Row(
+              children: [
+                CodePickerWidget(
+                  onChanged: (CountryCode countryCode) {
+                    _countryDialCode = countryCode.dialCode;
+                  },
+                  initialSelection: _countryDialCode,
+                  favorite: [_countryDialCode],
+                  showDropDownButton: true,
+                  padding: EdgeInsets.zero,
+                  showFlagMain: true,
+                  textStyle: TextStyle(
+                      color: Theme.of(context).textTheme.headline1.color),
+                ),
+                Expanded(
+                    child: CustomTextField(
+                  hintText: getTranslated('number_hint', context),
+                  
+                  focusNode: _phoneFocus,
+                  // nextNode: _passwordFocus,
+                  controller: _phoneController,
+                  isPhoneNumber: true,
+                  textInputAction: TextInputAction.next,
+                  textInputType: TextInputType.phone,
+                )),
+              ],
+            ),
+          ),
                             // for Phone No
-                            Container(
-                              margin: EdgeInsets.only(
-                                  top: Dimensions.PADDING_SIZE_DEFAULT,
-                                  left: Dimensions.PADDING_SIZE_DEFAULT,
-                                  right: Dimensions.PADDING_SIZE_DEFAULT),
-                              child: Column(
-                                children: [
-                                  Row(
-                                    children: [
-                                      Icon(Icons.dialpad, color: ColorResources.getLightSkyBlue(context), size: 20),
-                                      SizedBox(width: Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                                      Text(getTranslated('phone_no', context), style: titilliumRegular)
-                                    ],
-                                  ),
+                            // Container(
+                            //   margin: EdgeInsets.only(
+                            //       top: Dimensions.PADDING_SIZE_DEFAULT,
+                            //       left: Dimensions.PADDING_SIZE_DEFAULT,
+                            //       right: Dimensions.PADDING_SIZE_DEFAULT),
+                            //   child: Column(
+                            //     children: [
+                            //       Row(
+                            //         children: [
+                            //           Icon(Icons.dialpad, color: ColorResources.getLightSkyBlue(context), size: 20),
+                            //           SizedBox(width: Dimensions.PADDING_SIZE_EXTRA_SMALL),
+                            //           Text(getTranslated('phone_no', context), style: titilliumRegular)
+                            //         ],
+                            //       ),
 
-                                  SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
-                                  CustomTextField(
-                                    textInputType: TextInputType.number,
-                                    focusNode: _phoneFocus,
-                                    hintText: profile.userInfoModel.phone ?? "",
-                                    controller: _phoneController,
-                                    isPhoneNumber: true,
-                                  ),
-                                ],
-                              ),
-                            ),
+                            //       SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
+                            //       CustomTextField(
+                            //         textInputType: TextInputType.number,
+                            //         focusNode: _phoneFocus,
+                            //         hintText: profile.userInfoModel.phone ?? "",
+                            //         controller: _phoneController,
+                            //         isPhoneNumber: true,
+                            //       ),
+                            //     ],
+                            //   ),
+                            // ),
+                        
+                        
+                        
+                        
+                        
                             SizedBox(height: Dimensions.PADDING_SIZE_DEFAULT,),
                             Padding(
                               padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/4),

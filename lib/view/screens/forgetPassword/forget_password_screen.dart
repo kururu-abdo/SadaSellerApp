@@ -1,19 +1,19 @@
 import 'package:country_code_picker/country_code.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sixvalley_vendor_app/localization/language_constrants.dart';
-import 'package:sixvalley_vendor_app/provider/auth_provider.dart';
-import 'package:sixvalley_vendor_app/provider/splash_provider.dart';
-import 'package:sixvalley_vendor_app/provider/theme_provider.dart';
-import 'package:sixvalley_vendor_app/utill/dimensions.dart';
-import 'package:sixvalley_vendor_app/utill/images.dart';
-import 'package:sixvalley_vendor_app/utill/styles.dart';
-import 'package:sixvalley_vendor_app/view/base/custom_button.dart';
-import 'package:sixvalley_vendor_app/view/base/custom_dialog.dart';
-import 'package:sixvalley_vendor_app/view/base/textfeild/custom_text_feild.dart';
-import 'package:sixvalley_vendor_app/view/screens/forgetPassword/widget/code_picker_widget.dart';
-import 'package:sixvalley_vendor_app/view/screens/forgetPassword/widget/my_dialog.dart';
-import 'package:sixvalley_vendor_app/view/screens/forgetPassword/widget/otp_verification_screen.dart';
+import 'package:joseeder_seller/localization/language_constrants.dart';
+import 'package:joseeder_seller/provider/auth_provider.dart';
+import 'package:joseeder_seller/provider/splash_provider.dart';
+import 'package:joseeder_seller/provider/theme_provider.dart';
+import 'package:joseeder_seller/utill/dimensions.dart';
+import 'package:joseeder_seller/utill/images.dart';
+import 'package:joseeder_seller/utill/styles.dart';
+import 'package:joseeder_seller/view/base/custom_button.dart';
+import 'package:joseeder_seller/view/base/custom_dialog.dart';
+import 'package:joseeder_seller/view/base/textfeild/custom_text_feild.dart';
+import 'package:joseeder_seller/view/screens/forgetPassword/widget/code_picker_widget.dart';
+import 'package:joseeder_seller/view/screens/forgetPassword/widget/my_dialog.dart';
+import 'package:joseeder_seller/view/screens/forgetPassword/widget/otp_verification_screen.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
   @override
@@ -86,37 +86,80 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 SizedBox(height: Dimensions.PADDING_SIZE_LARGE),
 
 
-                Provider.of<SplashProvider>(context,listen: false).configModel.forgetPasswordVerification == "phone"?
-                Row(children: [
-                  CodePickerWidget(
-                    onChanged: (CountryCode countryCode) {
-                      _countryDialCode = countryCode.dialCode;
-                    },
-                    initialSelection: _countryDialCode,
-                    favorite: [_countryDialCode],
-                    showDropDownButton: true,
-                    padding: EdgeInsets.zero,
-                    showFlagMain: true,
-                    textStyle: TextStyle(color: Theme.of(context).textTheme.headline1.color),
-                  ),
+                // Provider.of<SplashProvider>(context,listen: false).configModel.forgetPasswordVerification == "phone"?
+                // Row(children: [
+                //   CodePickerWidget(
+                //     onChanged: (CountryCode countryCode) {
+                //       _countryDialCode = countryCode.dialCode;
+                //     },
+                //     initialSelection: _countryDialCode,
+                //     favorite: [_countryDialCode],
+                //     showDropDownButton: true,
+                //     padding: EdgeInsets.zero,
+                //     showFlagMain: true,
+                //     textStyle: TextStyle(color: Theme.of(context).textTheme.headline1.color),
+                //   ),
 
 
-                  Expanded(child: CustomTextField(
-                    hintText: getTranslated('number_hint', context),
-                    controller: _numberController,
-                    focusNode: _numberFocus,
-                    isPhoneNumber: true,
-                    textInputAction: TextInputAction.done,
-                    textInputType: TextInputType.phone,
-                  )),
-                ]) :
+                //   Expanded(child: CustomTextField(
+                //     hintText: getTranslated('number_hint', context),
+                //     controller: _numberController,
+                //     focusNode: _numberFocus,
+                //     isPhoneNumber: true,
+                //     textInputAction: TextInputAction.done,
+                //     textInputType: TextInputType.phone,
+                //   )),
+                // ]) :
 
-                CustomTextField(
-                  controller: _controller,
-                  hintText: getTranslated('ENTER_YOUR_EMAIL', context),
-                  textInputAction: TextInputAction.done,
-                  textInputType: TextInputType.emailAddress,
+                // CustomTextField(
+                //   controller: _controller,
+                //   hintText: getTranslated('ENTER_YOUR_EMAIL', context),
+                //   textInputAction: TextInputAction.done,
+                //   textInputType: TextInputType.emailAddress,
+                // ),
+
+
+
+
+
+
+
+  Container(
+            margin: EdgeInsets.only(
+                left: Dimensions.MARGIN_SIZE_LARGE,
+                right: Dimensions.MARGIN_SIZE_LARGE,
+                bottom: Dimensions.MARGIN_SIZE_SMALL),
+            child: Row(
+              children: [
+                CodePickerWidget(
+                  onChanged: (CountryCode countryCode) {
+                    _countryDialCode = countryCode.dialCode;
+                  },
+                  initialSelection: _countryDialCode,
+                  favorite: [_countryDialCode],
+                  showDropDownButton: true,
+                  padding: EdgeInsets.zero,
+                  showFlagMain: true,
+                  textStyle: TextStyle(
+                      color: Theme.of(context).textTheme.headline1.color),
                 ),
+                Expanded(
+                    child: CustomTextField(
+                  hintText: getTranslated('number_hint', context),
+                  
+                  // focusNode: _emailFocus,
+                  nextNode: _numberFocus,
+                  controller: _controller,
+                  isPhoneNumber: true,
+                  textInputAction: TextInputAction.next,
+                  textInputType: TextInputType.phone,
+                )),
+              ],
+            ),
+          ),
+
+
+
                 SizedBox(height: 100),
 
 
@@ -152,7 +195,10 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                               );
 
                             }
-                          });
+                          }
+                          
+                          
+                          );
                         }
 
                       }else{
