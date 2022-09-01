@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -26,9 +27,15 @@ class AuthRepo {
 
   Future<ApiResponse> forgetPassword(String identity) async {
     try {
-      Response response = await dioClient.post(AppConstants.FORGET_PASSWORD_URI, data: {"identity": identity});
+      log(identity);
+      Response response = await dioClient.post(AppConstants.FORGET_PASSWORD_URI, 
+     data: {"identity": identity}
+      
+      );
+      log(response.toString());
       return ApiResponse.withSuccess(response);
     } catch (e) {
+      log(e.toString());
       return ApiResponse.withError(ApiErrorHandler.getMessage(e));
     }
   }
