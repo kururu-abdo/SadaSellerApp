@@ -37,7 +37,7 @@ class AuthScreen extends StatelessWidget{
                   SizedBox(height: space),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal : Dimensions.PADDING_SIZE_EXTRA_LARGE),
-                    child: Container(width: 80,height: 80,
+                    child: Container(width: 200,height: 200,
                         child: Image.asset(Images.logo, color: Theme.of(context).primaryColor)),
                   ),
 

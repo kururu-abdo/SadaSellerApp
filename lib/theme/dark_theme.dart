@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 ThemeData dark = ThemeData(
   fontFamily: 'Cairo',
-  primaryColor: Color(0xFFe1eb99),
+  primaryColor: Color(0xFFfaf274),
   brightness: Brightness.dark,
   bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.transparent),
   highlightColor: Color(0xFF252525),

@@ -5,8 +5,8 @@ import 'package:joseeder_seller/utill/images.dart';
 
 class AppConstants {
 
-  static const String APP_NAME = 'Joseeder Seller App';
-  static const String BASE_URL = 'https://joseeder.com';
+  static const String APP_NAME = 'Seller App';
+  static const String BASE_URL = 'https://echoemaar.com';
   static const String LOGIN_URI = '/api/v2/seller/auth/login';
   static const String CONFIG_URI = '/api/v1/config';
   static const String SELLER_URI = '/api/v2/seller/seller-info';
