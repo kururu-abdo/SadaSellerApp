@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:joseeder_seller/data/model/response/base/api_response.dart';
-import 'package:joseeder_seller/data/model/response/base/error_response.dart';
-import 'package:joseeder_seller/data/model/response/category_wise_shipping_model.dart';
-import 'package:joseeder_seller/data/model/response/shipping_model.dart';
-import 'package:joseeder_seller/data/repository/shipping_repo.dart';
-import 'package:joseeder_seller/helper/api_checker.dart';
-import 'package:joseeder_seller/localization/language_constrants.dart';
-import 'package:joseeder_seller/provider/splash_provider.dart';
-import 'package:joseeder_seller/view/base/custom_snackbar.dart';
+import 'package:eamar_seller_app/data/model/response/base/api_response.dart';
+import 'package:eamar_seller_app/data/model/response/base/error_response.dart';
+import 'package:eamar_seller_app/data/model/response/category_wise_shipping_model.dart';
+import 'package:eamar_seller_app/data/model/response/shipping_model.dart';
+import 'package:eamar_seller_app/data/repository/shipping_repo.dart';
+import 'package:eamar_seller_app/helper/api_checker.dart';
+import 'package:eamar_seller_app/localization/language_constrants.dart';
+import 'package:eamar_seller_app/provider/splash_provider.dart';
+import 'package:eamar_seller_app/view/base/custom_snackbar.dart';
 
 import 'auth_provider.dart';
 

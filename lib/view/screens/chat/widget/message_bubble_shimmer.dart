@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:joseeder_seller/provider/chat_provider.dart';
-import 'package:joseeder_seller/utill/color_resources.dart';
+import 'package:eamar_seller_app/provider/chat_provider.dart';
+import 'package:eamar_seller_app/utill/color_resources.dart';
 
 class MessageBubbleShimmer extends StatelessWidget {
   final bool isMe;

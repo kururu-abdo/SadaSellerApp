@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:provider/provider.dart';
-import 'package:joseeder_seller/localization/language_constrants.dart';
-import 'package:joseeder_seller/provider/auth_provider.dart';
-import 'package:joseeder_seller/provider/splash_provider.dart';
-import 'package:joseeder_seller/utill/color_resources.dart';
-import 'package:joseeder_seller/utill/dimensions.dart';
-import 'package:joseeder_seller/utill/images.dart';
-import 'package:joseeder_seller/view/base/custom_button.dart';
-import 'package:joseeder_seller/view/base/custom_snackbar.dart';
-import 'package:joseeder_seller/view/screens/forgetPassword/widget/reset_password_widget.dart';
+import 'package:eamar_seller_app/localization/language_constrants.dart';
+import 'package:eamar_seller_app/provider/auth_provider.dart';
+import 'package:eamar_seller_app/provider/splash_provider.dart';
+import 'package:eamar_seller_app/utill/color_resources.dart';
+import 'package:eamar_seller_app/utill/dimensions.dart';
+import 'package:eamar_seller_app/utill/images.dart';
+import 'package:eamar_seller_app/view/base/custom_button.dart';
+import 'package:eamar_seller_app/view/base/custom_snackbar.dart';
+import 'package:eamar_seller_app/view/screens/forgetPassword/widget/reset_password_widget.dart';
 
 class VerificationScreen extends StatelessWidget {
   final String mobileNumber;

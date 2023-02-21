@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:joseeder_seller/data/model/response/base/api_response.dart';
-import 'package:joseeder_seller/data/model/response/month_model.dart';
-import 'package:joseeder_seller/data/model/response/transaction_model.dart';
-import 'package:joseeder_seller/data/model/response/year_model.dart';
-import 'package:joseeder_seller/data/repository/transaction_repo.dart';
-import 'package:joseeder_seller/helper/api_checker.dart';
-import 'package:joseeder_seller/helper/date_converter.dart';
+import 'package:eamar_seller_app/data/model/response/base/api_response.dart';
+import 'package:eamar_seller_app/data/model/response/month_model.dart';
+import 'package:eamar_seller_app/data/model/response/transaction_model.dart';
+import 'package:eamar_seller_app/data/model/response/year_model.dart';
+import 'package:eamar_seller_app/data/repository/transaction_repo.dart';
+import 'package:eamar_seller_app/helper/api_checker.dart';
+import 'package:eamar_seller_app/helper/date_converter.dart';
 
 class TransactionProvider extends ChangeNotifier {
   final TransactionRepo transactionRepo;

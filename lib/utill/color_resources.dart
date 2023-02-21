@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:joseeder_seller/provider/theme_provider.dart';
+import 'package:eamar_seller_app/provider/theme_provider.dart';
 
 class ColorResources {
 

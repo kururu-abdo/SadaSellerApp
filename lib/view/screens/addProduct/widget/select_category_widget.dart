@@ -2,12 +2,12 @@
 import 'package:autocomplete_textfield/autocomplete_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:joseeder_seller/data/model/response/product_model.dart';
-import 'package:joseeder_seller/localization/language_constrants.dart';
-import 'package:joseeder_seller/provider/restaurant_provider.dart';
-import 'package:joseeder_seller/utill/color_resources.dart';
-import 'package:joseeder_seller/utill/dimensions.dart';
-import 'package:joseeder_seller/utill/styles.dart';
+import 'package:eamar_seller_app/data/model/response/product_model.dart';
+import 'package:eamar_seller_app/localization/language_constrants.dart';
+import 'package:eamar_seller_app/provider/restaurant_provider.dart';
+import 'package:eamar_seller_app/utill/color_resources.dart';
+import 'package:eamar_seller_app/utill/dimensions.dart';
+import 'package:eamar_seller_app/utill/styles.dart';
 
 class SelectCategoryWidget extends StatefulWidget {
   final Product product;

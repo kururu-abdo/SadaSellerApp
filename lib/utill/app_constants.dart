@@ -1,7 +1,7 @@
 
 
-import 'package:joseeder_seller/data/model/response/language_model.dart';
-import 'package:joseeder_seller/utill/images.dart';
+import 'package:eamar_seller_app/data/model/response/language_model.dart';
+import 'package:eamar_seller_app/utill/images.dart';
 
 class AppConstants {
 

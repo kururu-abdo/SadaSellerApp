@@ -1,18 +1,18 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:joseeder_seller/helper/network_info.dart';
-import 'package:joseeder_seller/provider/auth_provider.dart';
-import 'package:joseeder_seller/provider/splash_provider.dart';
-import 'package:joseeder_seller/provider/theme_provider.dart';
-import 'package:joseeder_seller/utill/app_constants.dart';
-import 'package:joseeder_seller/utill/color_resources.dart';
-import 'package:joseeder_seller/utill/dimensions.dart';
-import 'package:joseeder_seller/utill/images.dart';
-import 'package:joseeder_seller/utill/styles.dart';
-import 'package:joseeder_seller/view/screens/auth/auth_screen.dart';
-import 'package:joseeder_seller/view/screens/dashboard/dashboard_screen.dart';
-import 'package:joseeder_seller/view/screens/splash/widget/splash_painter.dart';
+import 'package:eamar_seller_app/helper/network_info.dart';
+import 'package:eamar_seller_app/provider/auth_provider.dart';
+import 'package:eamar_seller_app/provider/splash_provider.dart';
+import 'package:eamar_seller_app/provider/theme_provider.dart';
+import 'package:eamar_seller_app/utill/app_constants.dart';
+import 'package:eamar_seller_app/utill/color_resources.dart';
+import 'package:eamar_seller_app/utill/dimensions.dart';
+import 'package:eamar_seller_app/utill/images.dart';
+import 'package:eamar_seller_app/utill/styles.dart';
+import 'package:eamar_seller_app/view/screens/auth/auth_screen.dart';
+import 'package:eamar_seller_app/view/screens/dashboard/dashboard_screen.dart';
+import 'package:eamar_seller_app/view/screens/splash/widget/splash_painter.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -46,15 +46,15 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Stack(
         clipBehavior: Clip.none, children: [
-        Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          color: Colors.white,
-        //  color: Provider.of<ThemeProvider>(context).darkTheme ? Colors.black : ColorResources.getPrimary(context),
-          child: CustomPaint(
-            painter: SplashPainter(),
-          ),
-        ),
+        // Container(
+        //   width: MediaQuery.of(context).size.width,
+        //   height: MediaQuery.of(context).size.height,
+        //   color: Colors.white,
+        // //  color: Provider.of<ThemeProvider>(context).darkTheme ? Colors.black : ColorResources.getPrimary(context),
+        //   child: CustomPaint(
+        //     painter: SplashPainter(),
+        //   ),
+        // ),
         Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,

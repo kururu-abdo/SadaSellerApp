@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
-import 'package:joseeder_seller/localization/language_constrants.dart';
-import 'package:joseeder_seller/provider/auth_provider.dart';
-import 'package:joseeder_seller/provider/theme_provider.dart';
-import 'package:joseeder_seller/utill/dimensions.dart';
-import 'package:joseeder_seller/utill/images.dart';
-import 'package:joseeder_seller/utill/styles.dart';
-import 'package:joseeder_seller/view/screens/auth/login_screen.dart';
-import 'package:joseeder_seller/view/screens/splash/widget/splash_painter.dart';
+import 'package:eamar_seller_app/localization/language_constrants.dart';
+import 'package:eamar_seller_app/provider/auth_provider.dart';
+import 'package:eamar_seller_app/provider/theme_provider.dart';
+import 'package:eamar_seller_app/utill/dimensions.dart';
+import 'package:eamar_seller_app/utill/images.dart';
+import 'package:eamar_seller_app/utill/styles.dart';
+import 'package:eamar_seller_app/view/screens/auth/login_screen.dart';
+import 'package:eamar_seller_app/view/screens/splash/widget/splash_painter.dart';
 
 class AuthScreen extends StatelessWidget{
 
@@ -21,14 +21,14 @@ class AuthScreen extends StatelessWidget{
       body: Stack(
         clipBehavior: Clip.none,
         children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            color: Provider.of<ThemeProvider>(context).darkTheme ? Colors.black : Theme.of(context).cardColor,
-            child: CustomPaint(
-              painter: SplashPainter(),
-            ),
-          ),
+          // Container(
+          //   width: MediaQuery.of(context).size.width,
+          //   height: MediaQuery.of(context).size.height,
+          //   color: Provider.of<ThemeProvider>(context).darkTheme ? Colors.black : Theme.of(context).cardColor,
+          //   child: CustomPaint(
+          //     painter: SplashPainter(),
+          //   ),
+          // ),
 
           Consumer<AuthProvider>(
             builder: (context, auth, child) => SafeArea(

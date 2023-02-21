@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:joseeder_seller/helper/price_converter.dart';
-import 'package:joseeder_seller/localization/language_constrants.dart';
-import 'package:joseeder_seller/provider/bank_info_provider.dart';
-import 'package:joseeder_seller/provider/order_provider.dart';
-import 'package:joseeder_seller/provider/product_provider.dart';
-import 'package:joseeder_seller/provider/profile_provider.dart';
-import 'package:joseeder_seller/provider/shipping_provider.dart';
-import 'package:joseeder_seller/provider/splash_provider.dart';
-import 'package:joseeder_seller/provider/transaction_provider.dart';
-import 'package:joseeder_seller/utill/color_resources.dart';
-import 'package:joseeder_seller/utill/dimensions.dart';
-import 'package:joseeder_seller/utill/images.dart';
-import 'package:joseeder_seller/utill/styles.dart';
-import 'package:joseeder_seller/view/screens/home/widget/order_type_button.dart';
-import 'package:joseeder_seller/view/screens/home/widget/order_type_button_head.dart';
-import 'package:joseeder_seller/view/screens/home/widget/stock_out_product_widget.dart';
-import 'package:joseeder_seller/view/screens/home/widget/transaction_chart.dart';
+import 'package:eamar_seller_app/helper/price_converter.dart';
+import 'package:eamar_seller_app/localization/language_constrants.dart';
+import 'package:eamar_seller_app/provider/bank_info_provider.dart';
+import 'package:eamar_seller_app/provider/order_provider.dart';
+import 'package:eamar_seller_app/provider/product_provider.dart';
+import 'package:eamar_seller_app/provider/profile_provider.dart';
+import 'package:eamar_seller_app/provider/shipping_provider.dart';
+import 'package:eamar_seller_app/provider/splash_provider.dart';
+import 'package:eamar_seller_app/provider/transaction_provider.dart';
+import 'package:eamar_seller_app/utill/color_resources.dart';
+import 'package:eamar_seller_app/utill/dimensions.dart';
+import 'package:eamar_seller_app/utill/images.dart';
+import 'package:eamar_seller_app/utill/styles.dart';
+import 'package:eamar_seller_app/view/screens/home/widget/order_type_button.dart';
+import 'package:eamar_seller_app/view/screens/home/widget/order_type_button_head.dart';
+import 'package:eamar_seller_app/view/screens/home/widget/stock_out_product_widget.dart';
+import 'package:eamar_seller_app/view/screens/home/widget/transaction_chart.dart';
 
 
 class HomePageScreen extends StatefulWidget {
@@ -75,7 +75,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   centerTitle: false,
                   automaticallyImplyLeading: false,
                   backgroundColor: Theme.of(context).highlightColor,
-                  title: Image.asset(Images.logo_with_app_name, height: 35),
+                  title: Image.asset(Images.logo_with_app_name, height: 150 , width: 200,),
                 ),
                 SliverToBoxAdapter(
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start,

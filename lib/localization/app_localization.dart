@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:joseeder_seller/utill/app_constants.dart';
+import 'package:eamar_seller_app/utill/app_constants.dart';
 
 class AppLocalization {
   AppLocalization(this.locale);

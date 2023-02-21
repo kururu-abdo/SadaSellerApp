@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:joseeder_seller/data/model/response/base/api_response.dart';
-import 'package:joseeder_seller/data/model/response/order_details_model.dart';
-import 'package:joseeder_seller/data/model/response/order_model.dart';
-import 'package:joseeder_seller/data/repository/order_repo.dart';
-import 'package:joseeder_seller/helper/api_checker.dart';
-import 'package:joseeder_seller/utill/app_constants.dart';
+import 'package:eamar_seller_app/data/model/response/base/api_response.dart';
+import 'package:eamar_seller_app/data/model/response/order_details_model.dart';
+import 'package:eamar_seller_app/data/model/response/order_model.dart';
+import 'package:eamar_seller_app/data/repository/order_repo.dart';
+import 'package:eamar_seller_app/helper/api_checker.dart';
+import 'package:eamar_seller_app/utill/app_constants.dart';
 
 class OrderProvider extends ChangeNotifier {
   final OrderListRepo orderListRepo;

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:joseeder_seller/data/model/response/base/api_response.dart';
-import 'package:joseeder_seller/data/model/response/refund_details_model.dart';
-import 'package:joseeder_seller/data/model/response/refund_model.dart';
-import 'package:joseeder_seller/data/repository/refund_repo.dart';
-import 'package:joseeder_seller/helper/api_checker.dart';
-import 'package:joseeder_seller/localization/language_constrants.dart';
-import 'package:joseeder_seller/utill/app_constants.dart';
-import 'package:joseeder_seller/view/base/custom_snackbar.dart';
+import 'package:eamar_seller_app/data/model/response/base/api_response.dart';
+import 'package:eamar_seller_app/data/model/response/refund_details_model.dart';
+import 'package:eamar_seller_app/data/model/response/refund_model.dart';
+import 'package:eamar_seller_app/data/repository/refund_repo.dart';
+import 'package:eamar_seller_app/helper/api_checker.dart';
+import 'package:eamar_seller_app/localization/language_constrants.dart';
+import 'package:eamar_seller_app/utill/app_constants.dart';
+import 'package:eamar_seller_app/view/base/custom_snackbar.dart';
 
 class RefundProvider extends ChangeNotifier {
   final RefundRepo refundRepo;

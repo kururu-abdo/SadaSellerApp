@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:joseeder_seller/data/model/response/attr.dart';
+import 'package:eamar_seller_app/data/model/response/attr.dart';
 
 class AttributeModel {
   Attr attribute;

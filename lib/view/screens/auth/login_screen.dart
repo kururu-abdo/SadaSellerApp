@@ -1,20 +1,21 @@
 import 'package:country_code_picker/country_code.dart';
 import 'package:flutter/material.dart';
+import 'package:eamar_seller_app/view/base/textfeild/phone_field.dart';
 import 'package:provider/provider.dart';
-import 'package:joseeder_seller/helper/email_checker.dart';
-import 'package:joseeder_seller/localization/language_constrants.dart';
-import 'package:joseeder_seller/provider/auth_provider.dart';
-import 'package:joseeder_seller/utill/color_resources.dart';
-import 'package:joseeder_seller/utill/dimensions.dart';
-import 'package:joseeder_seller/utill/phone_number_utils.dart';
-import 'package:joseeder_seller/utill/styles.dart';
-import 'package:joseeder_seller/view/base/custom_button.dart';
-import 'package:joseeder_seller/view/base/custom_snackbar.dart';
-import 'package:joseeder_seller/view/base/textfeild/custom_pass_textfeild.dart';
-import 'package:joseeder_seller/view/base/textfeild/custom_text_feild.dart';
-import 'package:joseeder_seller/view/screens/dashboard/dashboard_screen.dart';
-import 'package:joseeder_seller/view/screens/forgetPassword/forget_password_screen.dart';
-import 'package:joseeder_seller/view/screens/forgetPassword/widget/code_picker_widget.dart';
+import 'package:eamar_seller_app/helper/email_checker.dart';
+import 'package:eamar_seller_app/localization/language_constrants.dart';
+import 'package:eamar_seller_app/provider/auth_provider.dart';
+import 'package:eamar_seller_app/utill/color_resources.dart';
+import 'package:eamar_seller_app/utill/dimensions.dart';
+import 'package:eamar_seller_app/utill/phone_number_utils.dart';
+import 'package:eamar_seller_app/utill/styles.dart';
+import 'package:eamar_seller_app/view/base/custom_button.dart';
+import 'package:eamar_seller_app/view/base/custom_snackbar.dart';
+import 'package:eamar_seller_app/view/base/textfeild/custom_pass_textfeild.dart';
+import 'package:eamar_seller_app/view/base/textfeild/custom_text_feild.dart';
+import 'package:eamar_seller_app/view/screens/dashboard/dashboard_screen.dart';
+import 'package:eamar_seller_app/view/screens/forgetPassword/forget_password_screen.dart';
+import 'package:eamar_seller_app/view/screens/forgetPassword/widget/code_picker_widget.dart';
 import 'package:validate_ksa_number/validate_ksa_number.dart';
 
 class SignInWidget extends StatefulWidget {
@@ -58,48 +59,63 @@ class _SignInWidgetState extends State<SignInWidget> {
       builder: (context, authProvider, child) => Form(
         key: _formKeyLogin,
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: Dimensions.PADDING_SIZE_SMALL),
+          padding: EdgeInsets.symmetric(vertical: Dimensions.PADDING_SIZE_LARGE),
           child: Column(
             children: [
 
 
   // for Email
-          Container(
-            margin: EdgeInsets.only(
+          // Container(
+          //   margin: EdgeInsets.only(
+          //       left: Dimensions.MARGIN_SIZE_LARGE,
+          //       right: Dimensions.MARGIN_SIZE_LARGE,
+          //       bottom: Dimensions.MARGIN_SIZE_SMALL),
+          //   child: Row(
+          //     children: [
+          //       CodePickerWidget(
+          //         onChanged: (CountryCode countryCode) {
+          //           _countryDialCode = countryCode.dialCode;
+          //         },
+          //         initialSelection: _countryDialCode,
+          //         favorite: [_countryDialCode],
+          //         showDropDownButton: true,
+          //         padding: EdgeInsets.zero,
+          //         showFlagMain: true,
+          //         textStyle: TextStyle(
+          //             color: Theme.of(context).textTheme.headline1.color),
+          //       ),
+          //       Expanded(
+          //           child: CustomTextField(
+          //         hintText: getTranslated('number_hint', context),
+                  
+          //         focusNode: _emailFocus,
+          //         nextNode: _passwordFocus,
+          //         controller: _emailController,
+          //         isPhoneNumber: true,
+          //         textInputAction: TextInputAction.next,
+          //         textInputType: TextInputType.phone,
+          //       )),
+          //     ],
+          //   ),
+          // ),
+
+
+Container(
+                               margin: EdgeInsets.only(
                 left: Dimensions.MARGIN_SIZE_LARGE,
                 right: Dimensions.MARGIN_SIZE_LARGE,
                 bottom: Dimensions.MARGIN_SIZE_SMALL),
-            child: Row(
-              children: [
-                CodePickerWidget(
-                  onChanged: (CountryCode countryCode) {
-                    _countryDialCode = countryCode.dialCode;
-                  },
-                  initialSelection: _countryDialCode,
-                  favorite: [_countryDialCode],
-                  showDropDownButton: true,
-                  padding: EdgeInsets.zero,
-                  showFlagMain: true,
-                  textStyle: TextStyle(
-                      color: Theme.of(context).textTheme.headline1.color),
-                ),
-                Expanded(
-                    child: CustomTextField(
-                  hintText: getTranslated('number_hint', context),
-                  
-                  focusNode: _emailFocus,
+                      child: PhoneField(
+                                      hintText: getTranslated('ENTER_MOBILE_NUMBER', context),
+                                      focusNode: _emailFocus,
                   nextNode: _passwordFocus,
-                  controller: _emailController,
-                  isPhoneNumber: true,
-                  textInputAction: TextInputAction.next,
-                  textInputType: TextInputType.phone,
-                )),
-              ],
-            ),
-          ),
-
-
-
+                                      controller: _emailController,
+                                      
+                                      isPhoneNumber: true,
+                                      textInputAction: TextInputAction.next,
+                                      textInputType: TextInputType.phone,
+                                    ),
+                    ),
 
               // Container(margin: EdgeInsets.only(left: Dimensions.PADDING_SIZE_LARGE, right: Dimensions.PADDING_SIZE_LARGE, 
               //         bottom: Dimensions.PADDING_SIZE_SMALL),

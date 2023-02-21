@@ -1,4 +1,4 @@
-import 'package:joseeder_seller/data/model/response/chat_model.dart';
+import 'package:eamar_seller_app/data/model/response/chat_model.dart';
 
 class RefundModel {
   int id;

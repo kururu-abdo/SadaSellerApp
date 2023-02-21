@@ -2,22 +2,22 @@ import 'dart:developer';
 
 import 'package:country_code_picker/country_code.dart';
 import 'package:flutter/material.dart';
-import 'package:joseeder_seller/utill/phone_number_utils.dart';
-import 'package:joseeder_seller/view/base/custom_snackbar.dart';
+import 'package:eamar_seller_app/utill/phone_number_utils.dart';
+import 'package:eamar_seller_app/view/base/custom_snackbar.dart';
 import 'package:provider/provider.dart';
-import 'package:joseeder_seller/localization/language_constrants.dart';
-import 'package:joseeder_seller/provider/auth_provider.dart';
-import 'package:joseeder_seller/provider/splash_provider.dart';
-import 'package:joseeder_seller/provider/theme_provider.dart';
-import 'package:joseeder_seller/utill/dimensions.dart';
-import 'package:joseeder_seller/utill/images.dart';
-import 'package:joseeder_seller/utill/styles.dart';
-import 'package:joseeder_seller/view/base/custom_button.dart';
-import 'package:joseeder_seller/view/base/custom_dialog.dart';
-import 'package:joseeder_seller/view/base/textfeild/custom_text_feild.dart';
-import 'package:joseeder_seller/view/screens/forgetPassword/widget/code_picker_widget.dart';
-import 'package:joseeder_seller/view/screens/forgetPassword/widget/my_dialog.dart';
-import 'package:joseeder_seller/view/screens/forgetPassword/widget/otp_verification_screen.dart';
+import 'package:eamar_seller_app/localization/language_constrants.dart';
+import 'package:eamar_seller_app/provider/auth_provider.dart';
+import 'package:eamar_seller_app/provider/splash_provider.dart';
+import 'package:eamar_seller_app/provider/theme_provider.dart';
+import 'package:eamar_seller_app/utill/dimensions.dart';
+import 'package:eamar_seller_app/utill/images.dart';
+import 'package:eamar_seller_app/utill/styles.dart';
+import 'package:eamar_seller_app/view/base/custom_button.dart';
+import 'package:eamar_seller_app/view/base/custom_dialog.dart';
+import 'package:eamar_seller_app/view/base/textfeild/custom_text_feild.dart';
+import 'package:eamar_seller_app/view/screens/forgetPassword/widget/code_picker_widget.dart';
+import 'package:eamar_seller_app/view/screens/forgetPassword/widget/my_dialog.dart';
+import 'package:eamar_seller_app/view/screens/forgetPassword/widget/otp_verification_screen.dart';
 import 'package:validate_ksa_number/validate_ksa_number.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {

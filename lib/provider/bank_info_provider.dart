@@ -1,11 +1,11 @@
 
 import 'package:flutter/material.dart';
-import 'package:joseeder_seller/data/model/body/seller_body.dart';
-import 'package:joseeder_seller/data/model/response/base/api_response.dart';
-import 'package:joseeder_seller/data/model/response/response_model.dart';
-import 'package:joseeder_seller/data/model/response/seller_info.dart';
-import 'package:joseeder_seller/data/repository/bank_info_repo.dart';
-import 'package:joseeder_seller/helper/api_checker.dart';
+import 'package:eamar_seller_app/data/model/body/seller_body.dart';
+import 'package:eamar_seller_app/data/model/response/base/api_response.dart';
+import 'package:eamar_seller_app/data/model/response/response_model.dart';
+import 'package:eamar_seller_app/data/model/response/seller_info.dart';
+import 'package:eamar_seller_app/data/repository/bank_info_repo.dart';
+import 'package:eamar_seller_app/helper/api_checker.dart';
 import 'package:http/http.dart' as http;
 
 class BankInfoProvider extends ChangeNotifier {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:joseeder_seller/data/model/response/language_model.dart';
-import 'package:joseeder_seller/utill/app_constants.dart';
+import 'package:eamar_seller_app/data/model/response/language_model.dart';
+import 'package:eamar_seller_app/utill/app_constants.dart';
 
 class LanguageProvider with ChangeNotifier {
   int _selectIndex = 0;

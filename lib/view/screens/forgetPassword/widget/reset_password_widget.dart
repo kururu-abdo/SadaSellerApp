@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:joseeder_seller/localization/language_constrants.dart';
-import 'package:joseeder_seller/provider/auth_provider.dart';
-import 'package:joseeder_seller/utill/dimensions.dart';
-import 'package:joseeder_seller/utill/images.dart';
-import 'package:joseeder_seller/utill/styles.dart';
-import 'package:joseeder_seller/view/base/custom_button.dart';
-import 'package:joseeder_seller/view/base/custom_snackbar.dart';
-import 'package:joseeder_seller/view/base/textfeild/custom_pass_textfeild.dart';
-import 'package:joseeder_seller/view/screens/auth/auth_screen.dart';
+import 'package:eamar_seller_app/localization/language_constrants.dart';
+import 'package:eamar_seller_app/provider/auth_provider.dart';
+import 'package:eamar_seller_app/utill/dimensions.dart';
+import 'package:eamar_seller_app/utill/images.dart';
+import 'package:eamar_seller_app/utill/styles.dart';
+import 'package:eamar_seller_app/view/base/custom_button.dart';
+import 'package:eamar_seller_app/view/base/custom_snackbar.dart';
+import 'package:eamar_seller_app/view/base/textfeild/custom_pass_textfeild.dart';
+import 'package:eamar_seller_app/view/screens/auth/auth_screen.dart';
 class ResetPasswordWidget extends StatefulWidget {
   final String mobileNumber;
   final String otp;

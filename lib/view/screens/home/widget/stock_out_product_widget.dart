@@ -1,15 +1,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:joseeder_seller/data/model/response/product_model.dart';
-import 'package:joseeder_seller/localization/language_constrants.dart';
-import 'package:joseeder_seller/provider/localization_provider.dart';
-import 'package:joseeder_seller/provider/product_provider.dart';
-import 'package:joseeder_seller/provider/theme_provider.dart';
-import 'package:joseeder_seller/utill/dimensions.dart';
-import 'package:joseeder_seller/view/base/product_widget.dart';
-import 'package:joseeder_seller/view/base/title_row.dart';
-import 'package:joseeder_seller/view/screens/stockOut/stock_out_product_screen.dart';
+import 'package:eamar_seller_app/data/model/response/product_model.dart';
+import 'package:eamar_seller_app/localization/language_constrants.dart';
+import 'package:eamar_seller_app/provider/localization_provider.dart';
+import 'package:eamar_seller_app/provider/product_provider.dart';
+import 'package:eamar_seller_app/provider/theme_provider.dart';
+import 'package:eamar_seller_app/utill/dimensions.dart';
+import 'package:eamar_seller_app/view/base/product_widget.dart';
+import 'package:eamar_seller_app/view/base/title_row.dart';
+import 'package:eamar_seller_app/view/screens/stockOut/stock_out_product_screen.dart';
 
 
 class StockOutProductView extends StatelessWidget {

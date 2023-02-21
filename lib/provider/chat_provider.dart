@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:joseeder_seller/data/model/body/MessageBody.dart';
-import 'package:joseeder_seller/data/model/response/base/api_response.dart';
-import 'package:joseeder_seller/data/model/response/chat_model.dart';
-import 'package:joseeder_seller/data/repository/chat_repo.dart';
-import 'package:joseeder_seller/helper/api_checker.dart';
-import 'package:joseeder_seller/helper/date_converter.dart';
+import 'package:eamar_seller_app/data/model/body/MessageBody.dart';
+import 'package:eamar_seller_app/data/model/response/base/api_response.dart';
+import 'package:eamar_seller_app/data/model/response/chat_model.dart';
+import 'package:eamar_seller_app/data/repository/chat_repo.dart';
+import 'package:eamar_seller_app/helper/api_checker.dart';
+import 'package:eamar_seller_app/helper/date_converter.dart';
 
 class ChatProvider extends ChangeNotifier {
   final ChatRepo chatRepo;

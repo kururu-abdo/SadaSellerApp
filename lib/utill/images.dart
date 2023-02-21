@@ -5,7 +5,7 @@ class Images {
   static const String onboarding_two = 'assets/image/onboarding_image_two.png';
   static const String onboarding_three = 'assets/image/onboarding_image_three.png';
   static const String logo = 'assets/image/logo.png';
-  static const String logo_with_app_name = 'assets/image/logo_with_app_name.png';
+  static const String logo_with_app_name = 'assets/image/logo_with_name.png';
   static const String home = 'assets/image/home.png';
   static const String add_btn = 'assets/image/add.png';
   static const String wallet = 'assets/image/wallet.png';

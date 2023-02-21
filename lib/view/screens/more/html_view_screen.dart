@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:joseeder_seller/utill/dimensions.dart';
-import 'package:joseeder_seller/view/base/custom_app_bar.dart';
+import 'package:eamar_seller_app/utill/dimensions.dart';
+import 'package:eamar_seller_app/view/base/custom_app_bar.dart';
 
 class HtmlViewScreen extends StatelessWidget {
   final String title;

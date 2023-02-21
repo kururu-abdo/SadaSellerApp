@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:joseeder_seller/data/datasource/remote/dio/dio_client.dart';
-import 'package:joseeder_seller/data/datasource/remote/exception/api_error_handler.dart';
-import 'package:joseeder_seller/data/model/response/base/api_response.dart';
-import 'package:joseeder_seller/utill/app_constants.dart';
+import 'package:eamar_seller_app/data/datasource/remote/dio/dio_client.dart';
+import 'package:eamar_seller_app/data/datasource/remote/exception/api_error_handler.dart';
+import 'package:eamar_seller_app/data/model/response/base/api_response.dart';
+import 'package:eamar_seller_app/utill/app_constants.dart';
 
 class ProductReviewRepo {
   final DioClient dioClient;

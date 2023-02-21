@@ -1,17 +1,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:joseeder_seller/localization/language_constrants.dart';
-import 'package:joseeder_seller/provider/order_provider.dart';
-import 'package:joseeder_seller/provider/theme_provider.dart';
-import 'package:joseeder_seller/utill/color_resources.dart';
-import 'package:joseeder_seller/utill/dimensions.dart';
-import 'package:joseeder_seller/utill/styles.dart';
-import 'package:joseeder_seller/view/base/custom_app_bar.dart';
-import 'package:joseeder_seller/view/base/custom_button.dart';
-import 'package:joseeder_seller/view/base/textfeild/custom_pass_textfeild.dart';
-import 'package:joseeder_seller/view/base/textfeild/custom_text_feild.dart';
-import 'package:joseeder_seller/view/screens/dashboard/dashboard_screen.dart';
+import 'package:eamar_seller_app/localization/language_constrants.dart';
+import 'package:eamar_seller_app/provider/order_provider.dart';
+import 'package:eamar_seller_app/provider/theme_provider.dart';
+import 'package:eamar_seller_app/utill/color_resources.dart';
+import 'package:eamar_seller_app/utill/dimensions.dart';
+import 'package:eamar_seller_app/utill/styles.dart';
+import 'package:eamar_seller_app/view/base/custom_app_bar.dart';
+import 'package:eamar_seller_app/view/base/custom_button.dart';
+import 'package:eamar_seller_app/view/base/textfeild/custom_pass_textfeild.dart';
+import 'package:eamar_seller_app/view/base/textfeild/custom_text_feild.dart';
+import 'package:eamar_seller_app/view/screens/dashboard/dashboard_screen.dart';
 
 class PaymentMethodScreen extends StatefulWidget {
   @override

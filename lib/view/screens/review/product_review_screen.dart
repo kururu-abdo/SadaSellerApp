@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:joseeder_seller/data/model/response/review_model.dart';
-import 'package:joseeder_seller/provider/product_review_provider.dart';
-import 'package:joseeder_seller/view/screens/review/widget/review_full_view_screen.dart';
-import 'package:joseeder_seller/view/screens/review/widget/review_widget.dart';
+import 'package:eamar_seller_app/data/model/response/review_model.dart';
+import 'package:eamar_seller_app/provider/product_review_provider.dart';
+import 'package:eamar_seller_app/view/screens/review/widget/review_full_view_screen.dart';
+import 'package:eamar_seller_app/view/screens/review/widget/review_widget.dart';
 class ProductReview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

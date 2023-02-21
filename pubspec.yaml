@@ -1,4 +1,5 @@
-name: joseeder_seller
+name: eamar_seller_app
+# eamar_seller_app
 description: A new Flutter application.
 publish_to: 'none'
 version: 1.0.0+2
@@ -39,6 +40,7 @@ dependencies:
   fluttertoast: ^8.0.9
   responsive_framework: ^0.2.0
   validate_ksa_number: ^1.0.0
+  file: ^6.1.4
 
 
 

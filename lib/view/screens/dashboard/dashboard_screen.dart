@@ -3,18 +3,18 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:provider/provider.dart';
-import 'package:joseeder_seller/helper/network_info.dart';
-import 'package:joseeder_seller/helper/notification_helper.dart';
-import 'package:joseeder_seller/localization/language_constrants.dart';
-import 'package:joseeder_seller/provider/order_provider.dart';
-import 'package:joseeder_seller/utill/color_resources.dart';
-import 'package:joseeder_seller/utill/dimensions.dart';
-import 'package:joseeder_seller/utill/images.dart';
-import 'package:joseeder_seller/utill/styles.dart';
-import 'package:joseeder_seller/view/screens/home/home_page_screen.dart';
-import 'package:joseeder_seller/view/screens/menu/menu_screen.dart';
-import 'package:joseeder_seller/view/screens/order/order_screen.dart';
-import 'package:joseeder_seller/view/screens/refund/refund_screen.dart';
+import 'package:eamar_seller_app/helper/network_info.dart';
+import 'package:eamar_seller_app/helper/notification_helper.dart';
+import 'package:eamar_seller_app/localization/language_constrants.dart';
+import 'package:eamar_seller_app/provider/order_provider.dart';
+import 'package:eamar_seller_app/utill/color_resources.dart';
+import 'package:eamar_seller_app/utill/dimensions.dart';
+import 'package:eamar_seller_app/utill/images.dart';
+import 'package:eamar_seller_app/utill/styles.dart';
+import 'package:eamar_seller_app/view/screens/home/home_page_screen.dart';
+import 'package:eamar_seller_app/view/screens/menu/menu_screen.dart';
+import 'package:eamar_seller_app/view/screens/order/order_screen.dart';
+import 'package:eamar_seller_app/view/screens/refund/refund_screen.dart';
 
 
 class DashboardScreen extends StatefulWidget {

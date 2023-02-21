@@ -3,16 +3,16 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
-import 'package:joseeder_seller/data/model/response/shop_info_model.dart';
-import 'package:joseeder_seller/localization/language_constrants.dart';
-import 'package:joseeder_seller/provider/shop_info_provider.dart';
-import 'package:joseeder_seller/provider/splash_provider.dart';
-import 'package:joseeder_seller/utill/color_resources.dart';
-import 'package:joseeder_seller/utill/dimensions.dart';
-import 'package:joseeder_seller/utill/images.dart';
-import 'package:joseeder_seller/utill/styles.dart';
-import 'package:joseeder_seller/view/base/custom_app_bar.dart';
-import 'package:joseeder_seller/view/base/textfeild/custom_text_feild.dart';
+import 'package:eamar_seller_app/data/model/response/shop_info_model.dart';
+import 'package:eamar_seller_app/localization/language_constrants.dart';
+import 'package:eamar_seller_app/provider/shop_info_provider.dart';
+import 'package:eamar_seller_app/provider/splash_provider.dart';
+import 'package:eamar_seller_app/utill/color_resources.dart';
+import 'package:eamar_seller_app/utill/dimensions.dart';
+import 'package:eamar_seller_app/utill/images.dart';
+import 'package:eamar_seller_app/utill/styles.dart';
+import 'package:eamar_seller_app/view/base/custom_app_bar.dart';
+import 'package:eamar_seller_app/view/base/textfeild/custom_text_feild.dart';
 class ShopUpdateScreen extends StatefulWidget {
   @override
   _ShopUpdateScreenState createState() => _ShopUpdateScreenState();

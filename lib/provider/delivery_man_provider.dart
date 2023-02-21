@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
-import 'package:joseeder_seller/data/model/response/base/api_response.dart';
-import 'package:joseeder_seller/data/model/response/delivery_man_model.dart';
-import 'package:joseeder_seller/data/model/response/order_model.dart';
-import 'package:joseeder_seller/data/model/response/response_model.dart';
-import 'package:joseeder_seller/data/repository/delivery_man_repo.dart';
-import 'package:joseeder_seller/helper/api_checker.dart';
-import 'package:joseeder_seller/view/base/custom_snackbar.dart';
+import 'package:eamar_seller_app/data/model/response/base/api_response.dart';
+import 'package:eamar_seller_app/data/model/response/delivery_man_model.dart';
+import 'package:eamar_seller_app/data/model/response/order_model.dart';
+import 'package:eamar_seller_app/data/model/response/response_model.dart';
+import 'package:eamar_seller_app/data/repository/delivery_man_repo.dart';
+import 'package:eamar_seller_app/helper/api_checker.dart';
+import 'package:eamar_seller_app/view/base/custom_snackbar.dart';
 
 class DeliveryManProvider extends ChangeNotifier {
   final DeliveryManRepo deliveryManRepo;

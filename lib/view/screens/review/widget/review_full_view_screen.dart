@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:joseeder_seller/data/model/response/review_model.dart';
-import 'package:joseeder_seller/localization/language_constrants.dart';
-import 'package:joseeder_seller/view/base/custom_app_bar.dart';
-import 'package:joseeder_seller/view/screens/review/widget/review_widget.dart';
+import 'package:eamar_seller_app/data/model/response/review_model.dart';
+import 'package:eamar_seller_app/localization/language_constrants.dart';
+import 'package:eamar_seller_app/view/base/custom_app_bar.dart';
+import 'package:eamar_seller_app/view/screens/review/widget/review_widget.dart';
 class ReviewFullViewScreen extends StatelessWidget {
   final ReviewModel reviewModel;
   final bool isDetails;

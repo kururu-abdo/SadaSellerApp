@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:joseeder_seller/data/model/response/base/api_response.dart';
-import 'package:joseeder_seller/data/model/response/config_model.dart';
-import 'package:joseeder_seller/data/repository/splash_repo.dart';
-import 'package:joseeder_seller/helper/api_checker.dart';
+import 'package:eamar_seller_app/data/model/response/base/api_response.dart';
+import 'package:eamar_seller_app/data/model/response/config_model.dart';
+import 'package:eamar_seller_app/data/repository/splash_repo.dart';
+import 'package:eamar_seller_app/helper/api_checker.dart';
 
 class SplashProvider extends ChangeNotifier {
   final SplashRepo splashRepo;

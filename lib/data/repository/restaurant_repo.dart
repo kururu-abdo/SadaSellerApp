@@ -2,15 +2,15 @@ import 'package:dio/dio.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:joseeder_seller/data/datasource/remote/dio/dio_client.dart';
-import 'package:joseeder_seller/data/datasource/remote/exception/api_error_handler.dart';
-import 'package:joseeder_seller/data/model/response/add_product_model.dart';
-import 'package:joseeder_seller/data/model/response/base/api_response.dart';
-import 'package:joseeder_seller/data/model/response/product_model.dart';
-import 'package:joseeder_seller/data/model/response/restaurant_model.dart';
-import 'package:joseeder_seller/data/model/response/restaurant_view_model.dart';
-import 'package:joseeder_seller/utill/app_constants.dart';
-import 'package:joseeder_seller/utill/images.dart';
+import 'package:eamar_seller_app/data/datasource/remote/dio/dio_client.dart';
+import 'package:eamar_seller_app/data/datasource/remote/exception/api_error_handler.dart';
+import 'package:eamar_seller_app/data/model/response/add_product_model.dart';
+import 'package:eamar_seller_app/data/model/response/base/api_response.dart';
+import 'package:eamar_seller_app/data/model/response/product_model.dart';
+import 'package:eamar_seller_app/data/model/response/restaurant_model.dart';
+import 'package:eamar_seller_app/data/model/response/restaurant_view_model.dart';
+import 'package:eamar_seller_app/utill/app_constants.dart';
+import 'package:eamar_seller_app/utill/images.dart';
 import 'package:http/http.dart' as http;
 
 class RestaurantRepo {

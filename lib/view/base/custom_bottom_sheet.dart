@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:joseeder_seller/provider/theme_provider.dart';
-import 'package:joseeder_seller/utill/color_resources.dart';
-import 'package:joseeder_seller/utill/dimensions.dart';
-import 'package:joseeder_seller/utill/styles.dart';
+import 'package:eamar_seller_app/provider/theme_provider.dart';
+import 'package:eamar_seller_app/utill/color_resources.dart';
+import 'package:eamar_seller_app/utill/dimensions.dart';
+import 'package:eamar_seller_app/utill/styles.dart';
 
 class CustomBottomSheet extends StatelessWidget {
   final String image;
@@ -20,7 +20,7 @@ class CustomBottomSheet extends StatelessWidget {
       },
 
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.all(5),
         decoration: BoxDecoration(
           color: ColorResources.getBottomSheetColor(context),
           borderRadius: BorderRadius.circular(12),
