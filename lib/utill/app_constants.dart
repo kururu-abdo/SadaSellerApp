@@ -5,7 +5,7 @@ import 'package:eamar_seller_app/utill/images.dart';
 
 class AppConstants {
 
-  static const String APP_NAME = 'Seller App';
+  static const String APP_NAME = 'Eamar Seller';
   static const String BASE_URL = 'https://echoemaar.com';
   static const String LOGIN_URI = '/api/v2/seller/auth/login';
   static const String CONFIG_URI = '/api/v1/config';
