@@ -1,4 +1,4 @@
-package net.citysoft.joseeder_seller_app
+package net.eamar.seller
 
 import io.flutter.embedding.android.FlutterActivity
 

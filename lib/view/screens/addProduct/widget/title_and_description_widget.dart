@@ -14,8 +14,8 @@ class TitleAndDescriptionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal : Dimensions.PADDING_SIZE_DEFAULT),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
+        // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: Dimensions.PADDING_SIZE_SMALL,),
           Text('${getTranslated('inset_lang_wise_title_des', context)}',
