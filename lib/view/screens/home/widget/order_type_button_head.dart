@@ -30,7 +30,9 @@ class OrderTypeButtonHead extends StatelessWidget {
         child: Stack(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: Dimensions.PADDING_SIZE_LARGE),
+              padding: 
+              
+              const EdgeInsets.only(left: Dimensions.PADDING_SIZE_MEDIUM),
               child: Container(alignment: Alignment.center,
                 child: Center(
                   child: Column(crossAxisAlignment: CrossAxisAlignment.center,
@@ -41,7 +43,8 @@ class OrderTypeButtonHead extends StatelessWidget {
                               fontSize: Dimensions.FONT_SIZE_HEADER_LARGE)),
   Expanded(
     child: Text(text, 
-                          overflow: TextOverflow.visible,
+                          overflow: TextOverflow.ellipsis,
+                          // maxLines: 2,
                             
                             style: robotoRegular.copyWith(color: ColorResources.getWhite(context),
                                 fontSize: Dimensions.FONT_SIZE_LARGE)),
@@ -75,7 +78,9 @@ class OrderTypeButtonHead extends StatelessWidget {
                       color: Theme.of(context).cardColor.withOpacity(.10),
                       borderRadius: BorderRadius.only(bottomRight: Radius.circular(100))
                   ),),
-                Provider.of<LocalizationProvider>(context,listen: false).isLtr?Spacer():SizedBox.shrink(),
+                Provider.of<LocalizationProvider>(context,listen: false).isLtr?
+                Spacer():
+                SizedBox.shrink(),
               ],
             )
 

@@ -1,3 +1,6 @@
+
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:eamar_seller_app/data/model/response/base/api_response.dart';
 import 'package:eamar_seller_app/data/model/response/config_model.dart';
@@ -56,6 +59,7 @@ class SplashProvider extends ChangeNotifier {
     bool isSuccess;
     if (apiResponse.response != null && apiResponse.response.statusCode == 200) {
       _configModel = ConfigModel.fromJson(apiResponse.response.data);
+      log(_configModel.toJson().toString());
       _baseUrls = ConfigModel.fromJson(apiResponse.response.data).baseUrls;
       String _currencyCode = splashRepo.getCurrency();
       for(CurrencyList currencyList in _configModel.currencyList) {
