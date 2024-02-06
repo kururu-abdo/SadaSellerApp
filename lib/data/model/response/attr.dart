@@ -1,6 +1,6 @@
 class Attr {
-  int id;
-  String name;
+  int? id;
+  String? name;
 
   Attr({this.id, this.name});
 

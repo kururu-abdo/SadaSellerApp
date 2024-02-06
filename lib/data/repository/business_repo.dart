@@ -7,13 +7,18 @@ class BusinessRepo {
   Future<ApiResponse> getBusinessList() async {
     try {
       List<BusinessModel> businessList = [
-        BusinessModel(id: 0, title: 'Superb Discount', duration: '2-5', cost: 200),
-        BusinessModel(id: 1, title: 'New Discount', duration: '5-10', cost: 500),
+        BusinessModel(
+            id: 0, title: 'Superb Discount', duration: '2-5', cost: 200),
+        BusinessModel(
+            id: 1, title: 'New Discount', duration: '5-10', cost: 500),
       ];
 
-      final response=Response(data: businessList,statusCode: 200, requestOptions: RequestOptions(path: ""));
+      final response = Response(
+          data: businessList,
+          statusCode: 200,
+          requestOptions: RequestOptions(path: ""));
       return ApiResponse.withSuccess(response);
-    } catch (e){
+    } catch (e) {
       return ApiResponse.withError(ApiErrorHandler.getMessage(e));
     }
   }

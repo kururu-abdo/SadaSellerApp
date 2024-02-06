@@ -1,7 +1,7 @@
 class UploadImage {
-  List<String> productImages;
-  String thumbnail;
-  String metaImage;
+  List<String>? productImages;
+  String? thumbnail;
+  String? metaImage;
 
   UploadImage({this.productImages, this.thumbnail, this.metaImage});
 

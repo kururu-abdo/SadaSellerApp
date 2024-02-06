@@ -31,18 +31,23 @@ class VerificationScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(height: 55),
-                      Image.asset(Images.logo, width: 100, height: 100,),
+                      Image.asset(
+                        Images.logo,
+                        width: 100,
+                        height: 100,
+                      ),
                       SizedBox(height: 40),
-
-
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 50),
-                        child: Center(child: Text('${getTranslated('please_enter_4_digit_code', context)}\n$mobileNumber',
-                          textAlign: TextAlign.center,)),),
-
-
+                        child: Center(
+                            child: Text(
+                          '${getTranslated('please_enter_4_digit_code', context)}\n$mobileNumber',
+                          textAlign: TextAlign.center,
+                        )),
+                      ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 39, vertical: 35),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 39, vertical: 35),
                         child: PinCodeTextField(
                           length: 4,
                           appContext: context,
@@ -58,10 +63,12 @@ class VerificationScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                             selectedColor: ColorResources.colorMap[200],
                             selectedFillColor: Colors.white,
-                            inactiveFillColor: ColorResources.getSearchBg(context),
+                            inactiveFillColor:
+                                ColorResources.getSearchBg(context),
                             inactiveColor: ColorResources.colorMap[200],
                             activeColor: ColorResources.colorMap[400],
-                            activeFillColor: ColorResources.getSearchBg(context),
+                            activeFillColor:
+                                ColorResources.getSearchBg(context),
                           ),
                           animationDuration: Duration(milliseconds: 300),
                           backgroundColor: Colors.transparent,
@@ -72,60 +79,85 @@ class VerificationScreen extends StatelessWidget {
                           },
                         ),
                       ),
-
-                      Center(child: Text(getTranslated('i_didnt_receive_the_code', context),)),
-
-
+                      Center(
+                          child: Text(
+                        getTranslated('i_didnt_receive_the_code', context),
+                      )),
                       Center(
                         child: InkWell(
                           onTap: () {
-                            Provider.of<AuthProvider>(context, listen: false).forgetPassword(mobileNumber).then((value) {
+                            Provider.of<AuthProvider>(context, listen: false)
+                                .forgetPassword(mobileNumber)
+                                .then((value) {
                               if (value.isSuccess) {
-                                showCustomSnackBar('Resent code successful', context, isError: false);
+                                showCustomSnackBar(
+                                    'Resent code successful', context,
+                                    isError: false);
                               } else {
                                 showCustomSnackBar(value.message, context);
                               }
                             });
                           },
                           child: Padding(
-                            padding: EdgeInsets.all(Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                            child: Text(getTranslated('resend_code', context),),),
+                            padding: EdgeInsets.all(
+                                Dimensions.PADDING_SIZE_EXTRA_SMALL),
+                            child: Text(
+                              getTranslated('resend_code', context),
+                            ),
+                          ),
                         ),
                       ),
                       SizedBox(height: 48),
-
-
-                      authProvider.isEnableVerificationCode ? !authProvider.isPhoneNumberVerificationButtonLoading ?
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_LARGE),
-                        child: CustomButton(
-                          btnTxt: getTranslated('verify', context),
-
-                          onTap: () {
-                            print('===identity=>$mobileNumber');
-                            bool phoneVerification = Provider.of<SplashProvider>(context,listen: false).
-                            configModel.forgetPasswordVerification =='phone';
-                            if(phoneVerification){
-                              Provider.of<AuthProvider>(context, listen: false).verifyOtp(mobileNumber).then((value) {
-                                if(value.isSuccess) {
-                                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
-                                      builder: (_) => ResetPasswordWidget(mobileNumber: mobileNumber,
-                                          otp: authProvider.verificationCode)), (route) => false);
-                                  }else {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(content: Text(getTranslated('input_valid_otp', context)),
-                                        backgroundColor: Colors.red,)
-                                  );
-                                }
-                              });
-                            }
-                          },
-                        ),
-                      ):  Center(child: CircularProgressIndicator(
-                          valueColor: AlwaysStoppedAnimation<Color>(Theme.of(context).primaryColor)))
+                      authProvider.isEnableVerificationCode
+                          ? !authProvider.isPhoneNumberVerificationButtonLoading
+                              ? Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal:
+                                          Dimensions.PADDING_SIZE_LARGE),
+                                  child: CustomButton(
+                                    btnTxt: getTranslated('verify', context),
+                                    onTap: () {
+                                      print('===identity=>$mobileNumber');
+                                      bool phoneVerification =
+                                          Provider.of<SplashProvider>(context,
+                                                      listen: false)
+                                                  .configModel!
+                                                  .forgetPasswordVerification ==
+                                              'phone';
+                                      if (phoneVerification) {
+                                        Provider.of<AuthProvider>(context,
+                                                listen: false)
+                                            .verifyOtp(mobileNumber)
+                                            .then((value) {
+                                          if (value.isSuccess) {
+                                            Navigator.pushAndRemoveUntil(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (_) =>
+                                                        ResetPasswordWidget(
+                                                            mobileNumber:
+                                                                mobileNumber,
+                                                            otp: authProvider
+                                                                .verificationCode)),
+                                                (route) => false);
+                                          } else {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(SnackBar(
+                                              content: Text(getTranslated(
+                                                  'input_valid_otp', context)),
+                                              backgroundColor: Colors.red,
+                                            ));
+                                          }
+                                        });
+                                      }
+                                    },
+                                  ),
+                                )
+                              : Center(
+                                  child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                          Theme.of(context).primaryColor)))
                           : SizedBox.shrink()
-
-
                     ],
                   ),
                 ),

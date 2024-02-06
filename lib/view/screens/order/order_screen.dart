@@ -22,82 +22,117 @@ class OrderScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Theme.of(context).canvasColor,
-      body: Consumer<OrderProvider>(builder: (context, order, child) {
-        List<OrderModel> orderList = [];
-        if (order.orderTypeIndex == 0) {
-          orderList = order.orderList;
-        }else if (order.orderTypeIndex == 1) {
-          orderList = order.pendingList;
-        }else if (order.orderTypeIndex == 2) {
-          orderList = order.processing;
-        }else if (order.orderTypeIndex == 3) {
-          orderList = order.deliveredList;
-        }else if (order.orderTypeIndex == 4) {
-          orderList = order.returnList;
-        }else if (order.orderTypeIndex == 5) {
-          orderList = order.failedList;
-        }else if (order.orderTypeIndex == 6) {
-          orderList = order.canceledList;
-        }else if (order.orderTypeIndex == 7) {
-          orderList = order.confirmedList;
-        }else if (order.orderTypeIndex == 8) {
-          orderList = order.outForDeliveryList;
-        }
-        return Column(
-          children: [
-            CustomAppBar(title: getTranslated('my_order', context), isBackButtonExist: isBacButtonExist),
-
-            order.pendingList != null ? Padding(
-              padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_SMALL, vertical: Dimensions.PADDING_SIZE_SMALL),
-              child: SizedBox(
-                height: 40,
-                child: ListView(
-                  controller: scrollController,
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    OrderTypeButton(text: getTranslated('all', context), index: 0, orderList: order.orderList),
-                    SizedBox(width: 5),
-                    OrderTypeButton(text: getTranslated('pending', context), index: 1, orderList: order.pendingList),
-                    SizedBox(width: 5),
-                    OrderTypeButton(text: getTranslated('processing', context), index: 2, orderList: order.processing),
-                    SizedBox(width: 5),
-                    OrderTypeButton(text: getTranslated('delivered', context), index: 3, orderList: order.deliveredList),
-                    SizedBox(width: 5),
-                    OrderTypeButton(text: getTranslated('return', context), index: 4, orderList: order.returnList),
-                    SizedBox(width: 5),
-                    OrderTypeButton(text: getTranslated('failed', context), index: 5, orderList: order.failedList),
-                    SizedBox(width: 5),
-                    OrderTypeButton(text: getTranslated('cancelled', context), index: 6, orderList: order.canceledList),
-                    SizedBox(width: 5),
-                    OrderTypeButton(text: getTranslated('confirmed', context), index: 7, orderList: order.confirmedList),
-                    SizedBox(width: 5),
-                    OrderTypeButton(text: getTranslated('out_delivery', context), index: 8, orderList: order.outForDeliveryList),
-
-
-
-
-                  ],
-                ),
-              ),
-            ) : SizedBox(),
-            order.pendingList != null ? order.orderList.length > 0 ? Expanded(
-              child: RefreshIndicator(
-                backgroundColor: Theme.of(context).primaryColor,
-                onRefresh: () async {
-                  await order.getOrderList(context);
-                },
-                child: ListView.builder(
-                  itemCount: orderList.length,
-                  padding: EdgeInsets.all(0),
-                  itemBuilder: (context, index) =>
-                  OrderWidget(orderModel: orderList[index], index: index,),
-                ),
-              ),
-            ) : Expanded(child: NoDataScreen()) : Expanded(child: OrderShimmer()),
-          ],
-        );
-      },
+      body: Consumer<OrderProvider>(
+        builder: (context, order, child) {
+          List<OrderModel> orderList = [];
+          if (order.orderTypeIndex == 0) {
+            orderList = order.orderList!;
+          } else if (order.orderTypeIndex == 1) {
+            orderList = order.pendingList!;
+          } else if (order.orderTypeIndex == 2) {
+            orderList = order.processing!;
+          } else if (order.orderTypeIndex == 3) {
+            orderList = order.deliveredList!;
+          } else if (order.orderTypeIndex == 4) {
+            orderList = order.returnList!;
+          } else if (order.orderTypeIndex == 5) {
+            orderList = order.failedList!;
+          } else if (order.orderTypeIndex == 6) {
+            orderList = order.canceledList!;
+          } else if (order.orderTypeIndex == 7) {
+            orderList = order.confirmedList!;
+          } else if (order.orderTypeIndex == 8) {
+            orderList = order.outForDeliveryList!;
+          }
+          return Column(
+            children: [
+              CustomAppBar(
+                  title: getTranslated('my_order', context),
+                  isBackButtonExist: isBacButtonExist),
+              order.pendingList != null
+                  ? Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: Dimensions.PADDING_SIZE_SMALL,
+                          vertical: Dimensions.PADDING_SIZE_SMALL),
+                      child: SizedBox(
+                        height: 40,
+                        child: ListView(
+                          controller: scrollController,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            OrderTypeButton(
+                                text: getTranslated('all', context),
+                                index: 0,
+                                orderList: order.orderList!),
+                            SizedBox(width: 5),
+                            OrderTypeButton(
+                                text: getTranslated('pending', context),
+                                index: 1,
+                                orderList: order.pendingList!),
+                            SizedBox(width: 5),
+                            OrderTypeButton(
+                                text: getTranslated('processing', context),
+                                index: 2,
+                                orderList: order.processing!),
+                            SizedBox(width: 5),
+                            OrderTypeButton(
+                                text: getTranslated('delivered', context),
+                                index: 3,
+                                orderList: order.deliveredList!),
+                            SizedBox(width: 5),
+                            OrderTypeButton(
+                                text: getTranslated('return', context),
+                                index: 4,
+                                orderList: order.returnList!),
+                            SizedBox(width: 5),
+                            OrderTypeButton(
+                                text: getTranslated('failed', context),
+                                index: 5,
+                                orderList: order.failedList!),
+                            SizedBox(width: 5),
+                            OrderTypeButton(
+                                text: getTranslated('cancelled', context),
+                                index: 6,
+                                orderList: order.canceledList!),
+                            SizedBox(width: 5),
+                            OrderTypeButton(
+                                text: getTranslated('confirmed', context),
+                                index: 7,
+                                orderList: order.confirmedList!),
+                            SizedBox(width: 5),
+                            OrderTypeButton(
+                                text: getTranslated('out_delivery', context),
+                                index: 8,
+                                orderList: order.outForDeliveryList!),
+                          ],
+                        ),
+                      ),
+                    )
+                  : SizedBox(),
+              order.pendingList != null
+                  ? order.orderList!.length > 0
+                      ? Expanded(
+                          child: RefreshIndicator(
+                            backgroundColor: Theme.of(context).primaryColor,
+                            onRefresh: () async {
+                              await order.getOrderList(context);
+                            },
+                            child: ListView.builder(
+                              itemCount: orderList.length,
+                              padding: EdgeInsets.all(0),
+                              itemBuilder: (context, index) => OrderWidget(
+                                orderModel: orderList[index],
+                                index: index,
+                              ),
+                            ),
+                          ),
+                        )
+                      : Expanded(child: NoDataScreen())
+                  : Expanded(child: OrderShimmer()),
+            ],
+          );
+        },
       ),
     );
   }
@@ -115,8 +150,8 @@ class OrderShimmer extends StatelessWidget {
           padding: EdgeInsets.all(Dimensions.PADDING_SIZE_SMALL),
           color: Theme.of(context).highlightColor,
           child: Shimmer.fromColors(
-            baseColor: Colors.grey[300],
-            highlightColor: Colors.grey[100],
+            baseColor: Colors.grey[300]!,
+            highlightColor: Colors.grey[100]!,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -136,9 +171,11 @@ class OrderShimmer extends StatelessWidget {
                           SizedBox(height: 10),
                           Row(
                             children: [
-                              Container(height: 10, width: 70, color: Colors.white),
+                              Container(
+                                  height: 10, width: 70, color: Colors.white),
                               SizedBox(width: 10),
-                              Container(height: 10, width: 20, color: Colors.white),
+                              Container(
+                                  height: 10, width: 20, color: Colors.white),
                             ],
                           ),
                         ],
@@ -156,34 +193,47 @@ class OrderShimmer extends StatelessWidget {
 }
 
 class OrderTypeButton extends StatelessWidget {
-  final String text;
-  final int index;
-  final List<OrderModel> orderList;
-  OrderTypeButton({@required this.text, @required this.index, @required this.orderList});
+  final String? text;
+  final int? index;
+  final List<OrderModel>? orderList;
+  OrderTypeButton(
+      {@required this.text, @required this.index, @required this.orderList});
 
   @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        onTap: (){
-          Provider.of<OrderProvider>(context, listen: false).setIndex(index);
+        onTap: () {
+          Provider.of<OrderProvider>(context, listen: false).setIndex(index!);
         },
-        child: Consumer<OrderProvider>(builder: (context, order, child) {
-          return Container(
-            height: 40,
-            padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_LARGE,),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: order.orderTypeIndex == index ? Theme.of(context).primaryColor : ColorResources.getButtonHintColor(context),
-              borderRadius: BorderRadius.circular(Dimensions.PADDING_SIZE_LARGE),
-            ),
-            child: Text(text, style: order.orderTypeIndex == index ? titilliumBold.copyWith(color: order.orderTypeIndex == index
-                    ? ColorResources.getWhite(context) : ColorResources.getTextColor(context)):
-                robotoRegular.copyWith(color: order.orderTypeIndex == index
-                ? ColorResources.getWhite(context) : ColorResources.getTextColor(context))),
-          );
-        },
+        child: Consumer<OrderProvider>(
+          builder: (context, order, child) {
+            return Container(
+              height: 40,
+              padding: EdgeInsets.symmetric(
+                horizontal: Dimensions.PADDING_SIZE_LARGE,
+              ),
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: order.orderTypeIndex == index
+                    ? Theme.of(context).primaryColor
+                    : ColorResources.getButtonHintColor(context),
+                borderRadius:
+                    BorderRadius.circular(Dimensions.PADDING_SIZE_LARGE),
+              ),
+              child: Text(text!,
+                  style: order.orderTypeIndex == index
+                      ? titilliumBold.copyWith(
+                          color: order.orderTypeIndex == index
+                              ? ColorResources.getWhite(context)
+                              : ColorResources.getTextColor(context))
+                      : robotoRegular.copyWith(
+                          color: order.orderTypeIndex == index
+                              ? ColorResources.getWhite(context)
+                              : ColorResources.getTextColor(context))),
+            );
+          },
         ),
       ),
     );

@@ -1,27 +1,26 @@
 class ShopModel {
-  int id;
-  String name;
-  String address;
-  String contact;
-  String image;
-  String createdAt;
-  String updatedAt;
-  String banner;
-  double ratting;
-  int rattingCount;
+  int? id;
+  String? name;
+  String? address;
+  String? contact;
+  String? image;
+  String? createdAt;
+  String? updatedAt;
+  String? banner;
+  double? ratting;
+  int? rattingCount;
 
   ShopModel(
       {this.id,
-        this.name,
-        this.address,
-        this.contact,
-        this.image,
-        this.createdAt,
-        this.updatedAt,
-        this.banner,
-        this.ratting,
-        this.rattingCount
-      });
+      this.name,
+      this.address,
+      this.contact,
+      this.image,
+      this.createdAt,
+      this.updatedAt,
+      this.banner,
+      this.ratting,
+      this.rattingCount});
 
   ShopModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];

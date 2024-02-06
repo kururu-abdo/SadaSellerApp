@@ -1,24 +1,28 @@
 class BankInfoModel {
-  int _id;
-  String _name;
-  String _branch;
-  String _holderName;
-  int _accountNo;
+  int? _id;
+  String? _name;
+  String? _branch;
+  String? _holderName;
+  int? _accountNo;
 
   BankInfoModel(
-      {int id, String name, String branch, String holderName, int accountNo}) {
-    this._id = id;
-    this._name = name;
-    this._branch = branch;
-    this._holderName = holderName;
-    this._accountNo = accountNo;
+      {int? id,
+      String? name,
+      String? branch,
+      String? holderName,
+      int? accountNo}) {
+    this._id = id!;
+    this._name = name!;
+    this._branch = branch!;
+    this._holderName = holderName!;
+    this._accountNo = accountNo!;
   }
 
-  int get id => _id;
-  String get name => _name;
-  String get branch => _branch;
-  String get holderName => _holderName;
-  int get accountNo => _accountNo;
+  int get id => _id!;
+  String get name => _name!;
+  String get branch => _branch!;
+  String get holderName => _holderName!;
+  int get accountNo => _accountNo!;
 
   BankInfoModel.fromJson(Map<String, dynamic> json) {
     _id = json['id'];

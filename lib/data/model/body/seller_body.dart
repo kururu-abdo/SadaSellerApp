@@ -1,24 +1,24 @@
 class SellerBody {
-  String _sMethod;
-  String _fName;
-  String _lName;
-  String _bankName;
-  String _branch;
-  String _accountNo;
-  String _holderName;
-  String _password;
-  String _image;
+  String? _sMethod;
+  String? _fName;
+  String? _lName;
+  String? _bankName;
+  String? _branch;
+  String? _accountNo;
+  String? _holderName;
+  String? _password;
+  String? _image;
 
   SellerBody(
-      {String sMethod,
-        String fName,
-        String lName,
-        String bankName,
-        String branch,
-        String accountNo,
-        String holderName,
-        String password,
-        String image}) {
+      {String? sMethod,
+      String? fName,
+      String? lName,
+      String? bankName,
+      String? branch,
+      String? accountNo,
+      String? holderName,
+      String? password,
+      String? image}) {
     this._sMethod = sMethod;
     this._fName = fName;
     this._lName = lName;
@@ -30,15 +30,15 @@ class SellerBody {
     this._image = image;
   }
 
-  String get sMethod => _sMethod;
-  String get fName => _fName;
-  String get lName => _lName;
-  String get bankName => _bankName;
-  String get branch => _branch;
-  String get accountNo => _accountNo;
-  String get holderName => _holderName;
-  String get password => _password;
-  String get image => _image;
+  String get sMethod => _sMethod!;
+  String get fName => _fName!;
+  String get lName => _lName!;
+  String get bankName => _bankName!;
+  String get branch => _branch!;
+  String get accountNo => _accountNo!;
+  String get holderName => _holderName!;
+  String get password => _password!;
+  String get image => _image!;
 
   SellerBody.fromJson(Map<String, dynamic> json) {
     _sMethod = json['_method'];

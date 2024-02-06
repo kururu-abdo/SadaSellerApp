@@ -17,66 +17,95 @@ class SettingsScreen extends StatelessWidget {
     Provider.of<SplashProvider>(context, listen: false).setFromSetting(true);
 
     return Scaffold(
-      appBar: CustomAppBar(title: getTranslated('more', context),),
-      body: SafeArea( 
+      appBar: CustomAppBar(
+        title: getTranslated('more', context),
+      ),
+      body: SafeArea(
         child: ListView(
           physics: BouncingScrollPhysics(),
-
           children: [
-
             TitleButton(
               icon: Images.language,
               title: getTranslated('choose_language', context),
-              onTap: () => showAnimatedDialog(context, LanguageDialog(isCurrency: false, isShipping: false,)),
+              onTap: () => showAnimatedDialog(
+                  context,
+                  LanguageDialog(
+                    isCurrency: false,
+                    isShipping: false,
+                  )),
             ),
-
             TitleButton(
                 icon: Images.transactions,
                 title: getTranslated('transactions', context),
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => TransactionScreen()))
-            ),
-
+                onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => TransactionScreen()))),
             TitleButton(
               icon: Images.ship,
               title: '${getTranslated('shipping_setting', context)}',
-              onTap: () => showAnimatedDialog(context, LanguageDialog(isCurrency: false, isShipping: true,)),
+              onTap: () => showAnimatedDialog(
+                  context,
+                  LanguageDialog(
+                    isCurrency: false,
+                    isShipping: true,
+                  )),
             ),
-
           ],
         ),
       ),
     );
   }
-
 }
+
 class TitleButton extends StatelessWidget {
-  final String icon;
-  final String title;
-  final Function onTap;
-  TitleButton({@required this.icon, @required this.title, @required this.onTap});
+  final String? icon;
+  final String? title;
+  final Function? onTap;
+  TitleButton(
+      {@required this.icon, @required this.title, @required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: Dimensions.PADDING_SIZE_EXTRA_SMALL),
+      padding: const EdgeInsets.symmetric(
+          vertical: Dimensions.PADDING_SIZE_EXTRA_SMALL),
       child: InkWell(
-        onTap: onTap,
+        onTap: onTap!(),
         child: Container(
           decoration: BoxDecoration(
             color: Theme.of(context).cardColor,
-            boxShadow: [BoxShadow(color: Colors.grey[Provider.of<ThemeProvider>(context).darkTheme ? 800 : 200],
-                spreadRadius: 0.5, blurRadius: 0.3)],
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.grey[
+                      Provider.of<ThemeProvider>(context).darkTheme
+                          ? 800
+                          : 200]!,
+                  spreadRadius: 0.5,
+                  blurRadius: 0.3)
+            ],
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical : Dimensions.PADDING_SIZE_DEFAULT, horizontal: Dimensions.PADDING_SIZE_LARGE),
-            child: Row(children: [
-              Container(width:Dimensions.ICON_SIZE_LARGE, height:Dimensions.ICON_SIZE_LARGE, child: Image.asset(icon)),
-              SizedBox(width: Dimensions.PADDING_SIZE_SMALL,),
-              Text(title, style: titilliumRegular.copyWith(fontSize: Dimensions.FONT_SIZE_LARGE)),
-              Spacer(),
-              Icon(Icons.arrow_forward_ios, color: Theme.of(context).primaryColor,size: Dimensions.ICON_SIZE_SMALL,),
-            ],
-
+            padding: const EdgeInsets.symmetric(
+                vertical: Dimensions.PADDING_SIZE_DEFAULT,
+                horizontal: Dimensions.PADDING_SIZE_LARGE),
+            child: Row(
+              children: [
+                Container(
+                    width: Dimensions.ICON_SIZE_LARGE,
+                    height: Dimensions.ICON_SIZE_LARGE,
+                    child: Image.asset(icon!)),
+                SizedBox(
+                  width: Dimensions.PADDING_SIZE_SMALL,
+                ),
+                Text(title!,
+                    style: titilliumRegular.copyWith(
+                        fontSize: Dimensions.FONT_SIZE_LARGE)),
+                Spacer(),
+                Icon(
+                  Icons.arrow_forward_ios,
+                  color: Theme.of(context).primaryColor,
+                  size: Dimensions.ICON_SIZE_SMALL,
+                ),
+              ],
             ),
           ),
         ),
@@ -84,4 +113,3 @@ class TitleButton extends StatelessWidget {
     );
   }
 }
-

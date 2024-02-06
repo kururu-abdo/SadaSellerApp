@@ -5,7 +5,7 @@ import 'package:eamar_seller_app/data/repository/product_repo.dart';
 import 'package:eamar_seller_app/helper/api_checker.dart';
 
 class ProductProvider extends ChangeNotifier {
-  final ProductRepo productRepo;
+  final ProductRepo? productRepo;
   ProductProvider({@required this.productRepo});
 
   bool _isLoading = false;
@@ -17,79 +17,83 @@ class ProductProvider extends ChangeNotifier {
   bool get firstLoading => _firstLoading;
   int get offset => _offset;
 
-
-
   // Seller products
   List<Product> _sellerProductList = [];
   List<Product> _stockOutProductList = [];
-  int _sellerPageSize;
-  int _stockOutProductPageSize;
+  int? _sellerPageSize;
+  int? _stockOutProductPageSize;
   List<Product> get sellerProductList => _sellerProductList;
   List<Product> get stockOutProductList => _stockOutProductList;
-  int get sellerPageSize => _sellerPageSize;
-  int get stockOutProductPageSize => _stockOutProductPageSize;
+  int? get sellerPageSize => _sellerPageSize;
+  int? get stockOutProductPageSize => _stockOutProductPageSize;
 
-  void initSellerProductList(String sellerId, int offset, BuildContext context, String languageCode, {bool reload = false}) async {
-    if(reload || offset == 1) {
+  void initSellerProductList(
+      String sellerId, int offset, BuildContext context, String languageCode,
+      {bool reload = false}) async {
+    if (reload || offset == 1) {
       _offset = 1;
-          _offsetList = [];
-          _sellerProductList = [];
-        }
-    if(!_offsetList.contains(offset)){
+      _offsetList = [];
+      _sellerProductList = [];
+    }
+    if (!_offsetList.contains(offset)) {
       _offsetList.add(offset);
-      ApiResponse apiResponse = await productRepo.getSellerProductList(sellerId, offset,languageCode);
-      if (apiResponse.response != null && apiResponse.response.statusCode == 200) {
+      ApiResponse apiResponse = await productRepo!
+          .getSellerProductList(sellerId, offset, languageCode);
+      if (apiResponse.response != null &&
+          apiResponse.response!.statusCode == 200) {
         _sellerProductList = [];
-        _sellerProductList.addAll(ProductModel.fromJson(apiResponse.response.data).products);
-        _sellerPageSize = ProductModel.fromJson(apiResponse.response.data).totalSize;
+        _sellerProductList.addAll(
+            ProductModel.fromJson(apiResponse.response!.data).products!);
+        _sellerPageSize =
+            ProductModel.fromJson(apiResponse.response!.data).totalSize;
         _firstLoading = false;
         _isLoading = false;
       } else {
         ApiChecker.checkApi(context, apiResponse);
       }
       notifyListeners();
-
-    }else{
-      if(_isLoading) {
+    } else {
+      if (_isLoading) {
         _isLoading = false;
       }
-
     }
-
   }
-  Future getStockOutProductList(int offset, BuildContext context, String languageCode, {bool reload = false}) async {
-    if(reload || offset == 1) {
+
+  Future getStockOutProductList(
+      int offset, BuildContext context, String languageCode,
+      {bool reload = false}) async {
+    if (reload || offset == 1) {
       _offset = 1;
       _offsetList = [];
       _stockOutProductList = [];
     }
-    if(!_offsetList.contains(offset)){
+    if (!_offsetList.contains(offset)) {
       _offsetList.add(offset);
-      ApiResponse apiResponse = await productRepo.getStockLimitedProductList(offset,languageCode);
-      if (apiResponse.response != null && apiResponse.response.statusCode == 200) {
+      ApiResponse apiResponse =
+          await productRepo!.getStockLimitedProductList(offset, languageCode);
+      if (apiResponse.response != null &&
+          apiResponse.response!.statusCode == 200) {
         _stockOutProductList = [];
-        _stockOutProductList.addAll(ProductModel.fromJson(apiResponse.response.data).products);
-        _stockOutProductPageSize = ProductModel.fromJson(apiResponse.response.data).totalSize;
+        _stockOutProductList.addAll(
+            ProductModel.fromJson(apiResponse.response!.data).products!);
+        _stockOutProductPageSize =
+            ProductModel.fromJson(apiResponse.response!.data).totalSize;
         _firstLoading = false;
         _isLoading = false;
       } else {
         ApiChecker.checkApi(context, apiResponse);
       }
       notifyListeners();
-
-    }else{
-      if(_isLoading) {
+    } else {
+      if (_isLoading) {
         _isLoading = false;
       }
-
     }
-
   }
 
   void setOffset(int offset) {
     _offset = offset;
   }
-
 
   void showBottomLoader() {
     _isLoading = true;
@@ -100,18 +104,15 @@ class ProductProvider extends ChangeNotifier {
     _firstLoading = true;
     notifyListeners();
   }
-  Future<int> getLatestOffset(String sellerId, String languageCode) async {
-    ApiResponse apiResponse = await productRepo.getSellerProductList(sellerId, 1,languageCode);
-    return ProductModel.fromJson(apiResponse.response.data).totalSize;
-  }
 
+  Future<int> getLatestOffset(String sellerId, String languageCode) async {
+    ApiResponse apiResponse =
+        await productRepo!.getSellerProductList(sellerId, 1, languageCode);
+    return ProductModel.fromJson(apiResponse.response!.data).totalSize!;
+  }
 
   void clearSellerData() {
     _sellerProductList = [];
     notifyListeners();
   }
-
-
-
-
 }

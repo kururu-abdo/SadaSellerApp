@@ -8,18 +8,18 @@ import 'package:eamar_seller_app/data/model/response/year_model.dart';
 import 'package:eamar_seller_app/utill/app_constants.dart';
 
 class TransactionRepo {
-  final DioClient dioClient;
+  final DioClient? dioClient;
   TransactionRepo({@required this.dioClient});
 
   Future<ApiResponse> getTransactionList() async {
     try {
-      final Response response = await dioClient.get(AppConstants.TRANSACTIONS_URI);
+      final Response response =
+          await dioClient!.get(AppConstants.TRANSACTIONS_URI);
       return ApiResponse.withSuccess(response);
-    } catch (e){
+    } catch (e) {
       return ApiResponse.withError(ApiErrorHandler.getMessage(e));
     }
   }
-
 
   Future<ApiResponse> getMonthTypeList() async {
     try {
@@ -37,14 +37,17 @@ class TransactionRepo {
         MonthModel(id: 11, month: 'October'),
         MonthModel(id: 12, month: 'November'),
         MonthModel(id: 13, month: 'December'),
-
       ];
-      Response response = Response(requestOptions: RequestOptions(path: ''), data: monthTypeList, statusCode: 200);
+      Response response = Response(
+          requestOptions: RequestOptions(path: ''),
+          data: monthTypeList,
+          statusCode: 200);
       return ApiResponse.withSuccess(response);
     } catch (e) {
       return ApiResponse.withError(ApiErrorHandler.getMessage(e));
     }
   }
+
   Future<ApiResponse> getYearList() async {
     try {
       List<YearModel> yearList = [
@@ -61,9 +64,11 @@ class TransactionRepo {
         YearModel(id: 11, year: '2030'),
         YearModel(id: 12, year: '2031'),
         YearModel(id: 13, year: '2032'),
-
       ];
-      Response response = Response(requestOptions: RequestOptions(path: ''), data: yearList, statusCode: 200);
+      Response response = Response(
+          requestOptions: RequestOptions(path: ''),
+          data: yearList,
+          statusCode: 200);
       return ApiResponse.withSuccess(response);
     } catch (e) {
       return ApiResponse.withError(ApiErrorHandler.getMessage(e));

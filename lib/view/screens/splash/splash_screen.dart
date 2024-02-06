@@ -20,18 +20,22 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     super.initState();
     NetworkInfo.checkConnectivity(context);
-    Provider.of<SplashProvider>(context, listen: false).initConfig(context).then((bool isSuccess) {
-      if(isSuccess) {
-        Provider.of<SplashProvider>(context, listen: false).initShippingTypeList(context,'');
+    Provider.of<SplashProvider>(context, listen: false)
+        .initConfig(context)
+        .then((bool isSuccess) {
+      if (isSuccess) {
+        Provider.of<SplashProvider>(context, listen: false)
+            .initShippingTypeList(context, '');
         Timer(Duration(seconds: 1), () {
           if (Provider.of<AuthProvider>(context, listen: false).isLoggedIn()) {
-            Provider.of<AuthProvider>(context, listen: false).updateToken(context);
-            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context) => DashboardScreen()));
+            Provider.of<AuthProvider>(context, listen: false)
+                .updateToken(context);
+            Navigator.of(context).pushReplacement(MaterialPageRoute(
+                builder: (BuildContext context) => DashboardScreen()));
           } else {
             Navigator.of(context).pushReplacement(MaterialPageRoute(
                 builder: (BuildContext context) => AuthScreen()));
@@ -44,8 +48,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        clipBehavior: Clip.none, children: [
+        body: Stack(
+      clipBehavior: Clip.none,
+      children: [
         // Container(
         //   width: MediaQuery.of(context).size.width,
         //   height: MediaQuery.of(context).size.height,
@@ -59,21 +64,27 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image.asset(Images.logo, 
-              // height: 100.0, width: 100.0,
-               //color: Theme.of(context).highlightColor
-              //  fit: BoxFit.scaleDown
-               ),
-              SizedBox(height: Dimensions.PADDING_SIZE_EXTRA_LARGE,),
-              Text(AppConstants.APP_NAME, style: titilliumBold.copyWith(fontSize: Dimensions.FONT_SIZE_WALLET,
-                  color: Provider.of<ThemeProvider>(context).darkTheme ? Colors.white : ColorResources.BLACK),
+              Image.asset(
+                Images.logo,
+                // height: 100.0, width: 100.0,
+                //color: Theme.of(context).highlightColor
+                //  fit: BoxFit.scaleDown
+              ),
+              SizedBox(
+                height: Dimensions.PADDING_SIZE_EXTRA_LARGE,
+              ),
+              Text(
+                AppConstants.APP_NAME,
+                style: titilliumBold.copyWith(
+                    fontSize: Dimensions.FONT_SIZE_WALLET,
+                    color: Provider.of<ThemeProvider>(context).darkTheme
+                        ? Colors.white
+                        : ColorResources.BLACK),
               ),
             ],
           ),
         ),
       ],
-      )
-    );
+    ));
   }
-
 }

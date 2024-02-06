@@ -1,21 +1,21 @@
 class ProductModel {
-  int _totalSize;
-  int _limit;
-  int _offset;
-  List<Product> _products;
+  int? _totalSize;
+  int? _limit;
+  int? _offset;
+  List<Product>? _products;
 
   ProductModel(
-      {int totalSize, int limit, int offset, List<Product> products}) {
+      {int? totalSize, int? limit, int? offset, List<Product>? products}) {
     this._totalSize = totalSize;
     this._limit = limit;
     this._offset = offset;
     this._products = products;
   }
 
-  int get totalSize => _totalSize;
-  int get limit => _limit;
-  int get offset => _offset;
-  List<Product> get products => _products;
+  int? get totalSize => _totalSize;
+  int? get limit => _limit;
+  int? get offset => _offset;
+  List<Product>? get products => _products;
 
   ProductModel.fromJson(Map<String, dynamic> json) {
     _totalSize = json['total_size'];
@@ -24,7 +24,7 @@ class ProductModel {
     if (json['products'] != null) {
       _products = [];
       json['products'].forEach((v) {
-        _products.add(new Product.fromJson(v));
+        _products!.add(new Product.fromJson(v));
       });
     }
   }
@@ -35,79 +35,79 @@ class ProductModel {
     data['limit'] = this._limit;
     data['offset'] = this._offset;
     if (this._products != null) {
-      data['products'] = this._products.map((v) => v.toJson()).toList();
+      data['products'] = this._products!.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
 class Product {
-  int id;
-  String addedBy;
-  int userId;
-  String name;
-  int brandId;
-  List<CategoryIds> categoryIds;
-  String unit;
-  List<String> images;
-  String thumbnail;
-  List<ProductColors> colors;
-  List<int> attributes;
-  List<ChoiceOptions> choiceOptions;
-  List<Variation> variation;
-  double unitPrice;
-  double purchasePrice;
-  double tax;
-  int minQty;
-  String taxType;
-  double discount;
-  String discountType;
-  int currentStock;
-  String details;
-  String createdAt;
-  String updatedAt;
-  List<Rating> rating;
-  String metaTitle;
-  String metaDescription;
-  String metaImage;
-  double shippingCost;
-  int multiplyWithQuantity;
+  int? id;
+  String? addedBy;
+  int? userId;
+  String? name;
+  int? brandId;
+  List<CategoryIds>? categoryIds;
+  String? unit;
+  List<String>? images;
+  String? thumbnail;
+  List<ProductColors>? colors;
+  List<int>? attributes;
+  List<ChoiceOptions>? choiceOptions;
+  List<Variation>? variation;
+  double? unitPrice;
+  double? purchasePrice;
+  double? tax;
+  int? minQty;
+  String? taxType;
+  double? discount;
+  String? discountType;
+  int? currentStock;
+  String? details;
+  String? createdAt;
+  String? updatedAt;
+  List<Rating>? rating;
+  String? metaTitle;
+  String? metaDescription;
+  String? metaImage;
+  double? shippingCost;
+  int? multiplyWithQuantity;
 
-  Product(
-      {int id,
-        String addedBy,
-        int userId,
-        String name,
-        int brandId,
-        List<CategoryIds> categoryIds,
-        String unit,
-        int minQty,
-        List<String> images,
-        String thumbnail,
-        List<ProductColors> colors,
-        String variantProduct,
-        List<int> attributes,
-        List<ChoiceOptions> choiceOptions,
-        List<Variation> variation,
-        double unitPrice,
-        double purchasePrice,
-        double tax,
-        String taxType,
-        double discount,
-        String discountType,
-        int currentStock,
-        String details,
-        String attachment,
-        String createdAt,
-        String updatedAt,
-        int featuredStatus,
-        List<Rating> rating,
-        String metaTitle,
-        String metaDescription,
-        String metaImage,
-        double shippingCost,
-        int multiplyWithQuantity,
-      }) {
+  Product({
+    int? id,
+    String? addedBy,
+    int? userId,
+    String? name,
+    int? brandId,
+    List<CategoryIds>? categoryIds,
+    String? unit,
+    int? minQty,
+    List<String>? images,
+    String? thumbnail,
+    List<ProductColors>? colors,
+    String? variantProduct,
+    List<int>? attributes,
+    List<ChoiceOptions>? choiceOptions,
+    List<Variation>? variation,
+    double? unitPrice,
+    double? purchasePrice,
+    double? tax,
+    String? taxType,
+    double? discount,
+    String? discountType,
+    int? currentStock,
+    String? details,
+    String? attachment,
+    String? createdAt,
+    String? updatedAt,
+    int? featuredStatus,
+    List<Rating>? rating,
+    String? metaTitle,
+    String? metaDescription,
+    String? metaImage,
+    double? shippingCost,
+    int? multiplyWithQuantity,
+  }) {
     this.id = id;
     this.addedBy = addedBy;
     this.userId = userId;
@@ -149,12 +149,12 @@ class Product {
     if (json['category_ids'] != null) {
       categoryIds = [];
       json['category_ids'].forEach((v) {
-        categoryIds.add(new CategoryIds.fromJson(v));
+        categoryIds!.add(new CategoryIds.fromJson(v));
       });
     }
     unit = json['unit'];
     minQty = json['min_qty'];
-    if(json['images'] != null){
+    if (json['images'] != null) {
       images = json['images'] != null ? json['images'].cast<String>() : [];
     }
 
@@ -162,25 +162,25 @@ class Product {
     if (json['colors'] != null) {
       colors = [];
       json['colors'].forEach((v) {
-        colors.add(new ProductColors.fromJson(v));
+        colors!.add(new ProductColors.fromJson(v));
       });
     }
-    if(json['attributes'] != null) {
+    if (json['attributes'] != null) {
       attributes = [];
-      for(int index=0; index<json['attributes'].length; index++) {
-        attributes.add(int.parse(json['attributes'][index].toString()));
+      for (int index = 0; index < json['attributes'].length; index++) {
+        attributes!.add(int.parse(json['attributes'][index].toString()));
       }
     }
     if (json['choice_options'] != null) {
       choiceOptions = [];
       json['choice_options'].forEach((v) {
-        choiceOptions.add(new ChoiceOptions.fromJson(v));
+        choiceOptions!.add(new ChoiceOptions.fromJson(v));
       });
     }
     if (json['variation'] != null) {
       variation = [];
       json['variation'].forEach((v) {
-        variation.add(new Variation.fromJson(v));
+        variation!.add(new Variation.fromJson(v));
       });
     }
     unitPrice = json['unit_price'].toDouble();
@@ -196,19 +196,18 @@ class Product {
     if (json['rating'] != null) {
       rating = [];
       json['rating'].forEach((v) {
-        rating.add(new Rating.fromJson(v));
+        rating!.add(new Rating.fromJson(v));
       });
     }
     metaTitle = json['meta_title'];
     metaDescription = json['meta_description'];
     metaImage = json['meta_image'];
-    if(json['shipping_cost']!=null){
+    if (json['shipping_cost'] != null) {
       shippingCost = json['shipping_cost'].toDouble();
     }
-    if(json['multiply_qty']!=null){
+    if (json['multiply_qty'] != null) {
       multiplyWithQuantity = json['multiply_qty'];
     }
-
   }
 
   Map<String, dynamic> toJson() {
@@ -219,22 +218,22 @@ class Product {
     data['name'] = this.name;
     data['brand_id'] = this.brandId;
     if (this.categoryIds != null) {
-      data['category_ids'] = this.categoryIds.map((v) => v.toJson()).toList();
+      data['category_ids'] = this.categoryIds!.map((v) => v.toJson()).toList();
     }
     data['unit'] = this.unit;
     data['min_qty'] = this.minQty;
     data['images'] = this.images;
     data['thumbnail'] = this.thumbnail;
     if (this.colors != null) {
-      data['colors'] = this.colors.map((v) => v.toJson()).toList();
+      data['colors'] = this.colors!.map((v) => v.toJson()).toList();
     }
     data['attributes'] = this.attributes;
     if (this.choiceOptions != null) {
       data['choice_options'] =
-          this.choiceOptions.map((v) => v.toJson()).toList();
+          this.choiceOptions!.map((v) => v.toJson()).toList();
     }
     if (this.variation != null) {
-      data['variation'] = this.variation.map((v) => v.toJson()).toList();
+      data['variation'] = this.variation!.map((v) => v.toJson()).toList();
     }
     data['unit_price'] = this.unitPrice;
     data['purchase_price'] = this.purchasePrice;
@@ -247,7 +246,7 @@ class Product {
     data['created_at'] = this.createdAt;
     data['updated_at'] = this.updatedAt;
     if (this.rating != null) {
-      data['rating'] = this.rating.map((v) => v.toJson()).toList();
+      data['rating'] = this.rating!.map((v) => v.toJson()).toList();
     }
     data['meta_title'] = this.metaTitle;
     data['meta_description'] = this.metaDescription;
@@ -259,10 +258,10 @@ class Product {
 }
 
 class CategoryIds {
-  String id;
-  int position;
+  String? id;
+  int? position;
 
-  CategoryIds({String id, int position}) {
+  CategoryIds({String? id, int? position}) {
     this.id = id;
     this.position = position;
   }
@@ -285,16 +284,16 @@ class CategoryIds {
 }
 
 class ProductColors {
-  String _name;
-  String _code;
+  String? _name;
+  String? _code;
 
-  ProductColors({String name, String code}) {
+  ProductColors({String? name, String? code}) {
     this._name = name;
     this._code = code;
   }
 
-  String get name => _name;
-  String get code => _code;
+  String? get name => _name;
+  String? get code => _code;
 
   ProductColors.fromJson(Map<String, dynamic> json) {
     _name = json['name'];
@@ -310,19 +309,19 @@ class ProductColors {
 }
 
 class ChoiceOptions {
-  String _name;
-  String _title;
-  List<String> _options;
+  String? _name;
+  String? _title;
+  List<String>? _options;
 
-  ChoiceOptions({String name, String title, List<String> options}) {
+  ChoiceOptions({String? name, String? title, List<String>? options}) {
     this._name = name;
     this._title = title;
     this._options = options;
   }
 
-  String get name => _name;
-  String get title => _title;
-  List<String> get options => _options;
+  String? get name => _name;
+  String? get title => _title;
+  List<String>? get options => _options;
 
   ChoiceOptions.fromJson(Map<String, dynamic> json) {
     _name = json['name'];
@@ -340,22 +339,22 @@ class ChoiceOptions {
 }
 
 class Variation {
-  String _type;
-  double _price;
-  String _sku;
-  int _qty;
+  String? _type;
+  double? _price;
+  String? _sku;
+  int? _qty;
 
-  Variation({String type, double price, String sku, int qty}) {
+  Variation({String? type, double? price, String? sku, int? qty}) {
     this._type = type;
     this._price = price;
     this._sku = sku;
     this._qty = qty;
   }
 
-  String get type => _type;
-  double get price => _price;
-  String get sku => _sku;
-  int get qty => _qty;
+  String get type => _type!;
+  double get price => _price!;
+  String get sku => _sku!;
+  int get qty => _qty!;
 
   Variation.fromJson(Map<String, dynamic> json) {
     _type = json['type'];
@@ -375,16 +374,16 @@ class Variation {
 }
 
 class Rating {
-  String _average;
-  int _productId;
+  String? _average;
+  int? _productId;
 
-  Rating({String average, int productId}) {
+  Rating({String? average, int? productId}) {
     this._average = average;
     this._productId = productId;
   }
 
-  String get average => _average;
-  int get productId => _productId;
+  String? get average => _average;
+  int? get productId => _productId;
 
   Rating.fromJson(Map<String, dynamic> json) {
     _average = json['average'].toString();
@@ -398,5 +397,3 @@ class Rating {
     return data;
   }
 }
-
-

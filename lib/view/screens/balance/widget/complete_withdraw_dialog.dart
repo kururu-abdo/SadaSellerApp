@@ -15,27 +15,37 @@ class CompleteOrderWidget extends StatelessWidget {
         padding: EdgeInsets.all(Dimensions.PADDING_SIZE_DEFAULT),
         child: Column(
           children: [
-            Icon(Icons.check_circle_outline, size: 50, color: Theme.of(context).primaryColor,),
-            Text( getTranslated('congrats', context),
-              style: titilliumRegular.copyWith(fontSize: 22, color: Theme.of(context).primaryColor),
+            Icon(
+              Icons.check_circle_outline,
+              size: 50,
+              color: Theme.of(context).primaryColor,
+            ),
+            Text(
+              getTranslated('congrats', context),
+              style: titilliumRegular.copyWith(
+                  fontSize: 22, color: Theme.of(context).primaryColor),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text( getTranslated('your_withdrawal', context),
+              child: Text(
+                getTranslated('your_withdrawal', context),
                 textAlign: TextAlign.center,
-                style: titilliumRegular.copyWith(color: ColorResources.GREY, fontSize: 15),
+                style: titilliumRegular.copyWith(
+                    color: ColorResources.GREY, fontSize: 15),
               ),
             ),
-
-           SizedBox(height: 40,),
-           Padding(
-             padding: const EdgeInsets.all(Dimensions.PADDING_SIZE_DEFAULT),
-             child: CustomButton(btnTxt: getTranslated('go_to_home', context),
-                 backgroundColor: ColorResources.WHITE,
-               onTap: ()  {
-                 Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => DashboardScreen()));
-               })
-           ),
+            SizedBox(
+              height: 40,
+            ),
+            Padding(
+                padding: const EdgeInsets.all(Dimensions.PADDING_SIZE_DEFAULT),
+                child: CustomButton(
+                    btnTxt: getTranslated('go_to_home', context),
+                    backgroundColor: ColorResources.WHITE,
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (_) => DashboardScreen()));
+                    })),
           ],
         ),
       ),

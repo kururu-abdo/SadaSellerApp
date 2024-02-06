@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
-void showAnimatedDialog(BuildContext context, Widget dialog, {bool isFlip = false, bool dismissible = true}) {
+void showAnimatedDialog(BuildContext context, Widget dialog,
+    {bool isFlip = false, bool dismissible = true}) {
   showGeneralDialog(
     context: context,
     barrierDismissible: dismissible,
@@ -10,16 +11,21 @@ void showAnimatedDialog(BuildContext context, Widget dialog, {bool isFlip = fals
     pageBuilder: (context, animation1, animation2) => dialog,
     transitionDuration: Duration(milliseconds: 500),
     transitionBuilder: (context, a1, a2, widget) {
-      if(isFlip) {
+      if (isFlip) {
         return Rotation3DTransition(
           alignment: Alignment.center,
-          turns: Tween<double>(begin: math.pi, end: 2.0 * math.pi).animate(CurvedAnimation(parent: a1, curve: Interval(0.0, 1.0, curve: Curves.linear))),
+          turns: Tween<double>(begin: math.pi, end: 2.0 * math.pi).animate(
+              CurvedAnimation(
+                  parent: a1, curve: Interval(0.0, 1.0, curve: Curves.linear))),
           child: FadeTransition(
-            opacity: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(parent: a1, curve: Interval(0.5, 1.0, curve: Curves.elasticOut))),
+            opacity: Tween<double>(begin: 0.0, end: 1.0).animate(
+                CurvedAnimation(
+                    parent: a1,
+                    curve: Interval(0.5, 1.0, curve: Curves.elasticOut))),
             child: widget,
           ),
         );
-      }else {
+      } else {
         return Transform.scale(
           scale: a1.value,
           child: Opacity(
@@ -33,18 +39,18 @@ void showAnimatedDialog(BuildContext context, Widget dialog, {bool isFlip = fals
 }
 
 class Rotation3DTransition extends AnimatedWidget {
-  const Rotation3DTransition({
-    Key key,
-    @required Animation<double> turns,
+  Rotation3DTransition({
+    Key? key,
+    required Animation<double>? turns,
     this.alignment = Alignment.center,
     this.child,
   })  : assert(turns != null),
-        super(key: key, listenable: turns);
+        super(key: key, listenable: turns!);
 
-  Animation<double> get turns => listenable;
+  Animation<double> get turns => turns;
 
-  final Alignment alignment;
-  final Widget child;
+  final Alignment? alignment;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {

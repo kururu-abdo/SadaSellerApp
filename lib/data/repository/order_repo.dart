@@ -6,12 +6,12 @@ import 'package:eamar_seller_app/data/model/response/base/api_response.dart';
 import 'package:eamar_seller_app/utill/app_constants.dart';
 
 class OrderListRepo {
-  final DioClient dioClient;
+  final DioClient? dioClient;
   OrderListRepo({@required this.dioClient});
 
   Future<ApiResponse> getOrderList() async {
     try {
-      final response = await dioClient.get(AppConstants.ORDER_LIST_URI);
+      final response = await dioClient!.get(AppConstants.ORDER_LIST_URI);
       return ApiResponse.withSuccess(response);
     } catch (e) {
       return ApiResponse.withError(ApiErrorHandler.getMessage(e));
@@ -20,18 +20,19 @@ class OrderListRepo {
 
   Future<ApiResponse> getOrderDetails(String orderID) async {
     try {
-      final response = await dioClient.get(AppConstants.ORDER_DETAILS+orderID);
+      final response =
+          await dioClient!.get(AppConstants.ORDER_DETAILS + orderID);
       return ApiResponse.withSuccess(response);
     } catch (e) {
       return ApiResponse.withError(ApiErrorHandler.getMessage(e));
     }
   }
 
-
-  Future<ApiResponse> orderStatus(int orderID , String status) async {
-    print('update order status ====>${orderID.toString()} =======>${status.toString()}');
+  Future<ApiResponse> orderStatus(int orderID, String status) async {
+    print(
+        'update order status ====>${orderID.toString()} =======>${status.toString()}');
     try {
-      Response response = await dioClient.post(
+      Response response = await dioClient!.post(
         '${AppConstants.UPDATE_ORDER_STATUS}$orderID',
         data: {'_method': 'put', 'order_status': status},
       );
@@ -44,14 +45,14 @@ class OrderListRepo {
   Future<ApiResponse> getOrderStatusList(String type) async {
     try {
       List<String> addressTypeList = [];
-      if(type == 'inhouse_shipping'){
+      if (type == 'inhouse_shipping') {
         addressTypeList = [
           'Select Order Status',
           AppConstants.PENDING,
           AppConstants.CONFIRMED,
           AppConstants.PROCESSING,
         ];
-      }else{
+      } else {
         addressTypeList = [
           'Select Order Status',
           AppConstants.PENDING,
@@ -62,28 +63,29 @@ class OrderListRepo {
           AppConstants.RETURNED,
           AppConstants.FAILED,
           AppConstants.CANCELLED,
-
         ];
       }
 
-      Response response = Response(requestOptions: RequestOptions(path: ''), data: addressTypeList, statusCode: 200);
+      Response response = Response(
+          requestOptions: RequestOptions(path: ''),
+          data: addressTypeList,
+          statusCode: 200);
       return ApiResponse.withSuccess(response);
     } catch (e) {
       return ApiResponse.withError(ApiErrorHandler.getMessage(e));
     }
   }
 
-  Future<ApiResponse> updatePaymentStatus({int orderId, String status}) async {
+  Future<ApiResponse> updatePaymentStatus(
+      {int? orderId, String? status}) async {
     try {
-      Response response = await dioClient.post(AppConstants.PAYMENT_STATUS_UPDATE,
-        data: {"order_id": orderId, "payment_status": status},);
+      Response response = await dioClient!.post(
+        AppConstants.PAYMENT_STATUS_UPDATE,
+        data: {"order_id": orderId, "payment_status": status},
+      );
       return ApiResponse.withSuccess(response);
     } catch (e) {
       return ApiResponse.withError(ApiErrorHandler.getMessage(e));
     }
-
-
-
   }
-
 }

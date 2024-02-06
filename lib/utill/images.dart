@@ -1,9 +1,11 @@
 class Images {
   static const String placeholder_image = 'assets/image/placeholder.jpg';
-  static const String toolbar_background = 'assets/image/toolbar_background.jpg';
+  static const String toolbar_background =
+      'assets/image/toolbar_background.jpg';
   static const String onboarding_one = 'assets/image/onboarding_image_one.png';
   static const String onboarding_two = 'assets/image/onboarding_image_two.png';
-  static const String onboarding_three = 'assets/image/onboarding_image_three.png';
+  static const String onboarding_three =
+      'assets/image/onboarding_image_three.png';
   static const String logo = 'assets/image/logo.png';
   static const String logo_with_app_name = 'assets/image/logo_with_name.png';
   static const String home = 'assets/image/home.png';
@@ -31,7 +33,8 @@ class Images {
   static const String product_1 = 'assets/image/product_12.jpg';
   static const String product_2 = 'assets/image/product_2.png';
   static const String restaurant_image = 'assets/image/resturant.jpg';
-  static const String destination_marker = 'assets/image/destination_marker.png';
+  static const String destination_marker =
+      'assets/image/destination_marker.png';
   static const String dark_mode = 'assets/image/dark_mode.png';
   static const String light_mode = 'assets/image/light_mode.png';
   static const String logout = 'assets/image/log_out.png';
@@ -52,7 +55,8 @@ class Images {
   static const String privacy_policy = 'assets/image/privacy-policy.png';
   static const String profile = 'assets/image/profile.png';
   static const String settings = 'assets/image/settings.png';
-  static const String terms_and_condition = 'assets/image/terms-and-conditions.png';
+  static const String terms_and_condition =
+      'assets/image/terms-and-conditions.png';
   static const String edit_profile = 'assets/image/edit_profile.png';
   static const String send = 'assets/image/send.png';
   static const String card_white = 'assets/image/card_white.png';

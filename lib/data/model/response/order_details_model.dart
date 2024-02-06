@@ -1,42 +1,42 @@
 class OrderDetailsModel {
-  int _id;
-  int _orderId;
-  int _productId;
-  int _sellerId;
-  ProductDetails _productDetails;
-  int _qty;
-  double _price;
-  double _tax;
-  double _discount;
-  String _deliveryStatus;
-  String _paymentStatus;
-  String _createdAt;
-  String _updatedAt;
-  int _shippingMethodId;
-  String _variant;
-  String _variation;
-  String _discountType;
-  Shipping _shipping;
+  int? _id;
+  int? _orderId;
+  int? _productId;
+  int? _sellerId;
+  ProductDetails? _productDetails;
+  int? _qty;
+  double? _price;
+  double? _tax;
+  double? _discount;
+  String? _deliveryStatus;
+  String? _paymentStatus;
+  String? _createdAt;
+  String? _updatedAt;
+  int? _shippingMethodId;
+  String? _variant;
+  String? _variation;
+  String? _discountType;
+  Shipping? _shipping;
 
   OrderDetailsModel(
-      {int id,
-        int orderId,
-        int productId,
-        int sellerId,
-        ProductDetails productDetails,
-        int qty,
-        double price,
-        double tax,
-        double discount,
-        String deliveryStatus,
-        String paymentStatus,
-        String createdAt,
-        String updatedAt,
-        int shippingMethodId,
-        String variant,
-        String variation,
-        String discountType,
-        Shipping shipping}) {
+      {int? id,
+      int? orderId,
+      int? productId,
+      int? sellerId,
+      ProductDetails? productDetails,
+      int? qty,
+      double? price,
+      double? tax,
+      double? discount,
+      String? deliveryStatus,
+      String? paymentStatus,
+      String? createdAt,
+      String? updatedAt,
+      int? shippingMethodId,
+      String? variant,
+      String? variation,
+      String? discountType,
+      Shipping? shipping}) {
     this._id = id;
     this._orderId = orderId;
     this._productId = productId;
@@ -57,31 +57,31 @@ class OrderDetailsModel {
     this._shipping = shipping;
   }
 
-  int get id => _id;
+  int? get id => _id;
   // ignore: unnecessary_getters_setters
-  int get orderId => _orderId;
+  int get orderId => _orderId!;
 
   // ignore: unnecessary_getters_setters
   set orderId(int orderId) => _orderId = orderId;
-  int get productId => _productId;
-  int get sellerId => _sellerId;
-  ProductDetails get productDetails => _productDetails;
-  int get qty => _qty;
-  double get price => _price;
-  double get tax => _tax;
-  double get discount => _discount;
+  int? get productId => _productId;
+  int? get sellerId => _sellerId;
+  ProductDetails? get productDetails => _productDetails;
+  int? get qty => _qty;
+  double? get price => _price;
+  double? get tax => _tax;
+  double? get discount => _discount;
   // ignore: unnecessary_getters_setters
-  String get deliveryStatus => _deliveryStatus;
+  String get deliveryStatus => _deliveryStatus!;
   // ignore: unnecessary_getters_setters
   set deliveryStatus(String deliveryStatus) => _deliveryStatus = deliveryStatus;
-  String get paymentStatus => _paymentStatus;
-  String get createdAt => _createdAt;
-  String get updatedAt => _updatedAt;
-  int get shippingMethodId => _shippingMethodId;
-  String get variant => _variant;
-  String get variation => _variation;
-  String get discountType => _discountType;
-  Shipping get shipping => _shipping;
+  String? get paymentStatus => _paymentStatus;
+  String? get createdAt => _createdAt;
+  String? get updatedAt => _updatedAt;
+  int? get shippingMethodId => _shippingMethodId;
+  String? get variant => _variant;
+  String? get variation => _variation;
+  String? get discountType => _discountType;
+  Shipping? get shipping => _shipping;
 
   OrderDetailsModel.fromJson(Map<String, dynamic> json) {
     _id = json['id'];
@@ -92,7 +92,7 @@ class OrderDetailsModel {
         ? new ProductDetails.fromJson(json['product_details'])
         : null;
     _qty = json['qty'];
-    if(json['price']!=null){
+    if (json['price'] != null) {
       _price = json['price'].toDouble();
     }
 
@@ -118,7 +118,7 @@ class OrderDetailsModel {
     data['product_id'] = this._productId;
     data['seller_id'] = this._sellerId;
     if (this._productDetails != null) {
-      data['product_details'] = this._productDetails.toJson();
+      data['product_details'] = this._productDetails!.toJson();
     }
     data['qty'] = this._qty;
     data['price'] = this._price;
@@ -133,63 +133,63 @@ class OrderDetailsModel {
     data['variation'] = this._variation;
     data['discount_type'] = this._discountType;
     if (this._shipping != null) {
-      data['shipping'] = this._shipping.toJson();
+      data['shipping'] = this._shipping!.toJson();
     }
     return data;
   }
 }
 
 class ProductDetails {
-  int _id;
-  String _addedBy;
-  int _userId;
-  String _name;
-  List<CategoryIds> _categoryIds;
-  int _brandId;
-  String _unit;
-  int _minQty;
-  List<String> _images;
-  String _thumbnail;
-  List<Colores> _colors;
-  List<ChoiceOptions> _choiceOptions;
-  List<Variation> _variation;
-  double _unitPrice;
-  double _purchasePrice;
-  double _tax;
-  String _taxType;
-  double _discount;
-  String _discountType;
-  int _currentStock;
-  String _details;
-  int _freeShipping;
-  String _createdAt;
-  String _updatedAt;
+  int? _id;
+  String? _addedBy;
+  int? _userId;
+  String? _name;
+  List<CategoryIds>? _categoryIds;
+  int? _brandId;
+  String? _unit;
+  int? _minQty;
+  List<String>? _images;
+  String? _thumbnail;
+  List<Colores>? _colors;
+  List<ChoiceOptions>? _choiceOptions;
+  List<Variation>? _variation;
+  double? _unitPrice;
+  double? _purchasePrice;
+  double? _tax;
+  String? _taxType;
+  double? _discount;
+  String? _discountType;
+  int? _currentStock;
+  String? _details;
+  int? _freeShipping;
+  String? _createdAt;
+  String? _updatedAt;
 
   ProductDetails(
-      {int id,
-        String addedBy,
-        int userId,
-        String name,
-        List<CategoryIds> categoryIds,
-        int brandId,
-        String unit,
-        int minQty,
-        List<String> images,
-        String thumbnail,
-        List<Colores> colors,
-        List<String> attributes,
-        List<ChoiceOptions> choiceOptions,
-        List<Variation> variation,
-        double unitPrice,
-        double purchasePrice,
-        double tax,
-        String taxType,
-        double discount,
-        String discountType,
-        int currentStock,
-        String details,
-        String createdAt,
-        String updatedAt}) {
+      {int? id,
+      String? addedBy,
+      int? userId,
+      String? name,
+      List<CategoryIds>? categoryIds,
+      int? brandId,
+      String? unit,
+      int? minQty,
+      List<String>? images,
+      String? thumbnail,
+      List<Colores>? colors,
+      List<String>? attributes,
+      List<ChoiceOptions>? choiceOptions,
+      List<Variation>? variation,
+      double? unitPrice,
+      double? purchasePrice,
+      double? tax,
+      String? taxType,
+      double? discount,
+      String? discountType,
+      int? currentStock,
+      String? details,
+      String? createdAt,
+      String? updatedAt}) {
     this._id = id;
     this._addedBy = addedBy;
     this._userId = userId;
@@ -216,30 +216,30 @@ class ProductDetails {
     this._updatedAt = updatedAt;
   }
 
-  int get id => _id;
-  String get addedBy => _addedBy;
-  int get userId => _userId;
-  String get name => _name;
-  List<CategoryIds> get categoryIds => _categoryIds;
-  int get brandId => _brandId;
-  String get unit => _unit;
-  int get minQty => _minQty;
-  List<String> get images => _images;
-  String get thumbnail => _thumbnail;
-  List<Colores> get colors => _colors;
-  List<ChoiceOptions> get choiceOptions => _choiceOptions;
-  List<Variation> get variation => _variation;
-  double get unitPrice => _unitPrice;
-  double get purchasePrice => _purchasePrice;
-  double get tax => _tax;
-  String get taxType => _taxType;
-  double get discount => _discount;
-  String get discountType => _discountType;
-  int get currentStock => _currentStock;
-  String get details => _details;
-  int get freeShipping => _freeShipping;
-  String get createdAt => _createdAt;
-  String get updatedAt => _updatedAt;
+  int get id => _id!;
+  String get addedBy => _addedBy!;
+  int get userId => _userId!;
+  String get name => _name!;
+  List<CategoryIds> get categoryIds => _categoryIds!;
+  int get brandId => _brandId!;
+  String get unit => _unit!;
+  int get minQty => _minQty!;
+  List<String> get images => _images!;
+  String get thumbnail => _thumbnail!;
+  List<Colores> get colors => _colors!;
+  List<ChoiceOptions> get choiceOptions => _choiceOptions!;
+  List<Variation> get variation => _variation!;
+  double get unitPrice => _unitPrice!;
+  double get purchasePrice => _purchasePrice!;
+  double get tax => _tax!;
+  String get taxType => _taxType!;
+  double get discount => _discount!;
+  String get discountType => _discountType!;
+  int get currentStock => _currentStock!;
+  String get details => _details!;
+  int get freeShipping => _freeShipping!;
+  String get createdAt => _createdAt!;
+  String get updatedAt => _updatedAt!;
 
   ProductDetails.fromJson(Map<String, dynamic> json) {
     _id = json['id'];
@@ -249,7 +249,7 @@ class ProductDetails {
     if (json['category_ids'] != null) {
       _categoryIds = [];
       json['category_ids'].forEach((v) {
-        _categoryIds.add(new CategoryIds.fromJson(v));
+        _categoryIds!.add(new CategoryIds.fromJson(v));
       });
     }
     _brandId = json['brand_id'];
@@ -260,19 +260,19 @@ class ProductDetails {
     if (json['colors'] != null) {
       _colors = [];
       json['colors'].forEach((v) {
-        _colors.add(new Colores.fromJson(v));
+        _colors!.add(new Colores.fromJson(v));
       });
     }
     if (json['choice_options'] != null) {
       _choiceOptions = [];
       json['choice_options'].forEach((v) {
-        _choiceOptions.add(new ChoiceOptions.fromJson(v));
+        _choiceOptions!.add(new ChoiceOptions.fromJson(v));
       });
     }
     if (json['variation'] != null) {
       _variation = [];
       json['variation'].forEach((v) {
-        _variation.add(new Variation.fromJson(v));
+        _variation!.add(new Variation.fromJson(v));
       });
     }
     _unitPrice = json['unit_price'].toDouble();
@@ -295,7 +295,7 @@ class ProductDetails {
     data['user_id'] = this._userId;
     data['name'] = this._name;
     if (this._categoryIds != null) {
-      data['category_ids'] = this._categoryIds.map((v) => v.toJson()).toList();
+      data['category_ids'] = this._categoryIds!.map((v) => v.toJson()).toList();
     }
     data['brand_id'] = this._brandId;
     data['unit'] = this._unit;
@@ -303,14 +303,14 @@ class ProductDetails {
     data['images'] = this._images;
     data['thumbnail'] = this._thumbnail;
     if (this._colors != null) {
-      data['colors'] = this._colors.map((v) => v.toJson()).toList();
+      data['colors'] = this._colors!.map((v) => v.toJson()).toList();
     }
     if (this._choiceOptions != null) {
       data['choice_options'] =
-          this._choiceOptions.map((v) => v.toJson()).toList();
+          this._choiceOptions!.map((v) => v.toJson()).toList();
     }
     if (this._variation != null) {
-      data['variation'] = this._variation.map((v) => v.toJson()).toList();
+      data['variation'] = this._variation!.map((v) => v.toJson()).toList();
     }
     data['unit_price'] = this._unitPrice;
     data['purchase_price'] = this._purchasePrice;
@@ -328,16 +328,16 @@ class ProductDetails {
 }
 
 class CategoryIds {
-  String _id;
-  int _position;
+  String? _id;
+  int? _position;
 
-  CategoryIds({String id, int position}) {
+  CategoryIds({String? id, int? position}) {
     this._id = id;
     this._position = position;
   }
 
-  String get id => _id;
-  int get position => _position;
+  String get id => _id!;
+  int get position => _position!;
 
   CategoryIds.fromJson(Map<String, dynamic> json) {
     _id = json['id'].toString();
@@ -353,16 +353,16 @@ class CategoryIds {
 }
 
 class Colores {
-  String _name;
-  String _code;
+  String? _name;
+  String? _code;
 
-  Colores({String name, String code}) {
+  Colores({String? name, String? code}) {
     this._name = name;
     this._code = code;
   }
 
-  String get name => _name;
-  String get code => _code;
+  String get name => _name!;
+  String get code => _code!;
 
   Colores.fromJson(Map<String, dynamic> json) {
     _name = json['name'];
@@ -378,19 +378,19 @@ class Colores {
 }
 
 class ChoiceOptions {
-  String _name;
-  String _title;
-  List<String> _options;
+  String? _name;
+  String? _title;
+  List<String>? _options;
 
-  ChoiceOptions({String name, String title, List<String> options}) {
+  ChoiceOptions({String? name, String? title, List<String>? options}) {
     this._name = name;
     this._title = title;
     this._options = options;
   }
 
-  String get name => _name;
-  String get title => _title;
-  List<String> get options => _options;
+  String get name => _name!;
+  String get title => _title!;
+  List<String> get options => _options!;
 
   ChoiceOptions.fromJson(Map<String, dynamic> json) {
     _name = json['name'];
@@ -408,22 +408,22 @@ class ChoiceOptions {
 }
 
 class Variation {
-  String _type;
-  double _price;
-  String _sku;
-  int _qty;
+  String? _type;
+  double? _price;
+  String? _sku;
+  int? _qty;
 
-  Variation({String type, double price, String sku, int qty}) {
+  Variation({String? type, double? price, String? sku, int? qty}) {
     this._type = type;
     this._price = price;
     this._sku = sku;
     this._qty = qty;
   }
 
-  String get type => _type;
-  double get price => _price;
-  String get sku => _sku;
-  int get qty => _qty;
+  String get type => _type!;
+  double get price => _price!;
+  String get sku => _sku!;
+  int get qty => _qty!;
 
   Variation.fromJson(Map<String, dynamic> json) {
     _type = json['type'];
@@ -443,26 +443,26 @@ class Variation {
 }
 
 class Shipping {
-  int _id;
-  int _creatorId;
-  String _creatorType;
-  String _title;
-  int _cost;
-  String _duration;
-  int _status;
-  String _createdAt;
-  String _updatedAt;
+  int? _id;
+  int? _creatorId;
+  String? _creatorType;
+  String? _title;
+  int? _cost;
+  String? _duration;
+  int? _status;
+  String? _createdAt;
+  String? _updatedAt;
 
   Shipping(
-      {int id,
-        int creatorId,
-        String creatorType,
-        String title,
-        int cost,
-        String duration,
-        int status,
-        String createdAt,
-        String updatedAt}) {
+      {int? id,
+      int? creatorId,
+      String? creatorType,
+      String? title,
+      int? cost,
+      String? duration,
+      int? status,
+      String? createdAt,
+      String? updatedAt}) {
     this._id = id;
     this._creatorId = creatorId;
     this._creatorType = creatorType;
@@ -474,15 +474,15 @@ class Shipping {
     this._updatedAt = updatedAt;
   }
 
-  int get id => _id;
-  int get creatorId => _creatorId;
-  String get creatorType => _creatorType;
-  String get title => _title;
-  int get cost => _cost;
-  String get duration => _duration;
-  int get status => _status;
-  String get createdAt => _createdAt;
-  String get updatedAt => _updatedAt;
+  int get id => _id!;
+  int get creatorId => _creatorId!;
+  String get creatorType => _creatorType!;
+  String get title => _title!;
+  int get cost => _cost!;
+  String get duration => _duration!;
+  int get status => _status!;
+  String get createdAt => _createdAt!;
+  String get updatedAt => _updatedAt!;
 
   Shipping.fromJson(Map<String, dynamic> json) {
     _id = json['id'];

@@ -1,21 +1,20 @@
 class BusinessModel {
-  int _id;
-  String _title;
-  String _duration;
-  int _cost;
+  int? _id;
+  String? _title;
+  String? _duration;
+  int? _cost;
 
-  BusinessModel(
-      {int id, String title, String duration, int cost}) {
+  BusinessModel({int? id, String? title, String? duration, int? cost}) {
     this._id = id;
     this._title = title;
     this._duration = duration;
     this._cost = cost;
   }
 
-  int get id => _id;
-  String get title => _title;
-  String get duration => _duration;
-  int get cost => _cost;
+  int get id => _id!;
+  String get title => _title!;
+  String get duration => _duration!;
+  int get cost => _cost!;
 
   BusinessModel.fromJson(Map<String, dynamic> json) {
     _id = json['id'];

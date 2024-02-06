@@ -1,34 +1,34 @@
 class DeliveryManModel {
-  int id;
-  int sellerId;
-  String fName;
-  String lName;
-  String phone;
-  String email;
-  String identityNumber;
-  String identityType;
-  String identityImage;
-  String image;
-  int isActive;
-  String createdAt;
-  String updatedAt;
-  String fcmToken;
+  int? id;
+  int? sellerId;
+  String? fName;
+  String? lName;
+  String? phone;
+  String? email;
+  String? identityNumber;
+  String? identityType;
+  String? identityImage;
+  String? image;
+  int? isActive;
+  String? createdAt;
+  String? updatedAt;
+  String? fcmToken;
 
   DeliveryManModel(
       {this.id,
-        this.sellerId,
-        this.fName,
-        this.lName,
-        this.phone,
-        this.email,
-        this.identityNumber,
-        this.identityType,
-        this.identityImage,
-        this.image,
-        this.isActive,
-        this.createdAt,
-        this.updatedAt,
-        this.fcmToken});
+      this.sellerId,
+      this.fName,
+      this.lName,
+      this.phone,
+      this.email,
+      this.identityNumber,
+      this.identityType,
+      this.identityImage,
+      this.image,
+      this.isActive,
+      this.createdAt,
+      this.updatedAt,
+      this.fcmToken});
 
   DeliveryManModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];

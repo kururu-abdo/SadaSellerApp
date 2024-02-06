@@ -1,27 +1,26 @@
 class ReviewModel {
-  int id;
-  int productId;
-  int customerId;
-  String comment;
-  List<String> attachment;
-  int rating;
-  int status;
-  String createdAt;
-  String updatedAt;
-  Product product;
-  Customer customer;
-
+  int? id;
+  int? productId;
+  int? customerId;
+  String? comment;
+  List<String>? attachment;
+  int? rating;
+  int? status;
+  String? createdAt;
+  String? updatedAt;
+  Product? product;
+  Customer? customer;
 
   ReviewModel(
       {this.id,
-        this.productId,
-        this.customerId,
-        this.comment,
-        this.attachment,
-        this.rating,
-        this.status,
-        this.createdAt,
-        this.updatedAt,
+      this.productId,
+      this.customerId,
+      this.comment,
+      this.attachment,
+      this.rating,
+      this.status,
+      this.createdAt,
+      this.updatedAt,
       this.customer});
 
   ReviewModel.fromJson(Map<String, dynamic> json) {
@@ -34,10 +33,10 @@ class ReviewModel {
     status = json['status'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
-    product = json['product'] != null ? new Product.fromJson(json['product']) : null;
-    customer = json['customer'] != null ?  Customer.fromJson(json['customer']) : null;
-
-
+    product =
+        json['product'] != null ? new Product.fromJson(json['product']) : null;
+    customer =
+        json['customer'] != null ? Customer.fromJson(json['customer']) : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -52,23 +51,20 @@ class ReviewModel {
     data['created_at'] = this.createdAt;
     data['updated_at'] = this.updatedAt;
     if (this.product != null) {
-      data['product'] = this.product.toJson();
+      data['product'] = this.product!.toJson();
     }
     if (this.customer != null) {
-      data['customer'] = this.customer.toJson();
+      data['customer'] = this.customer!.toJson();
     }
     return data;
   }
 }
 
 class Product {
-  int id;
-  String name;
-  String thumbnail;
-  Product(
-      {this.id,
-        this.name,
-        this.thumbnail});
+  int? id;
+  String? name;
+  String? thumbnail;
+  Product({this.id, this.name, this.thumbnail});
 
   Product.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -86,25 +82,23 @@ class Product {
 }
 
 class Customer {
-  int id;
-  String name;
-  String fName;
-  String lName;
+  int? id;
+  String? name;
+  String? fName;
+  String? lName;
 
-
-  Customer(
-      {this.id,
-        this.name,
-        this.fName,
-        this.lName,
-       });
+  Customer({
+    this.id,
+    this.name,
+    this.fName,
+    this.lName,
+  });
 
   Customer.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     fName = json['f_name'];
     lName = json['l_name'];
-
   }
 
   Map<String, dynamic> toJson() {

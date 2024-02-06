@@ -1,4 +1,3 @@
-
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -16,9 +15,7 @@ import 'package:eamar_seller_app/view/screens/menu/menu_screen.dart';
 import 'package:eamar_seller_app/view/screens/order/order_screen.dart';
 import 'package:eamar_seller_app/view/screens/refund/refund_screen.dart';
 
-
 class DashboardScreen extends StatefulWidget {
-
   @override
   _DashboardScreenState createState() => _DashboardScreenState();
 }
@@ -26,9 +23,9 @@ class DashboardScreen extends StatefulWidget {
 class _DashboardScreenState extends State<DashboardScreen> {
   final PageController _pageController = PageController();
   int _pageIndex = 0;
-  List<Widget> _screens;
+  List<Widget>? _screens;
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
-  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
+  FlutterLocalNotificationsPlugin? flutterLocalNotificationsPlugin;
 
   @override
   void initState() {
@@ -40,30 +37,33 @@ class _DashboardScreenState extends State<DashboardScreen> {
           _setPage(1);
         });
       }),
-
       OrderScreen(),
       RefundScreen(),
-
     ];
 
     NetworkInfo.checkConnectivity(context);
 
-    var androidInitialize = const AndroidInitializationSettings('notification_icon');
-    var iOSInitialize = const IOSInitializationSettings();
-    var initializationsSettings = InitializationSettings(android: androidInitialize, iOS: iOSInitialize);
+    var androidInitialize =
+        const AndroidInitializationSettings('notification_icon');
+    var iOSInitialize = const DarwinInitializationSettings(
+      requestAlertPermission: false,
+      requestBadgePermission: false,
+      requestSoundPermission: false,
+    );
+    var initializationsSettings =
+        InitializationSettings(android: androidInitialize, iOS: iOSInitialize);
     flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
-    flutterLocalNotificationsPlugin.initialize(initializationsSettings);
+    flutterLocalNotificationsPlugin!.initialize(initializationsSettings);
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       debugPrint("onMessage: ${message.data}");
-      NotificationHelper.showNotification(message, flutterLocalNotificationsPlugin, false);
+      NotificationHelper.showNotification(
+          message, flutterLocalNotificationsPlugin!, false);
       Provider.of<OrderProvider>(context, listen: false).getOrderList(context);
-
     });
 
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
       debugPrint("onMessageOpenedApp: ${message.data}");
-
     });
   }
 
@@ -105,17 +105,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   context: context,
                   isScrollControlled: true,
                   backgroundColor: Colors.transparent,
-                  builder: (con) => MenuBottomSheet()
-              );
+                  builder: (con) => MenuBottomSheet());
             }
           },
         ),
         body: PageView.builder(
           controller: _pageController,
-          itemCount: _screens.length,
+          itemCount: _screens!.length,
           physics: NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
-            return _screens[index];
+            return _screens![index];
           },
         ),
       ),
@@ -125,18 +124,23 @@ class _DashboardScreenState extends State<DashboardScreen> {
   BottomNavigationBarItem _barItem(String icon, String label, int index) {
     return BottomNavigationBarItem(
       icon: Padding(
-        padding: const EdgeInsets.only(bottom : Dimensions.PADDING_SIZE_EXTRA_SMALL),
+        padding:
+            const EdgeInsets.only(bottom: Dimensions.PADDING_SIZE_EXTRA_SMALL),
         child: Stack(
           clipBehavior: Clip.none,
           children: [
-            Container(width: Dimensions.ICON_SIZE_EXTRA_LARGE,
-                child: Image.asset(icon, color: index == _pageIndex ?
-                Theme.of(context).primaryColor : ColorResources.HINT_TEXT_COLOR,)),
+            Container(
+                width: Dimensions.ICON_SIZE_EXTRA_LARGE,
+                child: Image.asset(
+                  icon,
+                  color: index == _pageIndex
+                      ? Theme.of(context).primaryColor
+                      : ColorResources.HINT_TEXT_COLOR,
+                )),
           ],
         ),
       ),
       label: label,
-
     );
   }
 

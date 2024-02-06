@@ -28,8 +28,7 @@ const robotoHintRegular = TextStyle(
     fontFamily: 'Cairo',
     fontWeight: FontWeight.w400,
     fontSize: Dimensions.FONT_SIZE_SMALL,
-    color: Colors.grey
-);
+    color: Colors.grey);
 const robotoRegular = TextStyle(
   fontFamily: 'Cairo',
   fontWeight: FontWeight.w400,

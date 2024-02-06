@@ -25,7 +25,7 @@ class LanguageProvider with ChangeNotifier {
       _selectIndex = -1;
       _languages = [];
       AppConstants.languages.forEach((product) async {
-        if (product.languageName.toLowerCase().contains(query.toLowerCase())) {
+        if (product.languageName!.toLowerCase().contains(query.toLowerCase())) {
           _languages.add(product);
         }
       });

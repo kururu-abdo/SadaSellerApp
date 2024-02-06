@@ -1,6 +1,6 @@
 class MonthModel {
-  int id;
-  String month;
+  int? id;
+  String? month;
 
   MonthModel({this.id, this.month});
 

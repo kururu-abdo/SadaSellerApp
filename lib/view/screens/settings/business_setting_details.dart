@@ -16,24 +16,22 @@ import 'package:eamar_seller_app/view/base/textfeild/custom_text_feild.dart';
 import 'business_setting.dart';
 
 class ShippingMethodScreen extends StatefulWidget {
-  final ShippingModel shipping;
+  final ShippingModel? shipping;
   ShippingMethodScreen({this.shipping});
   @override
   _ShippingMethodScreenState createState() => _ShippingMethodScreenState();
 }
 
 class _ShippingMethodScreenState extends State<ShippingMethodScreen> {
-
-  TextEditingController _titleController ;
-  TextEditingController _durationController ;
-  TextEditingController _costController ;
+  TextEditingController? _titleController;
+  TextEditingController? _durationController;
+  TextEditingController? _costController;
 
   final FocusNode _resNameNode = FocusNode();
   final FocusNode _addressNode = FocusNode();
   final FocusNode _phoneNode = FocusNode();
-  GlobalKey<FormState> _formKeyLogin;
-  ShippingModel shipping;
-
+  GlobalKey<FormState>? _formKeyLogin;
+  ShippingModel? shipping;
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -49,39 +47,43 @@ class _ShippingMethodScreenState extends State<ShippingMethodScreen> {
 
   @override
   void dispose() {
-    _titleController.dispose();
-    _durationController.dispose();
-    _costController.dispose();
+    _titleController!.dispose();
+    _durationController!.dispose();
+    _costController!.dispose();
     super.dispose();
   }
-  void callback(bool route, String error ){
-    if(route){
-      if(widget.shipping==null){
+
+  void callback(bool route, String error) {
+    if (route) {
+      if (widget.shipping == null) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          backgroundColor:  Colors.green,
-          content: Text(getTranslated('shipping_method_added_successfully', context)),
+          backgroundColor: Colors.green,
+          content: Text(
+              getTranslated('shipping_method_added_successfully', context)),
         ));
-      }else{
+      } else {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          backgroundColor:  Colors.green,
-          content: Text(getTranslated('shipping_method_update_successfully', context)),
+          backgroundColor: Colors.green,
+          content: Text(
+              getTranslated('shipping_method_update_successfully', context)),
         ));
       }
 
-        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => BusinessScreen()));
-
-    }else{
-      showCustomSnackBar(error,context);
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => BusinessScreen()));
+    } else {
+      showCustomSnackBar(error, context);
     }
-
-}
+  }
 
   @override
   Widget build(BuildContext context) {
-    if(widget.shipping!=null) {
-      _titleController.text = widget.shipping.title;
-      _durationController.text = widget.shipping.duration;
-      _costController.text = PriceConverter.convertAmount(widget.shipping.cost, context).toString();
+    if (widget.shipping != null) {
+      _titleController!.text = widget.shipping!.title!;
+      _durationController!.text = widget.shipping!.duration!;
+      _costController!.text =
+          PriceConverter.convertAmount(widget.shipping!.cost!, context)
+              .toString();
     }
     return Scaffold(
       key: _scaffoldKey,
@@ -94,14 +96,14 @@ class _ShippingMethodScreenState extends State<ShippingMethodScreen> {
             child: ListView(
               physics: BouncingScrollPhysics(),
               children: [
-
                 SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
                 Text(getTranslated('title', context),
-                    style: titilliumRegular.copyWith(fontSize: Dimensions.FONT_SIZE_DEFAULT,
-                      color: ColorResources.getHintColor(context),)),
+                    style: titilliumRegular.copyWith(
+                      fontSize: Dimensions.FONT_SIZE_DEFAULT,
+                      color: ColorResources.getHintColor(context),
+                    )),
 
                 SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
-
 
                 CustomTextField(
                   border: true,
@@ -114,10 +116,11 @@ class _ShippingMethodScreenState extends State<ShippingMethodScreen> {
                 ),
                 SizedBox(height: Dimensions.PADDING_SIZE_LARGE),
 
-
                 Text(getTranslated('duration', context),
-                    style: titilliumRegular.copyWith(fontSize: Dimensions.FONT_SIZE_DEFAULT,
-                      color: ColorResources.getHintColor(context),)),
+                    style: titilliumRegular.copyWith(
+                      fontSize: Dimensions.FONT_SIZE_DEFAULT,
+                      color: ColorResources.getHintColor(context),
+                    )),
 
                 SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
                 CustomTextField(
@@ -131,8 +134,10 @@ class _ShippingMethodScreenState extends State<ShippingMethodScreen> {
 
                 SizedBox(height: 22),
                 Text(getTranslated('cost', context),
-                    style: titilliumRegular.copyWith(fontSize: Dimensions.FONT_SIZE_DEFAULT,
-                      color: ColorResources.getHintColor(context),)),
+                    style: titilliumRegular.copyWith(
+                      fontSize: Dimensions.FONT_SIZE_DEFAULT,
+                      color: ColorResources.getHintColor(context),
+                    )),
 
                 SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
                 CustomTextField(
@@ -148,36 +153,56 @@ class _ShippingMethodScreenState extends State<ShippingMethodScreen> {
                 // for login button
                 SizedBox(height: 50),
 
-                Consumer<ShippingProvider>(builder: (context, shipProvider, child) {
-                  return !shipProvider.isLoading ? CustomButton(
-                    btnTxt: widget.shipping == null?getTranslated('save', context):getTranslated('update', context),
-                    backgroundColor: ColorResources.WHITE,
-                    onTap: ()  {
-                      String title = _titleController.text.trim();
-                      String cost = _costController.text.trim();
-                      String duration = _durationController.text.trim();
+                Consumer<ShippingProvider>(
+                    builder: (context, shipProvider, child) {
+                  return !shipProvider.isLoading!
+                      ? CustomButton(
+                          btnTxt: widget.shipping == null
+                              ? getTranslated('save', context)
+                              : getTranslated('update', context),
+                          backgroundColor: ColorResources.WHITE,
+                          onTap: () {
+                            String title = _titleController!.text.trim();
+                            String cost = _costController!.text.trim();
+                            String duration = _durationController!.text.trim();
 
-                      if(title.isEmpty){
-                        showCustomSnackBar(getTranslated('enter_title', context),context);
-                      }else if(cost.isEmpty){
-                        showCustomSnackBar(getTranslated('enter_cost', context),context);
-                      }else if(duration.isEmpty){
-                        showCustomSnackBar(getTranslated('enter_duration', context),context);
-                      } else{
-                        shipping.title = title;
-                        shipping.cost = PriceConverter.systemCurrencyToDefaultCurrency(double.parse(cost), context);
-                        shipping.duration = duration;
-                        print('-------${shipping.cost}');
-                        if(widget.shipping == null){
-                          Provider.of<ShippingProvider>(context,listen: false).addShippingMethod(shipping, callback);
-                        }
-                        else if(widget.shipping != null){
-                          Provider.of<ShippingProvider>(context,listen: false).updateShippingMethod(shipping.title,shipping.duration,shipping.cost,widget.shipping.id, callback);
-
-                        }
-                      }
-                    },
-                  ) : Center(child: CircularProgressIndicator());
+                            if (title.isEmpty) {
+                              showCustomSnackBar(
+                                  getTranslated('enter_title', context),
+                                  context);
+                            } else if (cost.isEmpty) {
+                              showCustomSnackBar(
+                                  getTranslated('enter_cost', context),
+                                  context);
+                            } else if (duration.isEmpty) {
+                              showCustomSnackBar(
+                                  getTranslated('enter_duration', context),
+                                  context);
+                            } else {
+                              shipping!.title = title;
+                              shipping!.cost = PriceConverter
+                                  .systemCurrencyToDefaultCurrency(
+                                      double.parse(cost), context);
+                              shipping!.duration = duration;
+                              print('-------${shipping!.cost}');
+                              if (widget.shipping == null) {
+                                Provider.of<ShippingProvider>(context,
+                                        listen: false)
+                                    .addShippingMethod(shipping!, callback);
+                              } else if (widget.shipping != null) {
+                                Provider.of<ShippingProvider>(context,
+                                        listen: false)
+                                    .updateShippingMethod(
+                                        shipping!.title!,
+                                        shipping!.duration!,
+                                        shipping!.cost!,
+                                        widget.shipping!.id!,
+                                        callback);
+                              }
+                            }
+                          },
+                        )
+                      : Center(child: CircularProgressIndicator());
                 }),
               ],
             ),

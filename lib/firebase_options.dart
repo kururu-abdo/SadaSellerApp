@@ -63,7 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '715551820384',
     projectId: 'eamar-ecda8',
     storageBucket: 'eamar-ecda8.appspot.com',
-    iosClientId: '715551820384-v0dam16d3em3e9pbk2uui6offfq5g8cr.apps.googleusercontent.com',
+    iosClientId:
+        '715551820384-v0dam16d3em3e9pbk2uui6offfq5g8cr.apps.googleusercontent.com',
     iosBundleId: 'net.eamar.seller',
   );
 }

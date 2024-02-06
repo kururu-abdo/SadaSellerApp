@@ -1,30 +1,30 @@
 class RestaurantModel {
-  int _id;
-  String _resName;
-  String _image;
-  String _location;
-  String _rating;
-  String _distance;
-  String _time;
-  String _availableTimeStarts;
-  String _availableTimeEnds;
-  String _discount;
-  String _description;
-  double _price;
+  int? _id;
+  String? _resName;
+  String? _image;
+  String? _location;
+  String? _rating;
+  String? _distance;
+  String? _time;
+  String? _availableTimeStarts;
+  String? _availableTimeEnds;
+  String? _discount;
+  String? _description;
+  double? _price;
 
   RestaurantModel(
-      {int id,
-        String resName,
-        String image,
-        String location,
-        String rating,
-        String distance,
-        String time,
-        String availableTimeStarts,
-        String availableTimeEnds,
-        String discount,
-        String description,
-      double price}) {
+      {int? id,
+      String? resName,
+      String? image,
+      String? location,
+      String? rating,
+      String? distance,
+      String? time,
+      String? availableTimeStarts,
+      String? availableTimeEnds,
+      String? discount,
+      String? description,
+      double? price}) {
     this._id = id;
     this._resName = resName;
     this._image = image;
@@ -39,18 +39,18 @@ class RestaurantModel {
     this._price = price;
   }
 
-  int get id => _id;
-  String get resName => _resName;
-  String get image => _image;
-  String get location => _location;
-  String get rating => _rating;
-  String get distance => _distance;
-  String get time => _time;
-  String get availableTimeStarts => _availableTimeStarts;
-  String get availableTimeEnds => _availableTimeEnds;
-  String get discount => _discount;
-  String get description => _description;
-  double get price => _price;
+  int get id => _id!;
+  String get resName => _resName!;
+  String get image => _image!;
+  String get location => _location!;
+  String get rating => _rating!;
+  String get distance => _distance!;
+  String get time => _time!;
+  String get availableTimeStarts => _availableTimeStarts!;
+  String get availableTimeEnds => _availableTimeEnds!;
+  String get discount => _discount!;
+  String get description => _description!;
+  double get price => _price!;
 
   RestaurantModel.fromJson(Map<String, dynamic> json) {
     _id = json['id'];

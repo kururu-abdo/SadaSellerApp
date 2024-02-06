@@ -1,37 +1,36 @@
-
 class MessageModel {
-  int _id;
-  int _userId;
-  int _sellerId;
-  String _message;
-  int _sentByCustomer;
-  int _sentBySeller;
-  int _seenByCustomer;
-  int _seenBySeller;
-  int _status;
-  String _createdAt;
-  String _updatedAt;
-  int _shopId;
-  SellerInfo _sellerInfo;
-  Customer _customer;
-  Shop _shop;
+  int? _id;
+  int? _userId;
+  int? _sellerId;
+  String? _message;
+  int? _sentByCustomer;
+  int? _sentBySeller;
+  int? _seenByCustomer;
+  int? _seenBySeller;
+  int? _status;
+  String? _createdAt;
+  String? _updatedAt;
+  int? _shopId;
+  SellerInfo? _sellerInfo;
+  Customer? _customer;
+  Shop? _shop;
 
   MessageModel(
-      {int id,
-        int userId,
-        int sellerId,
-        String message,
-        int sentByCustomer,
-        int sentBySeller,
-        int seenByCustomer,
-        int seenBySeller,
-        int status,
-        String createdAt,
-        String updatedAt,
-        int shopId,
-        SellerInfo sellerInfo,
-        Customer customer,
-        Shop shop}) {
+      {int? id,
+      int? userId,
+      int? sellerId,
+      String? message,
+      int? sentByCustomer,
+      int? sentBySeller,
+      int? seenByCustomer,
+      int? seenBySeller,
+      int? status,
+      String? createdAt,
+      String? updatedAt,
+      int? shopId,
+      SellerInfo? sellerInfo,
+      Customer? customer,
+      Shop? shop}) {
     this._id = id;
     this._userId = userId;
     this._sellerId = sellerId;
@@ -49,21 +48,21 @@ class MessageModel {
     this._shop = shop;
   }
 
-  int get id => _id;
-  int get userId => _userId;
-  int get sellerId => _sellerId;
-  String get message => _message;
-  int get sentByCustomer => _sentByCustomer;
-  int get sentBySeller => _sentBySeller;
-  int get seenByCustomer => _seenByCustomer;
-  int get seenBySeller => _seenBySeller;
-  int get status => _status;
-  String get createdAt => _createdAt;
-  String get updatedAt => _updatedAt;
-  int get shopId => _shopId;
-  SellerInfo get sellerInfo => _sellerInfo;
-  Customer get customer => _customer;
-  Shop get shop => _shop;
+  int get id => _id!;
+  int get userId => _userId!;
+  int get sellerId => _sellerId!;
+  String get message => _message!;
+  int get sentByCustomer => _sentByCustomer!;
+  int get sentBySeller => _sentBySeller!;
+  int get seenByCustomer => _seenByCustomer!;
+  int get seenBySeller => _seenBySeller!;
+  int get status => _status!;
+  String get createdAt => _createdAt!;
+  String get updatedAt => _updatedAt!;
+  int get shopId => _shopId!;
+  SellerInfo get sellerInfo => _sellerInfo!;
+  Customer get customer => _customer!;
+  Shop get shop => _shop!;
 
   MessageModel.fromJson(Map<String, dynamic> json) {
     _id = json['id'];
@@ -102,53 +101,53 @@ class MessageModel {
     data['updated_at'] = this._updatedAt;
     data['shop_id'] = this._shopId;
     if (this._sellerInfo != null) {
-      data['seller_info'] = this._sellerInfo.toJson();
+      data['seller_info'] = this._sellerInfo!.toJson();
     }
     if (this._customer != null) {
-      data['customer'] = this._customer.toJson();
+      data['customer'] = this._customer!.toJson();
     }
     if (this._shop != null) {
-      data['shop'] = this._shop.toJson();
+      data['shop'] = this._shop!.toJson();
     }
     return data;
   }
 }
 
 class SellerInfo {
-  int _id;
-  String _fName;
-  String _lName;
-  String _phone;
-  String _image;
-  String _email;
-  String _password;
-  String _status;
-  String _rememberToken;
-  String _createdAt;
-  String _updatedAt;
-  String _bankName;
-  String _branch;
-  String _accountNo;
-  String _holderName;
-  String _authToken;
+  int? _id;
+  String? _fName;
+  String? _lName;
+  String? _phone;
+  String? _image;
+  String? _email;
+  String? _password;
+  String? _status;
+  String? _rememberToken;
+  String? _createdAt;
+  String? _updatedAt;
+  String? _bankName;
+  String? _branch;
+  String? _accountNo;
+  String? _holderName;
+  String? _authToken;
 
   SellerInfo(
-      {int id,
-        String fName,
-        String lName,
-        String phone,
-        String image,
-        String email,
-        String password,
-        String status,
-        String rememberToken,
-        String createdAt,
-        String updatedAt,
-        String bankName,
-        String branch,
-        String accountNo,
-        String holderName,
-        String authToken}) {
+      {int? id,
+      String? fName,
+      String? lName,
+      String? phone,
+      String? image,
+      String? email,
+      String? password,
+      String? status,
+      String? rememberToken,
+      String? createdAt,
+      String? updatedAt,
+      String? bankName,
+      String? branch,
+      String? accountNo,
+      String? holderName,
+      String? authToken}) {
     this._id = id;
     this._fName = fName;
     this._lName = lName;
@@ -167,22 +166,22 @@ class SellerInfo {
     this._authToken = authToken;
   }
 
-  int get id => _id;
-  String get fName => _fName;
-  String get lName => _lName;
-  String get phone => _phone;
-  String get image => _image;
-  String get email => _email;
-  String get password => _password;
-  String get status => _status;
-  String get rememberToken => _rememberToken;
-  String get createdAt => _createdAt;
-  String get updatedAt => _updatedAt;
-  String get bankName => _bankName;
-  String get branch => _branch;
-  String get accountNo => _accountNo;
-  String get holderName => _holderName;
-  String get authToken => _authToken;
+  int get id => _id!;
+  String get fName => _fName!;
+  String get lName => _lName!;
+  String get phone => _phone!;
+  String get image => _image!;
+  String get email => _email!;
+  String get password => _password!;
+  String get status => _status!;
+  String get rememberToken => _rememberToken!;
+  String get createdAt => _createdAt!;
+  String get updatedAt => _updatedAt!;
+  String get bankName => _bankName!;
+  String get branch => _branch!;
+  String get accountNo => _accountNo!;
+  String get holderName => _holderName!;
+  String get authToken => _authToken!;
 
   SellerInfo.fromJson(Map<String, dynamic> json) {
     _id = json['id'];
@@ -226,42 +225,42 @@ class SellerInfo {
 }
 
 class Customer {
-  int _id;
-  String _name;
-  String _fName;
-  String _lName;
-  String _phone;
-  String _image;
-  String _email;
-  String _emailVerifiedAt;
-  String _createdAt;
-  String _updatedAt;
-  String _streetAddress;
-  String _country;
-  String _city;
-  String _zip;
-  String _houseNo;
-  String _apartmentNo;
-  String _cmFirebaseToken;
+  int? _id;
+  String? _name;
+  String? _fName;
+  String? _lName;
+  String? _phone;
+  String? _image;
+  String? _email;
+  String? _emailVerifiedAt;
+  String? _createdAt;
+  String? _updatedAt;
+  String? _streetAddress;
+  String? _country;
+  String? _city;
+  String? _zip;
+  String? _houseNo;
+  String? _apartmentNo;
+  String? _cmFirebaseToken;
 
   Customer(
-      {int id,
-        String name,
-        String fName,
-        String lName,
-        String phone,
-        String image,
-        String email,
-        String emailVerifiedAt,
-        String createdAt,
-        String updatedAt,
-        String streetAddress,
-        String country,
-        String city,
-        String zip,
-        String houseNo,
-        String apartmentNo,
-        String cmFirebaseToken}) {
+      {int? id,
+      String? name,
+      String? fName,
+      String? lName,
+      String? phone,
+      String? image,
+      String? email,
+      String? emailVerifiedAt,
+      String? createdAt,
+      String? updatedAt,
+      String? streetAddress,
+      String? country,
+      String? city,
+      String? zip,
+      String? houseNo,
+      String? apartmentNo,
+      String? cmFirebaseToken}) {
     this._id = id;
     this._name = name;
     this._fName = fName;
@@ -281,23 +280,23 @@ class Customer {
     this._cmFirebaseToken = cmFirebaseToken;
   }
 
-  int get id => _id;
-  String get name => _name;
-  String get fName => _fName;
-  String get lName => _lName;
-  String get phone => _phone;
-  String get image => _image;
-  String get email => _email;
-  String get emailVerifiedAt => _emailVerifiedAt;
-  String get createdAt => _createdAt;
-  String get updatedAt => _updatedAt;
-  String get streetAddress => _streetAddress;
-  String get country => _country;
-  String get city => _city;
-  String get zip => _zip;
-  String get houseNo => _houseNo;
-  String get apartmentNo => _apartmentNo;
-  String get cmFirebaseToken => _cmFirebaseToken;
+  int get id => _id!;
+  String get name => _name!;
+  String get fName => _fName!;
+  String get lName => _lName!;
+  String get phone => _phone!;
+  String get image => _image!;
+  String get email => _email!;
+  String get emailVerifiedAt => _emailVerifiedAt!;
+  String get createdAt => _createdAt!;
+  String get updatedAt => _updatedAt!;
+  String get streetAddress => _streetAddress!;
+  String get country => _country!;
+  String get city => _city!;
+  String get zip => _zip!;
+  String get houseNo => _houseNo!;
+  String get apartmentNo => _apartmentNo!;
+  String get cmFirebaseToken => _cmFirebaseToken!;
 
   Customer.fromJson(Map<String, dynamic> json) {
     _id = json['id'];
@@ -343,22 +342,22 @@ class Customer {
 }
 
 class Shop {
-  int _id;
-  String _name;
-  String _address;
-  String _contact;
-  String _image;
-  String _createdAt;
-  String _updatedAt;
+  int? _id;
+  String? _name;
+  String? _address;
+  String? _contact;
+  String? _image;
+  String? _createdAt;
+  String? _updatedAt;
 
   Shop(
-      {int id,
-        String name,
-        String address,
-        String contact,
-        String image,
-        String createdAt,
-        String updatedAt}) {
+      {int? id,
+      String? name,
+      String? address,
+      String? contact,
+      String? image,
+      String? createdAt,
+      String? updatedAt}) {
     this._id = id;
     this._name = name;
     this._address = address;
@@ -368,13 +367,13 @@ class Shop {
     this._updatedAt = updatedAt;
   }
 
-  int get id => _id;
-  String get name => _name;
-  String get address => _address;
-  String get contact => _contact;
-  String get image => _image;
-  String get createdAt => _createdAt;
-  String get updatedAt => _updatedAt;
+  int get id => _id!;
+  String get name => _name!;
+  String get address => _address!;
+  String get contact => _contact!;
+  String get image => _image!;
+  String get createdAt => _createdAt!;
+  String get updatedAt => _updatedAt!;
 
   Shop.fromJson(Map<String, dynamic> json) {
     _id = json['id'];

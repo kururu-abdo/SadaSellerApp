@@ -16,35 +16,38 @@ import 'package:eamar_seller_app/view/screens/restaurant/restaurant_screen.dart'
 
 class RestaurantSettingsScreen extends StatefulWidget {
   @override
-  _RestaurantSettingsScreenState createState() => _RestaurantSettingsScreenState();
+  _RestaurantSettingsScreenState createState() =>
+      _RestaurantSettingsScreenState();
 }
 
 class _RestaurantSettingsScreenState extends State<RestaurantSettingsScreen> {
-
-   TextEditingController _restaurantNameController ;
-   TextEditingController _addressController ;
-   TextEditingController _phoneController ;
+  TextEditingController? _restaurantNameController;
+  TextEditingController? _addressController;
+  TextEditingController? _phoneController;
 
   final FocusNode _resNameNode = FocusNode();
   final FocusNode _addressNode = FocusNode();
   final FocusNode _phoneNode = FocusNode();
-  GlobalKey<FormState> _formKeyLogin;
+  GlobalKey<FormState>? _formKeyLogin;
 
+  File? file;
+  final picker = ImagePicker();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-   File file;
-   final picker = ImagePicker();
-   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
-   void _choose() async {
-     final pickedFile = await picker.pickImage(source: ImageSource.gallery, imageQuality: 50, maxHeight: 500, maxWidth: 500);
-     setState(() {
-       if (pickedFile != null) {
-         file = File(pickedFile.path);
-       } else {
-         print('No image selected.');
-       }
-     });
-   }
+  void _choose() async {
+    final pickedFile = await picker.pickImage(
+        source: ImageSource.gallery,
+        imageQuality: 50,
+        maxHeight: 500,
+        maxWidth: 500);
+    setState(() {
+      if (pickedFile != null) {
+        file = File(pickedFile.path);
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
 
   @override
   void initState() {
@@ -54,16 +57,16 @@ class _RestaurantSettingsScreenState extends State<RestaurantSettingsScreen> {
     _addressController = TextEditingController();
     _phoneController = TextEditingController();
 
-    _restaurantNameController.text = 'Parallax Restaurant';
-    _addressController.text = '3460, Pallet Street, New York';
-    _phoneController.text = '012345678';
+    _restaurantNameController!.text = 'Parallax Restaurant';
+    _addressController!.text = '3460, Pallet Street, New York';
+    _phoneController!.text = '012345678';
   }
 
   @override
   void dispose() {
-    _restaurantNameController.dispose();
-    _addressController.dispose();
-    _phoneController.dispose();
+    _restaurantNameController!.dispose();
+    _addressController!.dispose();
+    _phoneController!.dispose();
     super.dispose();
   }
 
@@ -79,16 +82,21 @@ class _RestaurantSettingsScreenState extends State<RestaurantSettingsScreen> {
             child: ListView(
               physics: BouncingScrollPhysics(),
               children: [
-
                 Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Theme.of(context).highlightColor,
                     borderRadius: BorderRadius.circular(10),
-                    boxShadow: [BoxShadow(
-                      color: Colors.grey[Provider.of<ThemeProvider>(context).darkTheme ? 700 : 300],
-                      blurRadius: 5, spreadRadius: 1,
-                    )],
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey[
+                            Provider.of<ThemeProvider>(context).darkTheme
+                                ? 700
+                                : 300]!,
+                        blurRadius: 5,
+                        spreadRadius: 1,
+                      )
+                    ],
                   ),
                   child: InkWell(
                     onTap: _choose,
@@ -99,19 +107,21 @@ class _RestaurantSettingsScreenState extends State<RestaurantSettingsScreen> {
                           borderRadius: BorderRadius.circular(12),
                           child: file == null
                               ? Image.asset(
-                            Images.restaurant_image,
-                            width: double.infinity,
-                            fit: BoxFit.cover,
-                          )
-                              : Image.file(file,
-                              width: double.infinity,
-                              height: MediaQuery.of(context).size.height/ 3.5,
-                              fit: BoxFit.cover),
+                                  Images.restaurant_image,
+                                  width: double.infinity,
+                                  fit: BoxFit.cover,
+                                )
+                              : Image.file(file!,
+                                  width: double.infinity,
+                                  height:
+                                      MediaQuery.of(context).size.height / 3.5,
+                                  fit: BoxFit.cover),
                         ),
                         Positioned(
                           bottom: -5,
                           right: 0,
-                          child: InkWell(onTap: _choose,
+                          child: InkWell(
+                              onTap: _choose,
                               child: Container(
                                 alignment: Alignment.center,
                                 padding: EdgeInsets.all(5),
@@ -119,19 +129,24 @@ class _RestaurantSettingsScreenState extends State<RestaurantSettingsScreen> {
                                   shape: BoxShape.circle,
                                   color: Theme.of(context).primaryColor,
                                 ),
-                                child: Icon(Icons.camera_alt_outlined, size: 20, color: ColorResources.WHITE,),
-                          )),
+                                child: Icon(
+                                  Icons.camera_alt_outlined,
+                                  size: 20,
+                                  color: ColorResources.WHITE,
+                                ),
+                              )),
                         ),
                       ],
                     ),
                   ),
                 ),
 
-
                 SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
-                Text(
-                  getTranslated('restaurant_name', context),
-                  style: titilliumRegular.copyWith(fontSize: Dimensions.PADDING_SIZE_DEFAULT, color: ColorResources.getHintColor(context),)),
+                Text(getTranslated('restaurant_name', context),
+                    style: titilliumRegular.copyWith(
+                      fontSize: Dimensions.PADDING_SIZE_DEFAULT,
+                      color: ColorResources.getHintColor(context),
+                    )),
 
                 SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
                 CustomTextField(
@@ -143,9 +158,11 @@ class _RestaurantSettingsScreenState extends State<RestaurantSettingsScreen> {
                   textInputAction: TextInputAction.next,
                 ),
                 SizedBox(height: Dimensions.PADDING_SIZE_LARGE),
-                Text(
-                  getTranslated('address_line_01', context),
-                  style: titilliumRegular.copyWith(fontSize: Dimensions.PADDING_SIZE_DEFAULT, color: ColorResources.getHintColor(context),)),
+                Text(getTranslated('address_line_01', context),
+                    style: titilliumRegular.copyWith(
+                      fontSize: Dimensions.PADDING_SIZE_DEFAULT,
+                      color: ColorResources.getHintColor(context),
+                    )),
 
                 SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
                 CustomTextField(
@@ -157,9 +174,11 @@ class _RestaurantSettingsScreenState extends State<RestaurantSettingsScreen> {
                 ),
 
                 SizedBox(height: 22),
-                Text(
-                  getTranslated('phone_no', context),
-                  style: titilliumRegular.copyWith(fontSize: Dimensions.PADDING_SIZE_DEFAULT, color: ColorResources.getHintColor(context),)),
+                Text(getTranslated('phone_no', context),
+                    style: titilliumRegular.copyWith(
+                      fontSize: Dimensions.PADDING_SIZE_DEFAULT,
+                      color: ColorResources.getHintColor(context),
+                    )),
 
                 SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
                 CustomTextField(
@@ -172,15 +191,15 @@ class _RestaurantSettingsScreenState extends State<RestaurantSettingsScreen> {
 
                 // for login button
                 SizedBox(height: 50),
-               CustomButton(
+                CustomButton(
                   btnTxt: getTranslated('save', context),
                   backgroundColor: ColorResources.WHITE,
-                  onTap: ()  {
+                  onTap: () {
                     Navigator.pop(context);
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => RestaurantScreen()));
+                    Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (_) => RestaurantScreen()));
                   },
                 )
-
               ],
             ),
           ),

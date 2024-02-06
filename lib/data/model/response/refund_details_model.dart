@@ -1,25 +1,24 @@
 class RefundDetailsModel {
-  double productPrice;
-  int quntity;
-  double productTotalDiscount;
-  double productTotalTax;
-  double subtotal;
-  double couponDiscount;
-  double refundAmount;
-  List<RefundRequest> refundRequest;
-  DeliverymanDetails deliverymanDetails;
+  double? productPrice;
+  int? quntity;
+  double? productTotalDiscount;
+  double? productTotalTax;
+  double? subtotal;
+  double? couponDiscount;
+  double? refundAmount;
+  List<RefundRequest>? refundRequest;
+  DeliverymanDetails? deliverymanDetails;
 
   RefundDetailsModel(
       {this.productPrice,
-        this.quntity,
-        this.productTotalDiscount,
-        this.productTotalTax,
-        this.subtotal,
-        this.couponDiscount,
-        this.refundAmount,
-        this.refundRequest,
-        this.deliverymanDetails
-      });
+      this.quntity,
+      this.productTotalDiscount,
+      this.productTotalTax,
+      this.subtotal,
+      this.couponDiscount,
+      this.refundAmount,
+      this.refundRequest,
+      this.deliverymanDetails});
 
   RefundDetailsModel.fromJson(Map<String, dynamic> json) {
     productPrice = json['product_price'].toDouble();
@@ -32,7 +31,7 @@ class RefundDetailsModel {
     if (json['refund_request'] != null) {
       refundRequest = <RefundRequest>[];
       json['refund_request'].forEach((v) {
-        refundRequest.add(new RefundRequest.fromJson(v));
+        refundRequest!.add(new RefundRequest.fromJson(v));
       });
     }
     deliverymanDetails = json['deliveryman_details'] != null
@@ -51,50 +50,50 @@ class RefundDetailsModel {
     data['refund_amount'] = this.refundAmount;
     if (this.refundRequest != null) {
       data['refund_request'] =
-          this.refundRequest.map((v) => v.toJson()).toList();
+          this.refundRequest!.map((v) => v.toJson()).toList();
     }
     if (this.deliverymanDetails != null) {
-      data['deliveryman_details'] = this.deliverymanDetails.toJson();
+      data['deliveryman_details'] = this.deliverymanDetails!.toJson();
     }
     return data;
   }
 }
 
 class RefundRequest {
-  int id;
-  int orderDetailsId;
-  int customerId;
-  String status;
-  double amount;
-  int productId;
-  int orderId;
-  String refundReason;
-  List<String> images;
-  String createdAt;
-  String updatedAt;
-  String approvedNote;
-  String rejectedNote;
-  String paymentInfo;
-  String changeBy;
-  List<RefundStatus> refundStatus;
+  int? id;
+  int? orderDetailsId;
+  int? customerId;
+  String? status;
+  double? amount;
+  int? productId;
+  int? orderId;
+  String? refundReason;
+  List<String>? images;
+  String? createdAt;
+  String? updatedAt;
+  String? approvedNote;
+  String? rejectedNote;
+  String? paymentInfo;
+  String? changeBy;
+  List<RefundStatus>? refundStatus;
 
   RefundRequest(
       {this.id,
-        this.orderDetailsId,
-        this.customerId,
-        this.status,
-        this.amount,
-        this.productId,
-        this.orderId,
-        this.refundReason,
-        this.images,
-        this.createdAt,
-        this.updatedAt,
-        this.approvedNote,
-        this.rejectedNote,
-        this.paymentInfo,
-        this.changeBy,
-        this.refundStatus});
+      this.orderDetailsId,
+      this.customerId,
+      this.status,
+      this.amount,
+      this.productId,
+      this.orderId,
+      this.refundReason,
+      this.images,
+      this.createdAt,
+      this.updatedAt,
+      this.approvedNote,
+      this.rejectedNote,
+      this.paymentInfo,
+      this.changeBy,
+      this.refundStatus});
 
   RefundRequest.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -105,7 +104,7 @@ class RefundRequest {
     productId = json['product_id'];
     orderId = json['order_id'];
     refundReason = json['refund_reason'];
-    if(json['images']!=null){
+    if (json['images'] != null) {
       images = json['images'].cast<String>();
     }
 
@@ -118,7 +117,7 @@ class RefundRequest {
     if (json['refund_status'] != null) {
       refundStatus = <RefundStatus>[];
       json['refund_status'].forEach((v) {
-        refundStatus.add(new RefundStatus.fromJson(v));
+        refundStatus!.add(new RefundStatus.fromJson(v));
       });
     }
   }
@@ -142,44 +141,43 @@ class RefundRequest {
     data['change_by'] = this.changeBy;
     if (this.refundStatus != null) {
       data['refund_status'] =
-          this.refundStatus.map((v) => v.toJson()).toList();
+          this.refundStatus!.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
 class RefundStatus {
-  int id;
-  int refundRequestId;
-  String changeBy;
-  int changeById;
-  String status;
-  String message;
-  String createdAt;
-  String updatedAt;
+  int? id;
+  int? refundRequestId;
+  String? changeBy;
+  int? changeById;
+  String? status;
+  String? message;
+  String? createdAt;
+  String? updatedAt;
 
   RefundStatus(
       {this.id,
-        this.refundRequestId,
-        this.changeBy,
-        this.changeById,
-        this.status,
-        this.message,
-        this.createdAt,
-        this.updatedAt});
+      this.refundRequestId,
+      this.changeBy,
+      this.changeById,
+      this.status,
+      this.message,
+      this.createdAt,
+      this.updatedAt});
 
   RefundStatus.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     refundRequestId = json['refund_request_id'];
     changeBy = json['change_by'];
-    if(json['change_by_id']!=null)
-      {
-        try{
-          changeById = json['change_by_id'];
-        }catch(e){
-          changeById = int.parse(json['change_by_id']);
-        }
+    if (json['change_by_id'] != null) {
+      try {
+        changeById = json['change_by_id'];
+      } catch (e) {
+        changeById = int.parse(json['change_by_id']);
       }
+    }
 
     status = json['status'];
     message = json['message'];
@@ -202,36 +200,36 @@ class RefundStatus {
 }
 
 class DeliverymanDetails {
-  int id;
-  int sellerId;
-  String fName;
-  String lName;
-  String phone;
-  String email;
-  String identityNumber;
-  String identityType;
-  String identityImage;
-  String image;
-  int isActive;
-  String createdAt;
-  String updatedAt;
-  String fcmToken;
+  int? id;
+  int? sellerId;
+  String? fName;
+  String? lName;
+  String? phone;
+  String? email;
+  String? identityNumber;
+  String? identityType;
+  String? identityImage;
+  String? image;
+  int? isActive;
+  String? createdAt;
+  String? updatedAt;
+  String? fcmToken;
 
   DeliverymanDetails(
       {this.id,
-        this.sellerId,
-        this.fName,
-        this.lName,
-        this.phone,
-        this.email,
-        this.identityNumber,
-        this.identityType,
-        this.identityImage,
-        this.image,
-        this.isActive,
-        this.createdAt,
-        this.updatedAt,
-        this.fcmToken});
+      this.sellerId,
+      this.fName,
+      this.lName,
+      this.phone,
+      this.email,
+      this.identityNumber,
+      this.identityType,
+      this.identityImage,
+      this.image,
+      this.isActive,
+      this.createdAt,
+      this.updatedAt,
+      this.fcmToken});
 
   DeliverymanDetails.fromJson(Map<String, dynamic> json) {
     id = json['id'];

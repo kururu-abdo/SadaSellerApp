@@ -7,38 +7,42 @@ class ApiErrorHandler {
     dynamic errorDescription = "";
     if (error is Exception) {
       try {
-        if (error is DioError) {
+        if (error is DioException) {
           switch (error.type) {
-            case DioErrorType.cancel:
+            case DioExceptionType.cancel:
               errorDescription = "Request to API server was cancelled";
               break;
-            case DioErrorType.connectTimeout:
+            case DioExceptionType.connectionTimeout:
+            case DioExceptionType.connectionError:
               errorDescription = "Connection timeout with API server";
               break;
-            case DioErrorType.other:
-              errorDescription =
-              "Connection to API server failed due to internet connection";
+            case DioExceptionType.badCertificate:
+              errorDescription = "Connection timeout with API server";
               break;
-            case DioErrorType.receiveTimeout:
+            case DioExceptionType.unknown:
               errorDescription =
-              "Receive timeout in connection with API server";
+                  "Connection to API server failed due to internet connection";
               break;
-            case DioErrorType.response:
-              switch (error.response.statusCode) {
+            case DioExceptionType.receiveTimeout:
+              errorDescription =
+                  "Receive timeout in connection with API server";
+              break;
+            case DioExceptionType.badResponse:
+              switch (error.response!.statusCode) {
                 case 404:
                 case 500:
                 case 503:
-                  errorDescription = error.response.statusMessage;
+                  errorDescription = error.response!.statusMessage;
                   break;
                 default:
                   ErrorResponse errorResponse =
-                  ErrorResponse.fromJson(error.response.data);
+                      ErrorResponse.fromJson(error.response!.data);
                   if (errorResponse.errors != null &&
-                      errorResponse.errors.length > 0)
+                      errorResponse.errors!.length > 0)
                     errorDescription = errorResponse;
                   else
                     errorDescription =
-                    "Failed to load data - status code: ${error.response.statusCode}";
+                        "Failed to load data - status code: ${error.response!.statusCode}";
               }
               break;
             case DioErrorType.sendTimeout:

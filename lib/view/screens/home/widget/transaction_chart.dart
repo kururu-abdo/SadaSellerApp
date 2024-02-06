@@ -7,10 +7,11 @@ import 'package:eamar_seller_app/utill/images.dart';
 import 'package:eamar_seller_app/utill/styles.dart';
 
 class TransactionChart extends StatefulWidget {
-  final List<double> earnings;
-  final List<double> commissions;
+  final List<double>? earnings;
+  final List<double>? commissions;
   final double max;
-  TransactionChart({@required this.earnings,@required this.commissions, @required this.max});
+  TransactionChart(
+      {@required this.earnings, @required this.commissions, required this.max});
 
   @override
   State<StatefulWidget> createState() => TransactionChartState();
@@ -21,26 +22,38 @@ class TransactionChartState extends State<TransactionChart> {
   final Color rightBarColor = const Color(0xFFFF6969);
   final double width = 5;
 
-   List<BarChartGroupData> rawBarGroups;
-   List<BarChartGroupData> showingBarGroups;
+  List<BarChartGroupData>? rawBarGroups;
+  List<BarChartGroupData>? showingBarGroups;
 
   int touchedGroupIndex = -1;
 
   @override
   void initState() {
     super.initState();
-    final barGroup1 = makeGroupData(0, widget.commissions[0],  widget.earnings[0]);
-    final barGroup2 = makeGroupData(1, widget.commissions[1],  widget.earnings[1]);
-    final barGroup3 = makeGroupData(2, widget.commissions[2], widget.earnings[2]);
-    final barGroup4 = makeGroupData(3, widget.commissions[3],  widget.earnings[3]);
-    final barGroup5 = makeGroupData(4, widget.commissions[4], widget.earnings[4]);
-    final barGroup6 = makeGroupData(5, widget.commissions[5], widget.earnings[5]);
-    final barGroup7 = makeGroupData(6, widget.commissions[6],  widget.earnings[6]);
-    final barGroup8 = makeGroupData(7, widget.commissions[7], widget.earnings[7]);
-    final barGroup9 = makeGroupData(8, widget.commissions[8], widget.earnings[8]);
-    final barGroup10 = makeGroupData(9, widget.commissions[9], widget.earnings[9]);
-    final barGroup11 = makeGroupData(10, widget.commissions[10], widget.earnings[10]);
-    final barGroup12 = makeGroupData(11, widget.commissions[11], widget.earnings[11]);
+    final barGroup1 =
+        makeGroupData(0, widget.commissions![0], widget.earnings![0]);
+    final barGroup2 =
+        makeGroupData(1, widget.commissions![1], widget.earnings![1]);
+    final barGroup3 =
+        makeGroupData(2, widget.commissions![2], widget.earnings![2]);
+    final barGroup4 =
+        makeGroupData(3, widget.commissions![3], widget.earnings![3]);
+    final barGroup5 =
+        makeGroupData(4, widget.commissions![4], widget.earnings![4]);
+    final barGroup6 =
+        makeGroupData(5, widget.commissions![5], widget.earnings![5]);
+    final barGroup7 =
+        makeGroupData(6, widget.commissions![6], widget.earnings![6]);
+    final barGroup8 =
+        makeGroupData(7, widget.commissions![7], widget.earnings![7]);
+    final barGroup9 =
+        makeGroupData(8, widget.commissions![8], widget.earnings![8]);
+    final barGroup10 =
+        makeGroupData(9, widget.commissions![9], widget.earnings![9]);
+    final barGroup11 =
+        makeGroupData(10, widget.commissions![10], widget.earnings![10]);
+    final barGroup12 =
+        makeGroupData(11, widget.commissions![11], widget.earnings![11]);
 
     final items = [
       barGroup1,
@@ -77,42 +90,68 @@ class TransactionChartState extends State<TransactionChart> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-
-                Row(crossAxisAlignment: CrossAxisAlignment.center,
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                  Container(width: Dimensions.ICON_SIZE_LARGE,height: Dimensions.ICON_SIZE_LARGE ,
-                      padding: EdgeInsets.only(left: Dimensions.PADDING_SIZE_EXTRA_SMALL),
-                      child: Image.asset(Images.monthly_earning)),
-                  SizedBox(width: Dimensions.PADDING_SIZE_SMALL,),
-
-                  Text(getTranslated('monthly_earning', context), style: robotoBold.copyWith(
-                      color: ColorResources.getTextColor(context),
-                      fontSize: Dimensions.FONT_SIZE_LARGE),),
-
-                ],),
-                SizedBox(height: Dimensions.PADDING_SIZE_SMALL,),
-
-                Row(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Row(children: [
-                    Icon(Icons.circle,size: Dimensions.ICON_SIZE_SMALL,
-                        color: Color(0xFF4E9BF0)),
-                    SizedBox(width: Dimensions.PADDING_SIZE_EXTRA_SMALL,),
-                    Text(getTranslated('your_earnings', context),
-                      style: robotoSmallTitleRegular.copyWith(color: ColorResources.getTextColor(context),
-                    fontSize: Dimensions.FONT_SIZE_DEFAULT),),],),
-
-                    SizedBox(width : Dimensions.PADDING_SIZE_SMALL,),
-
-                    Row(children: [
-                      Icon(Icons.circle,size: Dimensions.ICON_SIZE_SMALL,
-                          color: Color(0xFFFF6969)),
-                      SizedBox(width: Dimensions.PADDING_SIZE_EXTRA_SMALL,),
-                      Text(getTranslated('commission_given', context),
-                           style: robotoSmallTitleRegular.copyWith(color: ColorResources.getTextColor(context),
-                               fontSize: Dimensions.FONT_SIZE_SMALL),
+                    Container(
+                        width: Dimensions.ICON_SIZE_LARGE,
+                        height: Dimensions.ICON_SIZE_LARGE,
+                        padding: EdgeInsets.only(
+                            left: Dimensions.PADDING_SIZE_EXTRA_SMALL),
+                        child: Image.asset(Images.monthly_earning)),
+                    SizedBox(
+                      width: Dimensions.PADDING_SIZE_SMALL,
                     ),
-                       ],
-                     ),
+                    Text(
+                      getTranslated('monthly_earning', context),
+                      style: robotoBold.copyWith(
+                          color: ColorResources.getTextColor(context),
+                          fontSize: Dimensions.FONT_SIZE_LARGE),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: Dimensions.PADDING_SIZE_SMALL,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(Icons.circle,
+                            size: Dimensions.ICON_SIZE_SMALL,
+                            color: Color(0xFF4E9BF0)),
+                        SizedBox(
+                          width: Dimensions.PADDING_SIZE_EXTRA_SMALL,
+                        ),
+                        Text(
+                          getTranslated('your_earnings', context),
+                          style: robotoSmallTitleRegular.copyWith(
+                              color: ColorResources.getTextColor(context),
+                              fontSize: Dimensions.FONT_SIZE_DEFAULT),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: Dimensions.PADDING_SIZE_SMALL,
+                    ),
+                    Row(
+                      children: [
+                        Icon(Icons.circle,
+                            size: Dimensions.ICON_SIZE_SMALL,
+                            color: Color(0xFFFF6969)),
+                        SizedBox(
+                          width: Dimensions.PADDING_SIZE_EXTRA_SMALL,
+                        ),
+                        Text(
+                          getTranslated('commission_given', context),
+                          style: robotoSmallTitleRegular.copyWith(
+                              color: ColorResources.getTextColor(context),
+                              fontSize: Dimensions.FONT_SIZE_SMALL),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ],
@@ -133,33 +172,40 @@ class TransactionChartState extends State<TransactionChart> {
                         if (response == null || response.spot == null) {
                           setState(() {
                             touchedGroupIndex = -1;
-                            showingBarGroups = List.of(rawBarGroups);
+                            showingBarGroups = List.of(rawBarGroups!);
                           });
                           return;
                         }
 
-                        touchedGroupIndex = response.spot.touchedBarGroupIndex;
+                        touchedGroupIndex =
+                            response.spot!.touchedBarGroupIndex!;
 
                         setState(() {
                           if (!event.isInterestedForInteractions) {
                             touchedGroupIndex = -1;
-                            showingBarGroups = List.of(rawBarGroups);
+                            showingBarGroups = List.of(rawBarGroups!);
                             return;
                           }
-                          showingBarGroups = List.of(rawBarGroups);
+                          showingBarGroups = List.of(rawBarGroups!);
                           if (touchedGroupIndex != -1) {
                             var sum = 0.0;
-                            for (var rod in showingBarGroups[touchedGroupIndex].barRods) {
+                            for (var rod in showingBarGroups![touchedGroupIndex]
+                                .barRods) {
                               sum += rod.y;
                             }
-                            final avg = sum / showingBarGroups[touchedGroupIndex].barRods.length;
+                            final avg = sum /
+                                showingBarGroups![touchedGroupIndex]
+                                    .barRods
+                                    .length;
 
-                            showingBarGroups[touchedGroupIndex] =
-                                showingBarGroups[touchedGroupIndex].copyWith(
-                                  barRods: showingBarGroups[touchedGroupIndex].barRods.map((rod) {
-                                    return rod.copyWith(y: avg);
-                                  }).toList(),
-                                );
+                            showingBarGroups![touchedGroupIndex] =
+                                showingBarGroups![touchedGroupIndex].copyWith(
+                              barRods: showingBarGroups![touchedGroupIndex]
+                                  .barRods
+                                  .map((rod) {
+                                return rod.copyWith(y: avg);
+                              }).toList(),
+                            );
                           }
                         });
                       }),
@@ -170,7 +216,9 @@ class TransactionChartState extends State<TransactionChart> {
                     bottomTitles: SideTitles(
                       showTitles: true,
                       getTextStyles: (context, value) => const TextStyle(
-                          color: Color(0xff7589a2), fontWeight: FontWeight.w400, fontSize: 10),
+                          color: Color(0xff7589a2),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 10),
                       margin: 10,
                       getTitles: (double value) {
                         switch (value.toInt()) {
@@ -284,7 +332,6 @@ class TransactionChartState extends State<TransactionChart> {
     );
   }
 }
-
 
 // class TransactionChart extends StatefulWidget {
 //   final List<double> earnings;

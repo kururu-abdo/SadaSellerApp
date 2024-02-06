@@ -1,8 +1,8 @@
 class ShippingModel {
-  int id;
-  String title;
-  String duration;
-  double cost;
+  int? id;
+  String? title;
+  String? duration;
+  double? cost;
 
   ShippingModel({this.id, this.title, this.duration, this.cost});
 

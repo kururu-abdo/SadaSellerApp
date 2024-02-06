@@ -18,7 +18,8 @@ class DateConverter {
   }
 
   static String isoStringToLocalTimeOnly(String dateTime) {
-    return DateFormat('yyyy-MM-dd HH:mm:ss').format(isoStringToLocalDate(dateTime));
+    return DateFormat('yyyy-MM-dd HH:mm:ss')
+        .format(isoStringToLocalDate(dateTime));
   }
 
   static String isoStringToLocalDateOnly(String dateTime) {
@@ -46,6 +47,7 @@ class DateConverter {
   static int getMonthIndex(String date) {
     return isoStringToLocalDate(date).month;
   }
+
   static int getYear(String date) {
     return isoStringToLocalDate(date).year;
   }

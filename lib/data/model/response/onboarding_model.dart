@@ -1,4 +1,4 @@
-class OnBoardingModel{
+class OnBoardingModel {
   String _imageUrl;
   String _title;
   String _description;

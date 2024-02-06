@@ -42,15 +42,21 @@ final sl = GetIt.instance;
 
 Future<void> init() async {
   // Core
-  sl.registerLazySingleton(() => DioClient(AppConstants.BASE_URL, sl(), loggingInterceptor: sl(), sharedPreferences: sl()));
+  sl.registerLazySingleton(() => DioClient(AppConstants.BASE_URL, sl(),
+      loggingInterceptor: sl(), sharedPreferences: sl()));
 
   // Repository
-  sl.registerLazySingleton(() => AuthRepo(sharedPreferences: sl(), dioClient: sl()));
-  sl.registerLazySingleton(() => SplashRepo(sharedPreferences: sl(), dioClient: sl()));
-  sl.registerLazySingleton(() => ProfileRepo(dioClient: sl(), sharedPreferences: sl()));
-  sl.registerLazySingleton(() => ShopRepo(dioClient: sl(), sharedPreferences: sl()));
+  sl.registerLazySingleton(
+      () => AuthRepo(sharedPreferences: sl(), dioClient: sl()));
+  sl.registerLazySingleton(
+      () => SplashRepo(sharedPreferences: sl(), dioClient: sl()));
+  sl.registerLazySingleton(
+      () => ProfileRepo(dioClient: sl(), sharedPreferences: sl()));
+  sl.registerLazySingleton(
+      () => ShopRepo(dioClient: sl(), sharedPreferences: sl()));
   sl.registerLazySingleton(() => OrderListRepo(dioClient: sl()));
-  sl.registerLazySingleton(() => BankInfoRepo(dioClient: sl(), sharedPreferences: sl()));
+  sl.registerLazySingleton(
+      () => BankInfoRepo(dioClient: sl(), sharedPreferences: sl()));
   sl.registerLazySingleton(() => ChatRepo(dioClient: sl()));
   sl.registerLazySingleton(() => BusinessRepo());
   sl.registerLazySingleton(() => TransactionRepo(dioClient: sl()));
@@ -80,7 +86,6 @@ Future<void> init() async {
   sl.registerFactory(() => ShippingProvider(shippingRepo: sl()));
   sl.registerFactory(() => DeliveryManProvider(deliveryManRepo: sl()));
   sl.registerFactory(() => RefundProvider(refundRepo: sl()));
-
 
   // External
   final sharedPreferences = await SharedPreferences.getInstance();

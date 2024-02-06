@@ -1,4 +1,3 @@
-
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -11,34 +10,35 @@ import 'package:eamar_seller_app/helper/api_checker.dart';
 import 'package:http/http.dart' as http;
 
 class ShopProvider extends ChangeNotifier {
-  final ShopRepo shopRepo;
+  final ShopRepo? shopRepo;
 
   ShopProvider({@required this.shopRepo});
 
+  int? _selectedIndex = 0;
+  int? get selectedIndex => _selectedIndex;
 
-  int _selectedIndex = 0;
-  int get selectedIndex =>_selectedIndex;
-
-  updateSelectedIndex(int index){
+  updateSelectedIndex(int index) {
     _selectedIndex = index;
     notifyListeners();
   }
 
+  ShopModel? _shopModel;
+  ShopModel? get shopModel => _shopModel;
 
-  ShopModel _shopModel;
-  ShopModel get shopModel => _shopModel;
+  bool? _isLoading = false;
+  bool? get isLoading => _isLoading;
 
-  bool _isLoading = false;
-  bool get isLoading => _isLoading;
+  File? _file;
 
-
-  File _file;
-
-  File get file => _file;
+  File? get file => _file;
   final picker = ImagePicker();
 
   void choosePhoto() async {
-    final pickedFile = await picker.pickImage(source: ImageSource.gallery, imageQuality: 50, maxHeight: 500, maxWidth: 500);
+    final pickedFile = await picker.pickImage(
+        source: ImageSource.gallery,
+        imageQuality: 50,
+        maxHeight: 500,
+        maxWidth: 500);
     if (pickedFile != null) {
       _file = File(pickedFile.path);
     } else {
@@ -49,9 +49,10 @@ class ShopProvider extends ChangeNotifier {
 
   Future<ResponseModel> getShopInfo(BuildContext context) async {
     ResponseModel _responseModel;
-    ApiResponse apiResponse = await shopRepo.getShop();
-    if (apiResponse.response != null && apiResponse.response.statusCode == 200) {
-      _shopModel = ShopModel.fromJson(apiResponse.response.data);
+    ApiResponse apiResponse = await shopRepo!.getShop();
+    if (apiResponse.response != null &&
+        apiResponse.response!.statusCode == 200) {
+      _shopModel = ShopModel.fromJson(apiResponse.response!.data);
       _responseModel = ResponseModel(true, 'successful');
     } else {
       String _errorMessage;
@@ -68,13 +69,14 @@ class ShopProvider extends ChangeNotifier {
     return _responseModel;
   }
 
-
-  Future<ResponseModel> updateShopInfo(ShopModel updateShopModel, File file, String token) async {
+  Future<ResponseModel> updateShopInfo(
+      ShopModel updateShopModel, File file, String token) async {
     _isLoading = true;
     notifyListeners();
 
     ResponseModel responseModel;
-    http.StreamedResponse response = await shopRepo.updateShop(shopModel, file, token);
+    http.StreamedResponse response =
+        await shopRepo!.updateShop(shopModel!, file, token);
     _isLoading = false;
     if (response.statusCode == 200) {
       String message = 'Success';
@@ -83,19 +85,21 @@ class ShopProvider extends ChangeNotifier {
       print(message);
     } else {
       print('${response.statusCode} ${response.reasonPhrase}');
-      responseModel = ResponseModel(false, '${response.statusCode} ${response.reasonPhrase}');
+      responseModel = ResponseModel(
+          false, '${response.statusCode} ${response.reasonPhrase}');
     }
     notifyListeners();
     return responseModel;
   }
 
-
-  Future<ResponseModel> updateBankInfo(ShopModel updateUserModel, File file, String token) async {
+  Future<ResponseModel> updateBankInfo(
+      ShopModel updateUserModel, File file, String token) async {
     _isLoading = true;
     notifyListeners();
 
     ResponseModel responseModel;
-    http.StreamedResponse response = await shopRepo.updateShop(updateUserModel, file, token);
+    http.StreamedResponse response =
+        await shopRepo!.updateShop(updateUserModel, file, token);
     _isLoading = false;
     if (response.statusCode == 200) {
       String message = 'Success';
@@ -104,16 +108,16 @@ class ShopProvider extends ChangeNotifier {
       print(message);
     } else {
       print('${response.statusCode} ${response.reasonPhrase}');
-      responseModel = ResponseModel(false, '${response.statusCode} ${response.reasonPhrase}',);
+      responseModel = ResponseModel(
+        false,
+        '${response.statusCode} ${response.reasonPhrase}',
+      );
     }
     notifyListeners();
     return responseModel;
   }
 
-
   String getShopToken() {
-    return shopRepo.getShopToken();
+    return shopRepo!.getShopToken();
   }
 }
-
-

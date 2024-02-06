@@ -1,20 +1,17 @@
 class BrandModel {
-  int _id;
-  String _name;
-  String _image;
+  int? _id;
+  String? _name;
+  String? _image;
 
-  BrandModel(
-      {int id,
-        String name,
-        String image}) {
+  BrandModel({int? id, String? name, String? image}) {
     this._id = id;
     this._name = name;
     this._image = image;
   }
 
-  int get id => _id;
-  String get name => _name;
-  String get image => _image;
+  int get id => _id!;
+  String get name => _name!;
+  String get image => _image!;
 
   BrandModel.fromJson(Map<String, dynamic> json) {
     _id = json['id'];

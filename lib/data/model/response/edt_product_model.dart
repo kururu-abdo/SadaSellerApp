@@ -1,14 +1,10 @@
 class EditProduct {
-  int id;
-  String name;
-  String details;
-  List<Translations> translations;
+  int? id;
+  String? name;
+  String? details;
+  List<Translations>? translations;
 
-  EditProduct(
-      {this.id,
-        this.name,
-        this.details,
-        this.translations});
+  EditProduct({this.id, this.name, this.details, this.translations});
 
   EditProduct.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -17,7 +13,7 @@ class EditProduct {
     if (json['translations'] != null) {
       translations = [];
       json['translations'].forEach((v) {
-        translations.add(new Translations.fromJson(v));
+        translations!.add(new Translations.fromJson(v));
       });
     }
   }
@@ -28,28 +24,27 @@ class EditProduct {
     data['name'] = this.name;
     data['details'] = this.details;
     if (this.translations != null) {
-      data['translations'] = this.translations.map((v) => v.toJson()).toList();
+      data['translations'] = this.translations!.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
-
 class Translations {
-  int id;
-  String translationableType;
-  int translationableId;
-  String locale;
-  String key;
-  String value;
+  int? id;
+  String? translationableType;
+  int? translationableId;
+  String? locale;
+  String? key;
+  String? value;
 
   Translations(
       {this.id,
-        this.translationableType,
-        this.translationableId,
-        this.locale,
-        this.key,
-        this.value});
+      this.translationableType,
+      this.translationableId,
+      this.locale,
+      this.key,
+      this.value});
 
   Translations.fromJson(Map<String, dynamic> json) {
     id = json['id'];

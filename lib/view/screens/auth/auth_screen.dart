@@ -10,13 +10,11 @@ import 'package:eamar_seller_app/utill/styles.dart';
 import 'package:eamar_seller_app/view/screens/auth/login_screen.dart';
 import 'package:eamar_seller_app/view/screens/splash/widget/splash_painter.dart';
 
-class AuthScreen extends StatelessWidget{
-
-
+class AuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Provider.of<AuthProvider>(context, listen: false).isActiveRememberMe;
-    double space = (MediaQuery.of(context).size.height/2)-270;
+    double space = (MediaQuery.of(context).size.height / 2) - 270;
     return Scaffold(
       body: Stack(
         clipBehavior: Clip.none,
@@ -36,19 +34,23 @@ class AuthScreen extends StatelessWidget{
                 children: [
                   SizedBox(height: space),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal : Dimensions.PADDING_SIZE_EXTRA_LARGE),
-                    child: Container(width: 200,height: 200,
-                        child: Image.asset(Images.logo_with_app_name, color: Theme.of(context).primaryColor)),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: Dimensions.PADDING_SIZE_EXTRA_LARGE),
+                    child: Container(
+                        width: 200,
+                        height: 200,
+                        child: Image.asset(Images.logo_with_app_name,
+                            color: Theme.of(context).primaryColor)),
                   ),
-
                   SizedBox(height: Dimensions.PADDING_SIZE_SMALL),
-                  Center(child: Text(getTranslated('login', context),
-                    style: titilliumBold.copyWith(fontSize: Dimensions.FONT_SIZE_OVER_LARGE),)),
-
+                  Center(
+                      child: Text(
+                    getTranslated('login', context),
+                    style: titilliumBold.copyWith(
+                        fontSize: Dimensions.FONT_SIZE_OVER_LARGE),
+                  )),
                   SizedBox(height: Dimensions.PADDING_SIZE_EXTRA_LARGE),
-
                   SignInWidget()
-
                 ],
               ),
             ),
@@ -58,4 +60,3 @@ class AuthScreen extends StatelessWidget{
     );
   }
 }
-

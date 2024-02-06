@@ -1,62 +1,61 @@
-
 class OrderModel {
-  int _id;
-  int _customerId;
-  String _customerType;
-  String _paymentStatus;
-  String _orderStatus;
-  String _paymentMethod;
-  String _transactionRef;
-  double _orderAmount;
-  int _shippingAddress;
-  String _shippingAddressData;
-  int _billingAddress;
-  BillingAddressData _billingAddressData;
-  String _createdAt;
-  String _updatedAt;
-  double _discountAmount;
-  double _shippingCost;
-  String _discountType;
-  Customer _customer;
-  int _deliveryManId;
-  String _orderNote;
-  String _orderType;
-  Shipping _shipping;
-  double _extraDiscount;
-  String _extraDiscountType;
-  String _deliveryType;
-  String _thirdPartyServiceName;
-  String _thirdPartyTrackingId;
+  int? _id;
+  int? _customerId;
+  String? _customerType;
+  String? _paymentStatus;
+  String? _orderStatus;
+  String? _paymentMethod;
+  String? _transactionRef;
+  double? _orderAmount;
+  int? _shippingAddress;
+  String? _shippingAddressData;
+  int? _billingAddress;
+  BillingAddressData? _billingAddressData;
+  String? _createdAt;
+  String? _updatedAt;
+  double? _discountAmount;
+  double? _shippingCost;
+  String? _discountType;
+  Customer? _customer;
+  int? _deliveryManId;
+  String? _orderNote;
+  String? _orderType;
+  Shipping? _shipping;
+  double? _extraDiscount;
+  String? _extraDiscountType;
+  String? _deliveryType;
+  String? _thirdPartyServiceName;
+  String? _thirdPartyTrackingId;
 
-  OrderModel(
-      {int id,
-        int customerId,
-        String customerType,
-        String paymentStatus,
-        String orderStatus,
-        String paymentMethod,
-        String transactionRef,
-        double orderAmount,
-        int shippingAddress,
-        String shippingAddressData,
-        int billingAddress,
-        BillingAddressData billingAddressData,
-        double shippingCost,
-        String createdAt,
-        String updatedAt,
-        double discountAmount,
-        String discountType,
-        Customer customer,
-        int deliveryManId,
-        String orderNote,
-        String orderType,
-        Shipping shipping,
-        double extraDiscount,
-        String extraDiscountType,
-        String deliveryType,
-        String thirdPartyServiceNam,
-        String thirdPartyTrackingId,
-      }) {
+  OrderModel({
+    int? id,
+    int? customerId,
+    String? customerType,
+    String? paymentStatus,
+    String? orderStatus,
+    String? paymentMethod,
+    String? transactionRef,
+    double? orderAmount,
+    int? shippingAddress,
+    String? shippingAddressData,
+    int? billingAddress,
+    BillingAddressData? billingAddressData,
+    double? shippingCost,
+    String? createdAt,
+    String? updatedAt,
+    double? discountAmount,
+    String? discountType,
+    Customer? customer,
+    int? deliveryManId,
+    String? orderNote,
+    String? orderType,
+    Shipping? shipping,
+    double? extraDiscount,
+    String? extraDiscountType,
+    String? deliveryType,
+    String? thirdPartyServiceNam,
+    String? thirdPartyTrackingId,
+  }) {
     this._id = id;
     this._customerId = customerId;
     this._customerType = customerType;
@@ -96,42 +95,41 @@ class OrderModel {
     if (thirdPartyTrackingId != null) {
       this._thirdPartyTrackingId = thirdPartyTrackingId;
     }
-
   }
 
   // ignore: unnecessary_getters_setters
-  int get id => _id;
+  int get id => _id!;
   // ignore: unnecessary_getters_setters
   set id(int id) => _id = id;
-  int get customerId => _customerId;
-  String get customerType => _customerType;
-  String get paymentStatus => _paymentStatus;
+  int? get customerId => _customerId;
+  String? get customerType => _customerType;
+  String? get paymentStatus => _paymentStatus;
   // ignore: unnecessary_getters_setters
-  String get orderStatus => _orderStatus;
+  String get orderStatus => _orderStatus!;
   // ignore: unnecessary_getters_setters
   set orderStatus(String orderStatus) => _orderStatus = orderStatus;
-  String get paymentMethod => _paymentMethod;
-  String get transactionRef => _transactionRef;
-  double get orderAmount => _orderAmount;
-  double get shippingCost => _shippingCost;
-  int get shippingAddress => _shippingAddress;
-  String get shippingAddressData => _shippingAddressData;
-  int get billingAddress => _billingAddress;
-  BillingAddressData get billingAddressData => _billingAddressData;
-  String get createdAt => _createdAt;
-  String get updatedAt => _updatedAt;
-  double get discountAmount => _discountAmount;
-  String get discountType => _discountType;
-  Customer get customer => _customer;
-  int get deliveryManId =>_deliveryManId;
-  String get orderNote => _orderNote;
-  String get orderType => _orderType;
-  Shipping get shipping => _shipping;
-  double get extraDiscount => _extraDiscount;
-  String get extraDiscountType => _extraDiscountType;
-  String get deliveryType => _deliveryType;
-  String get  thirdPartyServiceName => _thirdPartyServiceName;
-  String get  thirdPartyTrackingId => _thirdPartyTrackingId;
+  String? get paymentMethod => _paymentMethod;
+  String? get transactionRef => _transactionRef;
+  double? get orderAmount => _orderAmount;
+  double? get shippingCost => _shippingCost;
+  int? get shippingAddress => _shippingAddress;
+  String? get shippingAddressData => _shippingAddressData;
+  int? get billingAddress => _billingAddress;
+  BillingAddressData? get billingAddressData => _billingAddressData;
+  String? get createdAt => _createdAt;
+  String? get updatedAt => _updatedAt;
+  double? get discountAmount => _discountAmount;
+  String? get discountType => _discountType;
+  Customer? get customer => _customer;
+  int? get deliveryManId => _deliveryManId;
+  String? get orderNote => _orderNote;
+  String? get orderType => _orderType;
+  Shipping? get shipping => _shipping;
+  double? get extraDiscount => _extraDiscount;
+  String? get extraDiscountType => _extraDiscountType;
+  String? get deliveryType => _deliveryType;
+  String? get thirdPartyServiceName => _thirdPartyServiceName;
+  String? get thirdPartyTrackingId => _thirdPartyTrackingId;
 
   OrderModel.fromJson(Map<String, dynamic> json) {
     _id = json['id'];
@@ -151,11 +149,11 @@ class OrderModel {
         : null;
     _createdAt = json['created_at'];
     _updatedAt = json['updated_at'];
-    if(json['delivery_man_id'] != null){
+    if (json['delivery_man_id'] != null) {
       _deliveryManId = json['delivery_man_id'];
     }
 
-    if(json['discount_amount']!=null){
+    if (json['discount_amount'] != null) {
       _discountAmount = json['discount_amount'].toDouble();
     }
 
@@ -170,16 +168,17 @@ class OrderModel {
         : null;
     _extraDiscount = json['extra_discount'].toDouble();
     _extraDiscountType = json['extra_discount_type'];
-    if(json['delivery_type']!=null && json['delivery_type']!= ""){
+    if (json['delivery_type'] != null && json['delivery_type'] != "") {
       _deliveryType = json['delivery_type'];
     }
-    if(json['delivery_service_name']!=null && json['delivery_service_name']!= ""){
+    if (json['delivery_service_name'] != null &&
+        json['delivery_service_name'] != "") {
       _thirdPartyServiceName = json['delivery_service_name'];
     }
-    if(json['third_party_delivery_tracking_id']!=null && json['third_party_delivery_tracking_id']!= ""){
+    if (json['third_party_delivery_tracking_id'] != null &&
+        json['third_party_delivery_tracking_id'] != "") {
       _thirdPartyTrackingId = json['third_party_delivery_tracking_id'];
     }
-
   }
 
   Map<String, dynamic> toJson() {
@@ -196,7 +195,7 @@ class OrderModel {
     data['shipping_address_data'] = this.shippingAddressData;
     data['billing_address'] = this._billingAddress;
     if (this.billingAddressData != null) {
-      data['billing_address_data'] = this.billingAddressData.toJson();
+      data['billing_address_data'] = this.billingAddressData!.toJson();
     }
     data['shipping_cost'] = this._shippingCost;
     data['created_at'] = this._createdAt;
@@ -205,12 +204,12 @@ class OrderModel {
     data['discount_amount'] = this._discountAmount;
     data['discount_type'] = this._discountType;
     if (this._customer != null) {
-      data['customer'] = this._customer.toJson();
+      data['customer'] = this._customer!.toJson();
     }
     data['order_note'] = this._orderNote;
     data['order_type'] = this._orderType;
     if (this._shipping != null) {
-      data['shipping'] = this._shipping.toJson();
+      data['shipping'] = this._shipping!.toJson();
     }
     data['extra_discount'] = this._extraDiscount;
     data['extra_discount_type'] = this._extraDiscountType;
@@ -223,42 +222,42 @@ class OrderModel {
 }
 
 class Customer {
-  int _id;
-  String _name;
-  String _fName;
-  String _lName;
-  String _phone;
-  String _image;
-  String _email;
-  String _emailVerifiedAt;
-  String _createdAt;
-  String _updatedAt;
-  String _streetAddress;
-  String _country;
-  String _city;
-  String _zip;
-  String _houseNo;
-  String _apartmentNo;
-  String _cmFirebaseToken;
+  int? _id;
+  String? _name;
+  String? _fName;
+  String? _lName;
+  String? _phone;
+  String? _image;
+  String? _email;
+  String? _emailVerifiedAt;
+  String? _createdAt;
+  String? _updatedAt;
+  String? _streetAddress;
+  String? _country;
+  String? _city;
+  String? _zip;
+  String? _houseNo;
+  String? _apartmentNo;
+  String? _cmFirebaseToken;
 
   Customer(
-      {int id,
-        String name,
-        String fName,
-        String lName,
-        String phone,
-        String image,
-        String email,
-        String emailVerifiedAt,
-        String createdAt,
-        String updatedAt,
-        String streetAddress,
-        String country,
-        String city,
-        String zip,
-        String houseNo,
-        String apartmentNo,
-        String cmFirebaseToken}) {
+      {int? id,
+      String? name,
+      String? fName,
+      String? lName,
+      String? phone,
+      String? image,
+      String? email,
+      String? emailVerifiedAt,
+      String? createdAt,
+      String? updatedAt,
+      String? streetAddress,
+      String? country,
+      String? city,
+      String? zip,
+      String? houseNo,
+      String? apartmentNo,
+      String? cmFirebaseToken}) {
     this._id = id;
     this._name = name;
     this._fName = fName;
@@ -278,32 +277,32 @@ class Customer {
     this._cmFirebaseToken = cmFirebaseToken;
   }
 
-  int get id => _id;
-  String get name => _name;
-  String get fName => _fName;
-  String get lName => _lName;
-  String get phone => _phone;
-  String get image => _image;
-  String get email => _email;
-  String get emailVerifiedAt => _emailVerifiedAt;
-  String get createdAt => _createdAt;
-  String get updatedAt => _updatedAt;
-  String get streetAddress => _streetAddress;
-  String get country => _country;
-  String get city => _city;
-  String get zip => _zip;
-  String get houseNo => _houseNo;
-  String get apartmentNo => _apartmentNo;
-  String get cmFirebaseToken => _cmFirebaseToken;
+  int? get id => _id;
+  String? get name => _name;
+  String? get fName => _fName;
+  String? get lName => _lName;
+  String? get phone => _phone;
+  String? get image => _image;
+  String? get email => _email;
+  String? get emailVerifiedAt => _emailVerifiedAt;
+  String? get createdAt => _createdAt;
+  String? get updatedAt => _updatedAt;
+  String? get streetAddress => _streetAddress;
+  String? get country => _country;
+  String? get city => _city;
+  String? get zip => _zip;
+  String? get houseNo => _houseNo;
+  String? get apartmentNo => _apartmentNo;
+  String? get cmFirebaseToken => _cmFirebaseToken;
 
   Customer.fromJson(Map<String, dynamic> json) {
     _id = json['id'];
     _name = json['name'];
-    if(json['f_name']!=null){
+    if (json['f_name'] != null) {
       _fName = json['f_name'];
     }
 
-    if(json['l_name']!=null){
+    if (json['l_name'] != null) {
       _lName = json['l_name'];
     }
 
@@ -345,38 +344,37 @@ class Customer {
   }
 }
 
-
 class BillingAddressData {
-  int id;
-  int customerId;
-  String contactPersonName;
-  String addressType;
-  String address;
-  String city;
-  String zip;
-  String phone;
-  String createdAt;
-  String updatedAt;
-  String country;
-  String latitude;
-  String longitude;
-  int isBilling;
+  int? id;
+  int? customerId;
+  String? contactPersonName;
+  String? addressType;
+  String? address;
+  String? city;
+  String? zip;
+  String? phone;
+  String? createdAt;
+  String? updatedAt;
+  String? country;
+  String? latitude;
+  String? longitude;
+  int? isBilling;
 
   BillingAddressData(
       {this.id,
-        this.customerId,
-        this.contactPersonName,
-        this.addressType,
-        this.address,
-        this.city,
-        this.zip,
-        this.phone,
-        this.createdAt,
-        this.updatedAt,
-        this.country,
-        this.latitude,
-        this.longitude,
-        this.isBilling});
+      this.customerId,
+      this.contactPersonName,
+      this.addressType,
+      this.address,
+      this.city,
+      this.zip,
+      this.phone,
+      this.createdAt,
+      this.updatedAt,
+      this.country,
+      this.latitude,
+      this.longitude,
+      this.isBilling});
 
   BillingAddressData.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -416,26 +414,26 @@ class BillingAddressData {
 }
 
 class Shipping {
-  int _id;
-  int _creatorId;
-  String _creatorType;
-  String _title;
-  double _cost;
-  String _duration;
-  int _status;
-  String _createdAt;
-  String _updatedAt;
+  int? _id;
+  int? _creatorId;
+  String? _creatorType;
+  String? _title;
+  double? _cost;
+  String? _duration;
+  int? _status;
+  String? _createdAt;
+  String? _updatedAt;
 
   Shipping(
-      {int id,
-        int creatorId,
-        String creatorType,
-        String title,
-        double cost,
-        String duration,
-        int status,
-        String createdAt,
-        String updatedAt}) {
+      {int? id,
+      int? creatorId,
+      String? creatorType,
+      String? title,
+      double? cost,
+      String? duration,
+      int? status,
+      String? createdAt,
+      String? updatedAt}) {
     if (id != null) {
       this._id = id;
     }
@@ -465,16 +463,15 @@ class Shipping {
     }
   }
 
-  int get id => _id;
-  int get creatorId => _creatorId;
-  String get creatorType => _creatorType;
-  String get title => _title;
-  double get cost => _cost;
-  String get duration => _duration;
-  int get status => _status;
-  String get createdAt => _createdAt;
-  String get updatedAt => _updatedAt;
-
+  int? get id => _id;
+  int? get creatorId => _creatorId;
+  String? get creatorType => _creatorType;
+  String? get title => _title;
+  double? get cost => _cost;
+  String? get duration => _duration;
+  int? get status => _status;
+  String? get createdAt => _createdAt;
+  String? get updatedAt => _updatedAt;
 
   Shipping.fromJson(Map<String, dynamic> json) {
     _id = json['id'];

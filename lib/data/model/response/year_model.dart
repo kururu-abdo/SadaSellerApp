@@ -1,6 +1,6 @@
 class YearModel {
-  int id;
-  String year;
+  int? id;
+  String? year;
 
   YearModel({this.id, this.year});
 

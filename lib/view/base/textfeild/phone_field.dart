@@ -11,39 +11,39 @@ extension EmailValidator on String {
 }
 
 class PhoneField extends StatelessWidget {
-  final TextEditingController controller;
-  final String hintText;
-  final TextInputType textInputType;
-  final int maxLine;
-  final FocusNode focusNode;
-  final FocusNode nextNode;
-  final TextInputAction textInputAction;
-  final bool isPhoneNumber;
-  final bool isValidator;
-  final String validatorMessage;
-  final Color fillColor;
-  final TextCapitalization capitalization;
-  final bool isBorder;
+  final TextEditingController? controller;
+  final String? hintText;
+  final TextInputType? textInputType;
+  final int? maxLine;
+  final FocusNode? focusNode;
+  final FocusNode? nextNode;
+  final TextInputAction? textInputAction;
+  final bool? isPhoneNumber;
+  final bool? isValidator;
+  final String? validatorMessage;
+  final Color? fillColor;
+  final TextCapitalization? capitalization;
+  final bool? isBorder;
 
-  PhoneField(
-      {this.controller,
-      this.hintText,
-      this.textInputType,
-      this.maxLine,
-      this.focusNode,
-      this.nextNode,
-      this.textInputAction,
-      this.isPhoneNumber = false,
-      this.isValidator=false,
-      this.validatorMessage,
-      this.capitalization = TextCapitalization.none,
-      this.fillColor,
-      this.isBorder = false,
-      });
+  PhoneField({
+    this.controller,
+    this.hintText,
+    this.textInputType,
+    this.maxLine,
+    this.focusNode,
+    this.nextNode,
+    this.textInputAction,
+    this.isPhoneNumber = false,
+    this.isValidator = false,
+    this.validatorMessage,
+    this.capitalization = TextCapitalization.none,
+    this.fillColor,
+    this.isBorder = false,
+  });
 
   @override
   Widget build(context) {
-    var isRtl = Directionality.of(context)==TextDirection.rtl;
+    var isRtl = Directionality.of(context) == TextDirection.rtl;
     return Container(
       width: double.infinity,
 
@@ -52,7 +52,11 @@ class PhoneField extends StatelessWidget {
         color: Theme.of(context).highlightColor,
         borderRadius: BorderRadius.circular(6),
         boxShadow: [
-          BoxShadow(color: Colors.grey.withOpacity(0.2), spreadRadius: 1, blurRadius: 7, offset: Offset(0, 1)) // changes position of shadow
+          BoxShadow(
+              color: Colors.grey.withOpacity(0.2),
+              spreadRadius: 1,
+              blurRadius: 7,
+              offset: Offset(0, 1)) // changes position of shadow
         ],
       ),
       // decoration: BoxDecoration(
@@ -64,88 +68,88 @@ class PhoneField extends StatelessWidget {
       //   ],
       // ),
       child: TextFormField(
-        textAlign: 
-        
-        // isBorder? TextAlign.center:
-        isRtl?TextAlign.end:
-        TextAlign.start
-        
-        ,
-      
+        textAlign:
+
+            // isBorder? TextAlign.center:
+            isRtl ? TextAlign.end : TextAlign.start,
+
         controller: controller,
         maxLines: maxLine ?? 1,
-        textCapitalization: capitalization,
-        maxLength: isPhoneNumber ? 10 : null,
+        textCapitalization: capitalization!,
+        maxLength: isPhoneNumber! ? 10 : null,
         focusNode: focusNode,
         keyboardType: textInputType ?? TextInputType.text,
         //keyboardType: TextInputType.number,
         initialValue: null,
         textInputAction: textInputAction ?? TextInputAction.next,
 
-
-        
         onFieldSubmitted: (v) {
           FocusScope.of(context).requestFocus(nextNode);
         },
         //autovalidate: true,
-        inputFormatters: [isPhoneNumber ? FilteringTextInputFormatter.digitsOnly : FilteringTextInputFormatter.singleLineFormatter],
-        validator: (input){
-          if(input.isEmpty){
-            if(isValidator){
-              return validatorMessage??"";
+        inputFormatters: [
+          isPhoneNumber!
+              ? FilteringTextInputFormatter.digitsOnly
+              : FilteringTextInputFormatter.singleLineFormatter
+        ],
+        validator: (input) {
+          if (input!.isEmpty) {
+            if (isValidator!) {
+              return validatorMessage ?? "";
             }
           }
           return null;
-
         },
         decoration: InputDecoration(
-hintTextDirection: TextDirection.ltr,
+          hintTextDirection: TextDirection.ltr,
           hintText: hintText ?? '',
           filled: fillColor != null,
           fillColor: fillColor,
           contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 15),
           isDense: true,
           counterText: '',
-          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).primaryColor)),
-          hintStyle: titilliumRegular.copyWith(color: Theme.of(context).hintColor),
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Theme.of(context).primaryColor)),
+          hintStyle:
+              titilliumRegular.copyWith(color: Theme.of(context).hintColor),
           errorStyle: TextStyle(height: 1.5),
           border: InputBorder.none,
           floatingLabelBehavior: FloatingLabelBehavior.always,
 
-          prefixIcon:isRtl?null: Container(
-            padding: EdgeInsets.zero,
-            width: 30,
-            child: Center(
-              child: Text(
-                     '966',
-                  // showFlagMain: true,
+          prefixIcon: isRtl
+              ? null
+              : Container(
+                  padding: EdgeInsets.zero,
+                  width: 30,
+                  child: Center(
+                    child: Text(
+                      '966',
+                      // showFlagMain: true,
                       style: TextStyle(
                           // color: Colors.black
-                          
-                   color:       Theme.of(context).textTheme.headline1.color ,
-                   fontWeight: FontWeight.bold
-                          
-                          ),
+
+                          color: Theme.of(context).textTheme.headline1!.color,
+                          fontWeight: FontWeight.bold),
                     ),
-            ),
-          ),
- suffixIcon:isRtl? Container(
-            padding: EdgeInsets.zero,
-            width: 30,
-            child: Center(
-              child: Text(
-                     '966',
-                  // showFlagMain: true,
+                  ),
+                ),
+          suffixIcon: isRtl
+              ? Container(
+                  padding: EdgeInsets.zero,
+                  width: 30,
+                  child: Center(
+                    child: Text(
+                      '966',
+                      // showFlagMain: true,
                       style: TextStyle(
                           // color: Colors.black
-                          
-                   color:       Theme.of(context).textTheme.headline1.color ,
-                   fontWeight: FontWeight.bold
-                          
-                          ),
+
+                          color: Theme.of(context).textTheme.headline1!.color,
+                          fontWeight: FontWeight.bold),
                     ),
-            ),
-          ):null,
+                  ),
+                )
+              : null,
 
 //           prefix:  Flex(
 //           direction: Axis.horizontal,
@@ -158,13 +162,13 @@ hintTextDirection: TextDirection.ltr,
 //               // showFlagMain: true,
 //                   style: TextStyle(
 //                       color: Colors.black
-                      
+
 //                       // Theme.of(context).textTheme.headline1.color
-                      
+
 //                       ),
 //                 ),
 //                   // overflow: widget.textOverflow,
-                
+
 //               ),
 // ],
 //           )

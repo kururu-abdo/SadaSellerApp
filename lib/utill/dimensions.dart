@@ -11,7 +11,6 @@ class Dimensions {
   static const double FONT_SIZE_WITHDRAWABLE_AMOUNT = 30.0;
   static const double FONT_SIZE_HEADER_LARGE = 48.0;
 
-
   static const double PADDING_SIZE_VERY_TINY = 2.0;
   static const double PADDING_SIZE_ORDER = 4.0;
   static const double PADDING_SIZE_EXTRA_SMALL = 5.0;
@@ -24,7 +23,7 @@ class Dimensions {
   static const double PADDING_SIZE_BUTTON = 40.0;
   static const double PADDING_SIZE_BOTTOM_SPACE = 80.0;
 
- static const double MARGIN_SIZE_EXTRA_SMALL = 5.0;
+  static const double MARGIN_SIZE_EXTRA_SMALL = 5.0;
   static const double MARGIN_SIZE_SMALL = 10.0;
   static const double MARGIN_SIZE_DEFAULT = 15.0;
   static const double MARGIN_SIZE_LARGE = 20.0;
